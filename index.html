@@ -176,8 +176,8 @@ function next(){if(!answered)return;if(idx<list.length-1){idx++;show()}else fini
 function finish(){ $("quiz").style.display="none";$("result").style.display="block";const pct=Math.round(score/list.length*100);$("scoreBig").textContent=`${score}/${list.length}`;$("resultText").textContent=pct>=80?"शानदार! आपकी तैयारी बहुत अच्छी है। 🎉":pct>=50?"अच्छा प्रयास! अभ्यास जारी रखें। 💪":"कोई बात नहीं—फिर कोशिश करें, आप बेहतर करेंगे! 🌱";localStorage.setItem("hq-played",String(Number(localStorage.getItem("hq-played")||0)+1));const best=Math.max(Number(localStorage.getItem("hq-best")||0),pct);localStorage.setItem("hq-best",String(best));categories();window.scrollTo(0,0)}
 function home(){ $("quiz").style.display="none";$("result").style.display="none";$("home").style.display="block";categories();window.scrollTo(0,0)}
 $("start").onclick=start;$("next").onclick=next;$("quit").onclick=home;$("again").onclick=start;$("homeBtn").onclick=home;categories();
-</script><hr>
-<footer style="text-align:center; padding:20px; line-height:2;">
+</script>
+<hr><footer style="text-align:center; padding:20px; line-height:2;">
   <a href="about.html">About Us</a> |
   <a href="contact.html">Contact Us</a> |
   <a href="privacy.html">Privacy Policy</a>
