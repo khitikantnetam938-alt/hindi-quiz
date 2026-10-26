@@ -1,88 +1,181 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hindi GK Quiz</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101827">
+<meta name="description" content="Hindi GK Quiz — भारत, इतिहास, भूगोल, विज्ञान, संविधान और छत्तीसगढ़ सामान्य ज्ञान के सवाल।">
+<title>Hindi GK Quiz | ज्ञान चुनौती</title>
 <style>
-body{margin:0;font-family:Arial,sans-serif;background:#eef2ff;color:#172033}
-header{background:#4f46e5;color:white;text-align:center;padding:24px 10px}
-main{max-width:600px;margin:25px auto;padding:15px}
-.card{background:white;border-radius:16px;padding:22px;box-shadow:0 4px 15px #0001}
-button{width:100%;padding:14px;margin:7px 0;border:1px solid #cbd5e1;border-radius:10px;background:white;font-size:16px;text-align:left}
-button:disabled{opacity:1}
-.next{background:#4f46e5;color:white;text-align:center;border:0}
-#msg{font-weight:bold}
+:root{--bg:#0b1120;--panel:#131d30;--panel2:#1a2740;--text:#f4f7ff;--muted:#aab7cf;--line:#2b3a55;--a:#7c5cff;--b:#20c997;--bad:#ff667a}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#1a2850 0,#0b1120 55%);color:var(--text);font-family:system-ui,-apple-system,"Noto Sans Devanagari",Arial,sans-serif;min-height:100vh}
+header{padding:28px 16px 22px;text-align:center;background:linear-gradient(135deg,#5b42d6,#177d9b);border-bottom:1px solid #ffffff22}
+.logo{font-size:13px;letter-spacing:2px;font-weight:800;color:#e8e3ff}.hero h1{font-size:clamp(28px,6vw,42px);margin:8px 0}.hero p{margin:0;color:#e7efff}
+main{width:min(760px,100%);padding:18px 14px 40px;margin:auto}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 16px}.stat,.card{background:linear-gradient(160deg,var(--panel),#10192a);border:1px solid var(--line);border-radius:18px}.stat{text-align:center;padding:13px 5px}.stat strong{display:block;font-size:22px}.stat span{font-size:12px;color:var(--muted)}
+.card{padding:18px;margin-bottom:14px;box-shadow:0 12px 35px #0002}.label{font-size:13px;color:var(--muted);font-weight:700}.categories{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:12px}
+button,select{font:inherit}button{cursor:pointer;touch-action:manipulation}.cat,.option,.primary,.secondary,select{border:1px solid var(--line);border-radius:12px;padding:12px;background:var(--panel2);color:var(--text)}.cat{text-align:left;min-height:60px;font-weight:700}.cat small{display:block;color:var(--muted);font-weight:500;margin-top:3px}.cat.active{border-color:#a99aff;background:#382d72;box-shadow:0 0 0 2px #7c5cff33}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.row select{flex:1;min-width:140px}.primary{border:0;background:linear-gradient(135deg,#7c5cff,#4b70ff);font-weight:800;padding:13px 18px}.secondary{background:transparent}.primary:active,.cat:active,.option:active{transform:scale(.99)}
+#quiz{display:none}.quiz-top{display:flex;justify-content:space-between;gap:8px;align-items:center;color:var(--muted);font-size:13px}.track{height:8px;background:#26344c;border-radius:20px;overflow:hidden;margin:12px 0 20px}.fill{height:100%;width:0;background:linear-gradient(90deg,#20c997,#7c5cff);transition:width .2s}
+#question{font-size:clamp(20px,4.5vw,25px);line-height:1.5;margin:10px 0 18px}.options{display:grid;gap:10px}.option{text-align:left;line-height:1.45;min-height:52px}.option.correct{background:#123e37;border-color:#20c997}.option.wrong{background:#482431;border-color:var(--bad)}.option:disabled{cursor:default;opacity:1}.feedback{min-height:28px;margin:12px 0;color:var(--muted);font-weight:700}.feedback.good{color:#5be0b7}.feedback.bad{color:#ff91a0}.quiz-actions{display:flex;gap:10px;justify-content:space-between;align-items:center}.quiz-actions button{flex:1}
+#result{display:none;text-align:center}.score-big{font-size:48px;font-weight:900;color:#8cdecb}.result-icon{font-size:45px}.hidden{display:none!important}.foot{text-align:center;color:var(--muted);font-size:12px;padding:10px}
+@media(min-width:600px){.categories{grid-template-columns:repeat(3,minmax(0,1fr))}.card{padding:24px}.cat{min-height:72px}}
 </style>
 </head>
 <body>
-<header>
-<h1>🧠 हिंदी GK Quiz</h1>
-<p>हर दिन कुछ नया सीखें!</p>
-</header>
-<main><div class="card">
-<p id="progress"></p>
-<h2 id="question"></h2>
-<div id="options"></div>
-<p id="msg"></p>
-<button id="next" class="next" hidden>अगला सवाल →</button>
-<div id="result" hidden></div>
-<button id="restart" class="next" hidden>फिर से खेलें</button>
-</div></main>
+<header><div class="hero"><div class="logo">LEARN • PLAY • GROW</div><h1>🧠 हिंदी GK Quiz</h1><p>हर दिन कुछ नया सीखने की आदत बनाओ!</p></div></header>
+<main>
+<div class="stats">
+ <div class="stat"><strong id="totalStat">100+</strong><span>कुल सवाल</span></div>
+ <div class="stat"><strong id="playedStat">0</strong><span>आज खेले</span></div>
+ <div class="stat"><strong id="bestStat">0%</strong><span>सबसे अच्छा स्कोर</span></div>
+</div>
+<section id="home">
+ <div class="card"><div class="label">📚 अपनी कैटेगरी चुनें</div><div id="categories" class="categories"></div></div>
+ <div class="card"><div class="label">⚙️ Quiz सेटिंग</div><div class="row" style="margin-top:12px"><select id="count"><option value="10">10 सवाल</option><option value="15">15 सवाल</option><option value="20">20 सवाल</option><option value="all">सभी सवाल</option></select><button id="start" class="primary">Quiz शुरू करें →</button></div><p style="color:var(--muted);font-size:13px;margin-bottom:0">हर सवाल में 4 विकल्प होंगे। सही जवाब चुनकर अपना स्कोर बढ़ाएँ।</p></div>
+</section>
+<section id="quiz" class="card">
+ <div class="quiz-top"><span id="categoryLabel">सामान्य ज्ञान</span><span id="progressText">सवाल 1/10</span></div><div class="track"><div id="fill" class="fill"></div></div>
+ <h2 id="question"></h2><div id="options" class="options"></div><p id="feedback" class="feedback" aria-live="polite"></p>
+ <div class="quiz-actions"><button id="quit" class="secondary">← बाहर जाएँ</button><button id="next" class="primary" disabled>अगला सवाल →</button></div>
+</section>
+<section id="result" class="card"><div class="result-icon">🏆</div><h2>Quiz पूरा हुआ!</h2><div id="scoreBig" class="score-big">0/10</div><p id="resultText"></p><button id="again" class="primary">फिर से खेलें ↻</button> <button id="homeBtn" class="secondary">कैटेगरी बदलें</button></section>
+<div class="foot">Hindi GK Quiz • सीखते रहें, आगे बढ़ते रहें ✨</div>
+</main>
 <script>
-const qs=[
-{q:"भारत की राजधानी क्या है?",o:["मुंबई","नई दिल्ली","जयपुर","भोपाल"],a:1},
-{q:"छत्तीसगढ़ की राजधानी क्या है?",o:["बिलासपुर","दुर्ग","रायपुर","जगदलपुर"],a:2},
-{q:"सौरमंडल का सबसे बड़ा ग्रह कौन है?",o:["पृथ्वी","मंगल","शनि","बृहस्पति"],a:3},
-{q:"भारत का राष्ट्रीय पशु कौन है?",o:["शेर","बाघ","हाथी","तेंदुआ"],a:1},
-{q:"भारत का संविधान कब लागू हुआ?",o:["1947","26 जनवरी 1950","1949","1952"],a:1},
-{q:"पानी का रासायनिक सूत्र क्या है?",o:["CO2","O2","H2O","NaCl"],a:2},
-{q:"भारत का राष्ट्रीय गान किसने लिखा?",o:["प्रेमचंद","रवींद्रनाथ टैगोर","गांधीजी","नेहरू"],a:1},
-{q:"एक सप्ताह में कितने दिन होते हैं?",o:["5","6","7","8"],a:2},
-{q:"भारत का स्वतंत्रता दिवस कब है?",o:["26 जनवरी","15 अगस्त","2 अक्टूबर","14 नवंबर"],a:1},
-{q:"पौधे प्रकाश संश्लेषण में कौन-सी गैस लेते हैं?",o:["ऑक्सीजन","नाइट्रोजन","कार्बन डाइऑक्साइड","हाइड्रोजन"],a:2}
+const data = [
+["भारत सामान्य ज्ञान","भारत की राजधानी क्या है?",["मुंबई","नई दिल्ली","जयपुर","भोपाल"],1],
+["भारत सामान्य ज्ञान","भारत का राष्ट्रीय पशु कौन-सा है?",["शेर","हाथी","बाघ","चीता"],2],
+["भारत सामान्य ज्ञान","भारत का राष्ट्रीय पक्षी कौन-सा है?",["मोर","तोता","हंस","कबूतर"],0],
+["भारत सामान्य ज्ञान","भारत का राष्ट्रीय फूल कौन-सा है?",["गुलाब","कमल","चमेली","सूरजमुखी"],1],
+["भारत सामान्य ज्ञान","भारत की मुद्रा क्या है?",["डॉलर","टका","रुपया","येन"],2],
+["भारत सामान्य ज्ञान","भारत का स्वतंत्रता दिवस कब मनाया जाता है?",["26 जनवरी","15 अगस्त","2 अक्टूबर","14 नवंबर"],1],
+["भारत सामान्य ज्ञान","गणतंत्र दिवस कब होता है?",["15 अगस्त","26 जनवरी","5 सितंबर","1 मई"],1],
+["भारत सामान्य ज्ञान","भारत का राष्ट्रीय गान किसने लिखा?",["प्रेमचंद","रवींद्रनाथ टैगोर","महात्मा गांधी","बंकिमचंद्र चट्टोपाध्याय"],1],
+["भारत सामान्य ज्ञान","भारत का राष्ट्रीय गीत कौन-सा है?",["जन गण मन","वंदे मातरम्","सारे जहाँ से अच्छा","ऐ मेरे वतन"],1],
+["भारत सामान्य ज्ञान","भारत के पहले प्रधानमंत्री कौन थे?",["सरदार पटेल","जवाहरलाल नेहरू","लाल बहादुर शास्त्री","राजेंद्र प्रसाद"],1],
+["भारत सामान्य ज्ञान","भारत की पहली महिला प्रधानमंत्री कौन थीं?",["प्रतिभा पाटिल","सरोजिनी नायडू","इंदिरा गांधी","सुषमा स्वराज"],2],
+["भारत सामान्य ज्ञान","क्षेत्रफल के अनुसार भारत का सबसे बड़ा राज्य कौन-सा है?",["मध्य प्रदेश","राजस्थान","महाराष्ट्र","उत्तर प्रदेश"],1],
+["भारत सामान्य ज्ञान","जनसंख्या के अनुसार भारत का सबसे बड़ा राज्य कौन-सा है?",["बिहार","महाराष्ट्र","उत्तर प्रदेश","राजस्थान"],2],
+["भारत सामान्य ज्ञान","भारत का सबसे छोटा राज्य (क्षेत्रफल) कौन-सा है?",["गोवा","सिक्किम","त्रिपुरा","मणिपुर"],0],
+["भारत सामान्य ज्ञान","भारत का सर्वोच्च नागरिक सम्मान कौन-सा है?",["पद्मश्री","पद्म भूषण","भारत रत्न","परमवीर चक्र"],2],
+["इतिहास","ताजमहल किसने बनवाया था?",["अकबर","शाहजहाँ","जहाँगीर","बाबर"],1],
+["इतिहास","कुतुब मीनार किस शहर में है?",["आगरा","जयपुर","दिल्ली","लखनऊ"],2],
+["इतिहास","1857 के विद्रोह की शुरुआत कहाँ से मानी जाती है?",["मेरठ","कानपुर","झाँसी","दिल्ली"],0],
+["इतिहास","महात्मा गांधी का जन्म कब हुआ था?",["2 अक्टूबर 1869","15 अगस्त 1872","26 जनवरी 1869","14 नवंबर 1889"],0],
+["इतिहास","भारत छोड़ो आंदोलन किस वर्ष शुरू हुआ?",["1930","1942","1947","1920"],1],
+["इतिहास","जलियाँवाला बाग हत्याकांड किस वर्ष हुआ?",["1905","1919","1922","1931"],1],
+["इतिहास","आज़ाद हिंद फ़ौज से प्रमुख रूप से कौन जुड़े थे?",["सुभाष चंद्र बोस","गोपाल कृष्ण गोखले","दादाभाई नौरोजी","बाल गंगाधर तिलक"],0],
+["इतिहास","सम्राट अशोक किस वंश से थे?",["गुप्त","मौर्य","चोल","मुगल"],1],
+["इतिहास","हड़प्पा सभ्यता किस युग की सभ्यता थी?",["पाषाण युग","कांस्य युग","लौह युग","आधुनिक युग"],1],
+["इतिहास","भारत के पहले राष्ट्रपति कौन थे?",["डॉ. राजेंद्र प्रसाद","डॉ. राधाकृष्णन","ज़ाकिर हुसैन","वी. वी. गिरि"],0],
+["इतिहास","‘स्वराज मेरा जन्मसिद्ध अधिकार है’ किसने कहा?",["भगत सिंह","बाल गंगाधर तिलक","गांधीजी","नेहरू"],1],
+["इतिहास","झाँसी की रानी का नाम क्या था?",["लक्ष्मीबाई","अहिल्याबाई","दुर्गावती","पद्मिनी"],0],
+["इतिहास","दिल्ली सल्तनत की पहली महिला शासक कौन थीं?",["नूरजहाँ","रज़िया सुल्तान","चाँद बीबी","रानी दुर्गावती"],1],
+["इतिहास","विक्रमशिला प्राचीन विश्वविद्यालय वर्तमान में किस राज्य में था?",["बिहार","गुजरात","ओडिशा","पंजाब"],0],
+["इतिहास","भारत में मुगल साम्राज्य की स्थापना किसने की?",["अकबर","बाबर","हुमायूँ","औरंगज़ेब"],1],
+["भूगोल","भारत की सबसे लंबी नदी कौन-सी मानी जाती है?",["गोदावरी","गंगा","नर्मदा","कावेरी"],1],
+["भूगोल","विश्व का सबसे ऊँचा पर्वत कौन-सा है?",["K2","कंचनजंघा","माउंट एवरेस्ट","नंदा देवी"],2],
+["भूगोल","भारत के दक्षिण में कौन-सा महासागर है?",["अटलांटिक","हिंद महासागर","आर्कटिक","प्रशांत"],1],
+["भूगोल","थार मरुस्थल मुख्यतः किस राज्य में है?",["राजस्थान","असम","केरल","बिहार"],0],
+["भूगोल","सुंदरबन डेल्टा किस नदी प्रणाली से जुड़ा है?",["गंगा-ब्रह्मपुत्र","नर्मदा-तापी","गोदावरी-कृष्णा","सिंधु-झेलम"],0],
+["भूगोल","भारत में चाय उत्पादन के लिए कौन-सा राज्य प्रसिद्ध है?",["असम","हरियाणा","पंजाब","गोवा"],0],
+["भूगोल","कर्क रेखा भारत के कितने राज्यों से गुजरती है?",["6","8","10","12"],1],
+["भूगोल","भारत का सबसे बड़ा पठार कौन-सा है?",["मालवा","दक्कन का पठार","छोटानागपुर","मेघालय"],1],
+["भूगोल","विश्व का सबसे बड़ा महाद्वीप कौन-सा है?",["अफ्रीका","यूरोप","एशिया","ऑस्ट्रेलिया"],2],
+["भूगोल","विश्व का सबसे बड़ा महासागर कौन-सा है?",["हिंद महासागर","प्रशांत महासागर","अटलांटिक महासागर","आर्कटिक महासागर"],1],
+["भूगोल","भारत का सबसे लंबा समुद्री तट किस राज्य का है?",["गुजरात","गोवा","ओडिशा","केरल"],0],
+["भूगोल","चिल्का झील किस राज्य में है?",["ओडिशा","मणिपुर","राजस्थान","महाराष्ट्र"],0],
+["भूगोल","नर्मदा नदी किस दिशा में बहती है?",["पूर्व","पश्चिम","उत्तर","दक्षिण"],1],
+["भूगोल","भारत का दक्षिणतम मुख्यभूमि बिंदु कौन-सा है?",["इंदिरा पॉइंट","कन्याकुमारी","रामेश्वरम","कोच्चि"],1],
+["भूगोल","जापान की राजधानी क्या है?",["ओसाका","टोक्यो","क्योटो","नारा"],1],
+["विज्ञान","पानी का रासायनिक सूत्र क्या है?",["CO2","H2O","O2","NaCl"],1],
+["विज्ञान","पौधे भोजन किस प्रक्रिया से बनाते हैं?",["श्वसन","प्रकाश संश्लेषण","वाष्पीकरण","पाचन"],1],
+["विज्ञान","मानव शरीर का सबसे बड़ा अंग कौन-सा है?",["हृदय","त्वचा","यकृत","फेफड़ा"],1],
+["विज्ञान","रक्त का लाल रंग किसके कारण होता है?",["क्लोरोफिल","हीमोग्लोबिन","प्लाज्मा","कैल्शियम"],1],
+["विज्ञान","पृथ्वी के सबसे निकट तारा कौन-सा है?",["ध्रुव तारा","सूर्य","सीरियस","प्रॉक्सिमा सेंटॉरी"],1],
+["विज्ञान","ध्वनि किस माध्यम में यात्रा नहीं कर सकती?",["पानी","हवा","निर्वात","लोहा"],2],
+["विज्ञान","सामान्य वायुदाब पर पानी कितने °C पर उबलता है?",["50","75","100","120"],2],
+["विज्ञान","विटामिन C की कमी से कौन-सा रोग होता है?",["रिकेट्स","स्कर्वी","बेरी-बेरी","रतौंधी"],1],
+["विज्ञान","मानव हृदय में कितने कक्ष होते हैं?",["2","3","4","5"],2],
+["विज्ञान","सौरमंडल का सबसे बड़ा ग्रह कौन-सा है?",["पृथ्वी","शनि","बृहस्पति","मंगल"],2],
+["विज्ञान","विद्युत धारा की SI इकाई क्या है?",["वोल्ट","एम्पियर","ओम","वाट"],1],
+["विज्ञान","प्रकाश की गति सबसे अधिक किसमें होती है?",["पानी","काँच","निर्वात","हवा"],2],
+["विज्ञान","मानव शरीर में सामान्यतः कितनी हड्डियाँ होती हैं?",["206","201","212","220"],0],
+["विज्ञान","कौन-सी गैस पौधे प्रकाश संश्लेषण में लेते हैं?",["ऑक्सीजन","कार्बन डाइऑक्साइड","नाइट्रोजन","हाइड्रोजन"],1],
+["विज्ञान","DNA का पूरा नाम क्या है?",["डिऑक्सीराइबोन्यूक्लिक एसिड","डाइनाइट्रिक एसिड","डबल न्यूक्लियर एजेंट","इनमें से कोई नहीं"],0],
+["विज्ञान","तापमान मापने का यंत्र क्या है?",["बैरोमीटर","थर्मामीटर","अमीटर","हाइग्रोमीटर"],1],
+["विज्ञान","लाल ग्रह किसे कहा जाता है?",["शुक्र","मंगल","बुध","शनि"],1],
+["विज्ञान","मानव शरीर में रक्त को छानने में मुख्य भूमिका किसकी है?",["गुर्दे","फेफड़े","आँखें","अग्न्याशय"],0],
+["विज्ञान","ओजोन परत हमें किससे बचाती है?",["अवरक्त किरणों","पराबैंगनी किरणों","ध्वनि तरंगों","रेडियो तरंगों"],1],
+["संविधान","भारतीय संविधान कब अपनाया गया?",["15 अगस्त 1947","26 नवंबर 1949","26 जनवरी 1950","2 अक्टूबर 1950"],1],
+["संविधान","भारतीय संविधान कब लागू हुआ?",["26 जनवरी 1950","26 नवंबर 1949","15 अगस्त 1947","1 जनवरी 1950"],0],
+["संविधान","संविधान की प्रारूप समिति के अध्यक्ष कौन थे?",["डॉ. बी. आर. आंबेडकर","डॉ. राजेंद्र प्रसाद","जवाहरलाल नेहरू","सरदार पटेल"],0],
+["संविधान","मौलिक अधिकार संविधान के किस भाग में हैं?",["भाग I","भाग II","भाग III","भाग IV"],2],
+["संविधान","भारत में मतदान की न्यूनतम आयु कितनी है?",["16 वर्ष","18 वर्ष","21 वर्ष","25 वर्ष"],1],
+["संविधान","लोकसभा का सामान्य कार्यकाल कितना होता है?",["4 वर्ष","5 वर्ष","6 वर्ष","7 वर्ष"],1],
+["संविधान","भारत के राष्ट्रपति का चुनाव कौन करता है?",["केवल जनता सीधे","निर्वाचक मंडल","केवल लोकसभा","केवल राज्यसभा"],1],
+["संविधान","भारतीय संसद के कितने सदन हैं?",["एक","दो","तीन","चार"],1],
+["संविधान","राज्यसभा को क्या कहा जाता है?",["अस्थायी सदन","स्थायी सदन","न्यायालय","ग्राम सभा"],1],
+["संविधान","भारत में सरकार का संवैधानिक प्रमुख कौन है?",["प्रधानमंत्री","राष्ट्रपति","मुख्य न्यायाधीश","राज्यपाल"],1],
+["छत्तीसगढ़ GK","छत्तीसगढ़ राज्य का गठन कब हुआ?",["1 नवंबर 2000","1 नवंबर 2001","15 अगस्त 2000","26 जनवरी 2000"],0],
+["छत्तीसगढ़ GK","छत्तीसगढ़ की राजधानी क्या है?",["बिलासपुर","रायपुर","दुर्ग","जगदलपुर"],1],
+["छत्तीसगढ़ GK","छत्तीसगढ़ उच्च न्यायालय कहाँ है?",["रायपुर","बिलासपुर","दुर्ग","अंबिकापुर"],1],
+["छत्तीसगढ़ GK","चित्रकोट जलप्रपात किस नदी पर है?",["महानदी","इंद्रावती","शिवनाथ","अरपा"],1],
+["छत्तीसगढ़ GK","छत्तीसगढ़ का राजकीय पशु कौन-सा है?",["बाघ","वन भैंसा","हाथी","बारहसिंगा"],1],
+["छत्तीसगढ़ GK","छत्तीसगढ़ का राजकीय पक्षी कौन-सा है?",["पहाड़ी मैना","मोर","तोता","सारस"],0],
+["छत्तीसगढ़ GK","महानदी का उद्गम किस क्षेत्र से होता है?",["सिहावा","मैकाल","बस्तर","सरगुजा"],0],
+["छत्तीसगढ़ GK","बस्तर दशहरा किस राज्य की प्रसिद्ध परंपरा है?",["झारखंड","छत्तीसगढ़","ओडिशा","मध्य प्रदेश"],1],
+["छत्तीसगढ़ GK","भिलाई इस्पात संयंत्र किस जिले में है?",["दुर्ग","रायगढ़","कोरबा","रायपुर"],0],
+["छत्तीसगढ़ GK","कांगेर घाटी राष्ट्रीय उद्यान किस क्षेत्र में है?",["बस्तर","सरगुजा","रायपुर","बिलासपुर"],0],
+["छत्तीसगढ़ GK","छत्तीसगढ़ का प्रसिद्ध पंथी नृत्य किस समुदाय से जुड़ा है?",["सतनामी","गोंड","बैगा","हल्बा"],0],
+["छत्तीसगढ़ GK","सिरपुर पुरातात्विक स्थल किस जिले में है?",["महासमुंद","कोरिया","जशपुर","कांकेर"],0],
+["छत्तीसगढ़ GK","छत्तीसगढ़ का प्रमुख कोयला उत्पादक क्षेत्र कौन-सा है?",["कोरबा","धमतरी","बेमेतरा","बलरामपुर"],0],
+["छत्तीसगढ़ GK","राजिम किस कारण प्रसिद्ध है?",["त्रिवेणी संगम","समुद्र तट","रेगिस्तान","हिमनद"],0],
+["खेल","क्रिकेट टीम में मैदान पर एक टीम के कितने खिलाड़ी होते हैं?",["9","10","11","12"],2],
+["खेल","ओलंपिक के प्रतीक में कितने छल्ले होते हैं?",["4","5","6","7"],1],
+["खेल","फुटबॉल विश्व कप सामान्यतः कितने वर्ष में होता है?",["2","3","4","5"],2],
+["खेल","शतरंज की बिसात में कितने खाने होते हैं?",["32","64","72","100"],1],
+["खेल","बैडमिंटन में किस वस्तु को मारा जाता है?",["पक","शटल कॉक","गेंद","डिस्क"],1],
+["खेल","भारत का आधिकारिक राष्ट्रीय खेल कौन-सा है?",["हॉकी","क्रिकेट","कबड्डी","भारत ने कोई आधिकारिक राष्ट्रीय खेल घोषित नहीं किया है"],3],
+["खेल","कबड्डी की एक टीम के कितने खिलाड़ी मैदान पर होते हैं?",["5","6","7","9"],2],
+["कंप्यूटर","CPU का पूरा नाम क्या है?",["Central Processing Unit","Computer Personal Unit","Central Program Utility","Control Processing User"],0],
+["कंप्यूटर","वेब पेज खोलने के लिए किसका उपयोग करते हैं?",["ब्राउज़र","कैलकुलेटर","कंपाइलर","पेंट"],0],
+["कंप्यूटर","HTML मुख्यतः किस काम आता है?",["वेब पेज की संरचना","वीडियो रिकॉर्डिंग","वायरस हटाना","फोटो प्रिंट करना"],0],
+["कंप्यूटर","कीबोर्ड किस प्रकार का उपकरण है?",["इनपुट","आउटपुट","स्टोरेज","नेटवर्क"],0],
+["कंप्यूटर","कंप्यूटर में अस्थायी मेमोरी कौन-सी है?",["ROM","RAM","DVD","SSD"],1],
+["कंप्यूटर","URL का संबंध किससे है?",["वेब पते","प्रिंटर की स्याही","बैटरी","स्क्रीन की चमक"],0],
+["कंप्यूटर","1 किलोबाइट का पारंपरिक बाइनरी मान कितना है?",["100 बाइट","512 बाइट","1024 बाइट","2048 बाइट"],2],
+["कंप्यूटर","ईमेल पते में सामान्यतः कौन-सा चिन्ह होता है?",["#","@","%","&"],1],
+["कंप्यूटर","इनमें से कौन-सा ऑपरेटिंग सिस्टम है?",["Android","HTML","Google Search","Bluetooth"],0],
+["कंप्यूटर","वेबसाइट को इंटरनेट पर उपलब्ध कराने की सेवा क्या कहलाती है?",["होस्टिंग","स्कैनिंग","टाइपिंग","फॉर्मेटिंग"],0],
+["मिश्रित GK","एक सप्ताह में कितने दिन होते हैं?",["5","6","7","8"],2],
+["मिश्रित GK","इंद्रधनुष में परंपरागत रूप से कितने रंग बताए जाते हैं?",["5","6","7","8"],2],
+["मिश्रित GK","विश्व पर्यावरण दिवस कब मनाया जाता है?",["5 जून","22 अप्रैल","1 मई","10 दिसंबर"],0],
+["मिश्रित GK","अंतरराष्ट्रीय योग दिवस कब मनाया जाता है?",["21 जून","5 जून","11 जुलाई","14 नवंबर"],0],
+["मिश्रित GK","भारत में शिक्षक दिवस कब मनाया जाता है?",["5 सितंबर","14 नवंबर","2 अक्टूबर","8 मार्च"],0],
+["मिश्रित GK","संयुक्त राष्ट्र दिवस कब मनाया जाता है?",["24 अक्टूबर","5 जून","1 जनवरी","10 मई"],0],
+["मिश्रित GK","सूर्य किस दिशा से उगता हुआ दिखाई देता है?",["पश्चिम","उत्तर","पूर्व","दक्षिण"],2],
+["मिश्रित GK","एक त्रिभुज के कितने भुजाएँ होती हैं?",["2","3","4","5"],1],
+["मिश्रित GK","विश्व स्वास्थ्य संगठन का संक्षिप्त नाम क्या है?",["WHO","WTO","UNESCO","UNICEF"],0],
+["मिश्रित GK","भारत का अंतरिक्ष अनुसंधान संगठन कौन-सा है?",["NASA","ISRO","ESA","DRDO"],1]
 ];
-let i=0,score=0,done=false;
+const icons={"सभी कैटेगरी":"🌟","भारत सामान्य ज्ञान":"🇮🇳","इतिहास":"🏛️","भूगोल":"🌍","विज्ञान":"🔬","संविधान":"⚖️","छत्तीसगढ़ GK":"🌾","खेल":"🏏","कंप्यूटर":"💻","मिश्रित GK":"🧩"};
+let selected="सभी कैटेगरी",list=[],idx=0,score=0,answered=false;
 const $=id=>document.getElementById(id);
-function show(){
-done=false;$("msg").textContent="";$("next").hidden=true;
-$("result").hidden=true;$("restart").hidden=true;$("options").innerHTML="";
-$("progress").textContent=`सवाल ${i+1}/${qs.length} | स्कोर: ${score}`;
-$("question").textContent=qs[i].q;
-qs[i].o.forEach((v,n)=>{
-let b=document.createElement("button");
-b.textContent=["A","B","C","D"][n]+". "+v;
-b.onclick=()=>answer(n);$("options").appendChild(b);
-});
+function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function categories(){
+ const names=["सभी कैटेगरी",...new Set(data.map(q=>q[0]))];$("categories").innerHTML="";
+ names.forEach(name=>{const n=name==="सभी कैटेगरी"?data.length:data.filter(q=>q[0]===name).length;const b=document.createElement("button");b.className="cat"+(name===selected?" active":"");b.innerHTML=`${icons[name]||"📘"} ${name}<small>${n} सवाल</small>`;b.onclick=()=>{selected=name;categories()};$("categories").appendChild(b)});
+ $("totalStat").textContent=data.length+"+";$("playedStat").textContent=localStorage.getItem("hq-played")||"0";$("bestStat").textContent=(localStorage.getItem("hq-best")||"0")+"%";
 }
-function answer(n){
-if(done)return;done=true;
-let a=qs[i].a;
-if(n===a){score++;$("msg").textContent="✅ बिल्कुल सही जवाब!";}
-else $("msg").textContent="❌ सही जवाब: "+qs[i].o[a];
-[...$("options").children].forEach((b,j)=>{
-b.disabled=true;
-if(j===a)b.style.background="#bbf7d0";
-else if(j===n)b.style.background="#fecaca";
-});
-$("progress").textContent=`सवाल ${i+1}/${qs.length} | स्कोर: ${score}`;
-$("next").hidden=false;
-$("next").textContent=i===qs.length-1?"रिजल्ट देखें":"अगला सवाल →";
-}
-$("next").onclick=()=>{
-if(i<qs.length-1){i++;show();}
-else{
-$("question").textContent="🎉 क्विज़ पूरा हुआ!";
-$("progress").textContent="आपका रिजल्ट";
-$("options").innerHTML="";$("msg").textContent="";
-$("next").hidden=true;$("result").hidden=false;
-$("result").innerHTML=`<h2>आपका स्कोर: ${score}/${qs.length}</h2>`;
-$("restart").hidden=false;
-}
-};
-$("restart").onclick=()=>{i=0;score=0;show();};
-show();
+function start(){const source=selected==="सभी कैटेगरी"?data:data.filter(q=>q[0]===selected);list=shuffle(source);const n=$("count").value;if(n!=="all")list=list.slice(0,Number(n));idx=0;score=0;$("home").style.display="none";$("result").style.display="none";$("quiz").style.display="block";show();window.scrollTo(0,0)}
+function show(){answered=false;const q=list[idx];$("categoryLabel").textContent=(icons[q[0]]||"📘")+" "+q[0];$("progressText").textContent=`सवाल ${idx+1}/${list.length}`;$("fill").style.width=(idx/list.length*100)+"%";$("question").textContent=q[1];$("options").innerHTML="";$("feedback").textContent="";$("feedback").className="feedback";$("next").disabled=true;$("next").textContent=idx===list.length-1?"रिजल्ट देखें 🏆":"अगला सवाल →";const labels=["A","B","C","D"];q[2].forEach((opt,i)=>{const b=document.createElement("button");b.className="option";b.textContent=labels[i]+"  "+opt;b.onclick=()=>answer(i);$("options").appendChild(b)})}
+function answer(chosen){if(answered)return;answered=true;const q=list[idx];const buttons=[...$("options").children];buttons.forEach((b,i)=>{b.disabled=true;if(i===q[3])b.classList.add("correct");if(i===chosen&&i!==q[3])b.classList.add("wrong")});if(chosen===q[3]){score++;$("feedback").textContent="✅ बिल्कुल सही जवाब!";$("feedback").classList.add("good")}else{$("feedback").textContent="❌ सही जवाब: "+q[2][q[3]];$("feedback").classList.add("bad")} $("fill").style.width=((idx+1)/list.length*100)+"%";$("next").disabled=false}
+function next(){if(!answered)return;if(idx<list.length-1){idx++;show()}else finish()}
+function finish(){ $("quiz").style.display="none";$("result").style.display="block";const pct=Math.round(score/list.length*100);$("scoreBig").textContent=`${score}/${list.length}`;$("resultText").textContent=pct>=80?"शानदार! आपकी तैयारी बहुत अच्छी है। 🎉":pct>=50?"अच्छा प्रयास! अभ्यास जारी रखें। 💪":"कोई बात नहीं—फिर कोशिश करें, आप बेहतर करेंगे! 🌱";localStorage.setItem("hq-played",String(Number(localStorage.getItem("hq-played")||0)+1));const best=Math.max(Number(localStorage.getItem("hq-best")||0),pct);localStorage.setItem("hq-best",String(best));categories();window.scrollTo(0,0)}
+function home(){ $("quiz").style.display="none";$("result").style.display="none";$("home").style.display="block";categories();window.scrollTo(0,0)}
+$("start").onclick=start;$("next").onclick=next;$("quit").onclick=home;$("again").onclick=start;$("homeBtn").onclick=home;categories();
 </script>
 </body>
 </html>
