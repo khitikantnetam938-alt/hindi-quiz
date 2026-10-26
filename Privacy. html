@@ -1,17 +1,45 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy - Hindi GK Quiz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Hindi GK Quiz की Privacy Policy।">
+  <title>Privacy Policy | Hindi GK Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 750px;
+      margin: auto;
+      padding: 20px;
+      line-height: 1.8;
+      color: #222;
+    }
+    a { color: #2459c4; }
+  </style>
 </head>
 <body>
-  <h1>Privacy Policy</h1>
-  <p>Hindi GK Quiz पर हम आपकी गोपनीयता का सम्मान करते हैं।</p>
-  <p>हमारी वेबसाइट पर सामान्य ज्ञान के सवालों का अभ्यास किया जा सकता है।</p>
-  <p>हम भविष्य में विज्ञापन सेवाओं का उपयोग कर सकते हैं। ऐसी सेवाएँ अपनी नीतियों के अनुसार कुकीज़ का उपयोग कर सकती हैं।</p>
-  <p>इस नीति में बदलाव होने पर इस पेज को अपडेट किया जा सकता है।</p>
-  <a href="index.html">होम पेज पर जाएँ</a>
+  <h1>Privacy Policy – Hindi GK Quiz</h1>
+
+  <p>Hindi GK Quiz mein aapka swagat hai. Hum apni website par aane wale visitors ki privacy ka samman karte hain.</p>
+
+  <h2>Jaankari ka istemal</h2>
+  <p>Hum visitors ki website experience ko behtar banane aur website ki performance samajhne ke liye zaroori jaankari ka istemal kar sakte hain.</p>
+
+  <h2>Cookies</h2>
+  <p>Bhavishya mein website par ads ya analytics services ka istemal hone par cookies ya isi tarah ki technologies ka upyog ho sakta hai.</p>
+
+  <h2>Google AdSense aur vigyapan</h2>
+  <p>Hamari website bhavishya mein Google AdSense jaise third-party advertising services ka istemal kar sakti hai. Ye services cookies ya anya technologies ka istemal karke vigyapan dikha sakti hain. Vigyapan aur data ke istemal ki jaankari ke liye sambandhit service ki privacy policy dekhein.</p>
+
+  <h2>Third-party links</h2>
+  <p>Hamari website par doosri websites ke links ho sakte hain. Un websites ki privacy practices ke liye hum zimmedar nahi hain.</p>
+
+  <h2>Policy mein badlav</h2>
+  <p>Hum zaroorat ke anusaar is Privacy Policy ko update kar sakte hain.</p>
+
+  <h2>Contact</h2>
+  <p>Privacy se jude sawalon ke liye humse sampark karein: <a href="mailto:Khitikantnetam938@gmail.com">Khitikantnetam938@gmail.com</a></p>
+
+  <p><a href="index.html">मुख्य पेज पर वापस जाएँ</a></p>
 </body>
 </html>
