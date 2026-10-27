@@ -421,8 +421,7 @@ document.getElementById('adminLogout').onclick=async()=>{await sbClient.auth.sig
 document.getElementById('saveQuestion').onclick=saveQuestion;document.getElementById('cancelEdit').onclick=clearAdminForm;
 const sbScript=document.createElement('script');sbScript.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';sbScript.onload=()=>{sbClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);loadDbQuestions();};sbScript.onerror=()=>console.warn('Supabase JS failed to load');document.head.appendChild(sbScript);
 </script>
- !-- EXTRA GK CONTENT: Paste this whole block just ABOVE the closing </body> tag in your existing index.html.
-     Do not replace your existing quiz, admin panel, or Supabase code. -->
+ <!-- EXTRA GK CONTENT -->
 <style>
   .gkx-wrap{max-width:1100px;margin:32px auto;padding:18px;font-family:inherit;color:inherit}
   .gkx-hero{padding:24px;border-radius:18px;background:linear-gradient(135deg,#173b73,#2765a8);color:#fff;margin-bottom:20px}
