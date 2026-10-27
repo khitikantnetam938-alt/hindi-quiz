@@ -422,7 +422,9 @@ document.getElementById('saveQuestion').onclick=saveQuestion;document.getElement
 const sbScript=document.createElement('script');sbScript.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';sbScript.onload=()=>{sbClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);loadDbQuestions();};sbScript.onerror=()=>console.warn('Supabase JS failed to load');document.head.appendChild(sbScript);
 </script>
  <!-- EXTRA GK CONTENT -->
-<style>
+<style>body {
+  background: #18213a !important;
+}
 /* Modern premium design improvements */
 :root {
   --bg: #080d1a;
