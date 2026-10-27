@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Hindi GK Quiz के नए सवाल, चार विकल्प, सही जवाब और आसान हिंदी में स्पष्टीकरण।">
+<title>New Questions | Hindi GK Quiz</title>
+<style>
+:root {
+  --bg:#080e1d; --panel:#111b30; --line:#273550;
+  --text:#f5f7ff; --muted:#a6b3ca;
+  --purple:#815cff; --blue:#258cff; --green:#20c997;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:Arial,"Noto Sans Devanagari",sans-serif;
+  line-height:1.7;
+}
+header {
+  padding:30px 18px 25px;
+  background:linear-gradient(135deg,#172a52,#39216e,#10182d);
+  text-align:center; border-bottom:1px solid #354568;
+}
+.logo {
+  width:76px;height:76px;border-radius:23px;
+  margin:0 auto 12px;display:grid;place-items:center;
+  font-size:40px;background:linear-gradient(135deg,#258cff,#815cff);
+  box-shadow:0 10px 35px #6548ff55;
+}
+h1 { margin:0;font-size:clamp(25px,6vw,38px); }
+header p { color:#d4def6;margin:8px 0 0; }
+nav {
+  display:flex;justify-content:center;gap:10px;flex-wrap:wrap;
+  padding:13px;background:#0d1527;border-bottom:1px solid var(--line);
+}
+nav a {
+  color:#e3e9ff;text-decoration:none;border:1px solid var(--line);
+  border-radius:10px;padding:8px 13px;font-size:14px;
+}
+main { max-width:850px;margin:25px auto;padding:0 14px 45px; }
+.panel {
+  background:var(--panel);border:1px solid var(--line);
+  border-radius:18px;padding:19px;margin-bottom:18px;
+}
+.stats { display:grid;grid-template-columns:repeat(3,1fr);gap:10px; }
+.stat { text-align:center;background:#18243b;padding:12px 5px;border-radius:12px; }
+.stat strong { display:block;font-size:22px;color:#a995ff; }
+.stat span { color:var(--muted);font-size:12px; }
+select,button {
+  font:inherit;border-radius:11px;padding:11px 13px;
+}
+select {
+  background:#0b1427;color:white;border:1px solid #354563;
+  width:100%;margin:8px 0 16px;
+}
+button { cursor:pointer;border:0;font-weight:bold; }
+.primary { background:linear-gradient(110deg,var(--purple),var(--blue));color:white; }
+.secondary { background:#202e47;color:white;border:1px solid #40516e; }
+.category-list { display:flex;flex-wrap:wrap;gap:8px;margin:12px 0; }
+.cat { background:#1a2740;color:#dbe5ff;border:1px solid #344866; }
+.cat.active { background:#6749ce;border-color:#a38bff;color:white; }
+.progress { height:7px;background:#26334b;border-radius:20px;overflow:hidden;margin:12px 0; }
+#bar { height:100%;width:0;background:linear-gradient(90deg,#815cff,#20c997);transition:width .2s; }
+#question { font-size:20px;font-weight:bold;margin:17px 0; }
+.option {
+ display:block;width:100%;text-align:left;margin:10px 0;
+ background:#18243a;color:#f4f7ff;border:1px solid #354761;
+}
+.option:hover { border-color:#9a85ff; }
+.option.correct { background:#103e36;border-color:#20c997; }
+.option.wrong { background:#49242e;border-color:#ff657b; }
+#feedback { margin:14px 0;padding:13px;border-radius:12px;background:#0c1628; }
+.hidden { display:none; }
+.small { font-size:13px;color:var(--muted); }
+footer { text-align:center;padding:24px;color:var(--muted);font-size:13px; }
+@media(max-width:450px) {
+ .panel { padding:15px; }
+ .stats { gap:6px; }
+ .stat strong { font-size:19px; }
+ #question { font-size:18px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">🧠</div>
+  <h1>Hindi GK Quiz</h1>
+  <p>नए सवाल • सही जवाब • नई जानकारी ✨</p>
+</header>
+
+<nav>
+  <a href="index.html">🏠 होम</a>
+  <a href="new-questions.html">🧠 New Questions</a>
+  <a href="about.html">हमारे बारे में</a>
+  <a href="contact.html">संपर्क</a>
+</nav>
+
+<main>
+  <section class="panel">
+    <h2>🎯 अपना ज्ञान परखें</h2>
+    <p class="small">कैटेगरी चुनें और सवालों के जवाब देकर अपना स्कोर बढ़ाएँ।</p>
+    <div class="stats">
+      <div class="stat"><strong id="total">0</strong><span>कुल सवाल</span></div>
+      <div class="stat"><strong id="score">0</strong><span>सही जवाब</span></div>
+      <div class="stat"><strong id="number">0/0</strong><span>प्रगति</span></div>
+    </div>
+    <h3>📚 कैटेगरी चुनें</h3>
+    <div class="category-list" id="categories"></div>
+    <label for="count">कितने सवाल खेलने हैं?</label>
+    <select id="count">
+      <option value="10">10 सवाल</option>
+      <option value="15">15 सवाल</option>
+      <option value="20">20 सवाल</option>
+      <option value="all">सभी सवाल</option>
+    </select>
+    <button class="primary" id="start">क्विज शुरू करें →</button>
+  </section>
+
+  <section class="panel hidden" id="quiz">
+    <div class="small" id="categoryName"></div>
+    <div class="progress"><div id="bar"></div></div>
+    <div id="question"></div>
+    <div id="options"></div>
+    <div id="feedback" class="hidden"></div>
+    <button class="primary hidden" id="next">अगला सवाल →</button>
+  </section>
+
+  <section class="panel hidden" id="result">
+    <h2>🎉 क्विज पूरा हुआ!</h2>
+    <p id="resultText"></p>
+    <button class="primary" id="again">फिर से खेलें</button>
+  </section>
+
+  <section class="panel">
+    <h2>💡 महत्वपूर्ण तथ्य</h2>
+    <p>• भारत का संविधान 26 नवंबर 1949 को अपनाया गया था।</p>
+    <p>• भारत का राष्ट्रीय पशु बाघ है।</p>
+    <p>• छत्तीसगढ़ राज्य 1 नवंबर 2000 को बना था।</p>
+    <p>• पानी का रासायनिक सूत्र H₂O है।</p>
+    <p>• सौरमंडल का सबसे बड़ा ग्रह बृहस्पति है।</p>
+  </section>
+</main>
+
+<footer>Hindi GK Quiz • सीखते रहें, आगे बढ़ते रहें ✨</footer>
+
+<script>
+const questions = [
+{c:"भारत GK",q:"भारत का संविधान कब अपनाया गया था?",o:["15 अगस्त 1947","26 नवंबर 1949","26 जनवरी 1950","2 अक्टूबर 1949"],a:1,e:"संविधान सभा ने 26 नवंबर 1949 को संविधान अपनाया।"},
+{c:"भारत GK",q:"भारत का राष्ट्रीय पशु कौन है?",o:["शेर","हाथी","बाघ","तेंदुआ"],a:2,e:"बाघ भारत का राष्ट्रीय पशु है।"},
+{c:"भारत GK",q:"भारत की राजधानी कौन-सी है?",o:["मुंबई","नई दिल्ली","कोलकाता","चेन्नई"],a:1,e:"भारत की राजधानी नई दिल्ली है।"},
+{c:"भारत GK",q:"भारत का राष्ट्रीय गान किसने लिखा?",o:["प्रेमचंद","रवींद्रनाथ टैगोर","बंकिमचंद्र चट्टोपाध्याय","महात्मा गांधी"],a:1,e:"जन गण मन की रचना रवींद्रनाथ टैगोर ने की थी।"},
+{c:"भारत GK",q:"भारत में स्वतंत्रता दिवस कब मनाया जाता है?",o:["26 जनवरी","2 अक्टूबर","15 अगस्त","14 नवंबर"],a:2,e:"भारत 15 अगस्त 1947 को स्वतंत्र हुआ।"},
+{c:"इतिहास",q:"ताजमहल किसने बनवाया था?",o:["अकबर","शाहजहाँ","बाबर","जहाँगीर"],a:1,e:"शाहजहाँ ने मुमताज महल की याद में ताजमहल बनवाया।"},
+{c:"इतिहास",q:"1857 का विद्रोह किस वर्ष हुआ?",o:["1757","1857","1885","1942"],a:1,e:"1857 में ब्रिटिश शासन के विरुद्ध बड़ा विद्रोह हुआ।"},
+{c:"इतिहास",q:"भारत छोड़ो आंदोलन कब शुरू हुआ?",o:["1920","1930","1942","1947"],a:2,e:"महात्मा गांधी ने 1942 में भारत छोड़ो आंदोलन शुरू किया।"},
+{c:"इतिहास",q:"मौर्य साम्राज्य के प्रसिद्ध सम्राट कौन थे?",o:["अशोक","हर्षवर्धन","पृथ्वीराज चौहान","समुद्रगुप्त"],a:0,e:"सम्राट अशोक मौर्य वंश के प्रमुख शासक थे।"},
+{c:"भूगोल",q:"भारत की सबसे लंबी नदी कौन-सी मानी जाती है?",o:["नर्मदा","गोदावरी","गंगा","कावेरी"],a:2,e:"गंगा भारत की प्रमुख और सबसे लंबी नदियों में से एक है।"},
+{c:"भूगोल",q:"विश्व का सबसे बड़ा महासागर कौन है?",o:["हिंद महासागर","अटलांटिक","प्रशांत","आर्कटिक"],a:2,e:"प्रशांत महासागर क्षेत्रफल में सबसे बड़ा है।"},
+{c:"भूगोल",q:"सौरमंडल का सबसे बड़ा ग्रह कौन है?",o:["पृथ्वी","मंगल","शनि","बृहस्पति"],a:3,e:"बृहस्पति सौरमंडल का सबसे बड़ा ग्रह है।"},
+{c:"विज्ञान",q:"पानी का रासायनिक सूत्र क्या है?",o:["CO₂","H₂O","O₂","NaCl"],a:1,e:"पानी के एक अणु में दो हाइड्रोजन और एक ऑक्सीजन परमाणु होता है।"},
+{c:"विज्ञान",q:"पौधे प्रकाश संश्लेषण में कौन-सी गैस लेते हैं?",o:["ऑक्सीजन","नाइट्रोजन","कार्बन डाइऑक्साइड","हाइड्रोजन"],a:2,e:"पौधे प्रकाश संश्लेषण के लिए कार्बन डाइऑक्साइड लेते हैं।"},
+{c:"विज्ञान",q:"मानव शरीर में रक्त पंप करने वाला अंग कौन है?",o:["फेफड़ा","हृदय","गुर्दा","यकृत"],a:1,e:"हृदय रक्त को पूरे शरीर में पंप करता है।"},
+{c:"संविधान",q:"भारत में संविधान दिवस कब मनाया जाता है?",o:["15 अगस्त","26 जनवरी","26 नवंबर","2 अक्टूबर"],a:2,e:"26 नवंबर को संविधान दिवस मनाया जाता है।"},
+{c:"संविधान",q:"भारत का संवैधानिक राष्ट्राध्यक्ष कौन होता है?",o:["प्रधानमंत्री","राष्ट्रपति","मुख्यमंत्री","मुख्य न्यायाधीश"],a:1,e:"भारत में राष्ट्रपति संवैधानिक राष्ट्राध्यक्ष होते हैं।"},
+{c:"छत्तीसगढ़",q:"छत्तीसगढ़ राज्य कब बना?",o:["1 नवंबर 2000","1 मई 1960","15 अगस्त 1947","26 जनवरी 1950"],a:0,e:"छत्तीसगढ़ 1 नवंबर 2000 को मध्य प्रदेश से अलग होकर बना।"},
+{c:"छत्तीसगढ़",q:"छत्तीसगढ़ की राजधानी क्या है?",o:["बिलासपुर","दुर्ग","रायपुर","जगदलपुर"],a:2,e:"रायपुर छत्तीसगढ़ की राजधानी है।"},
+{c:"छत्तीसगढ़",q:"चित्रकोट जलप्रपात किस राज्य में है?",o:["ओडिशा","छत्तीसगढ़","झारखंड","मध्य प्रदेश"],a:1,e:"चित्रकोट जलप्रपात बस्तर क्षेत्र, छत्तीसगढ़ में स्थित है।"}
+];
+
+let selected="सभी", list=[], pos=0, score=0, locked=false;
+const $=id=>document.getElementById(id);
+$("total").textContent=questions.length;
+
+function drawCategories(){
+ const cats=["सभी",...new Set(questions.map(q=>q.c))];
+ $("categories").innerHTML="";
+ cats.forEach(c=>{
+  const b=document.createElement("button");
+  b.className="cat"+(c===selected?" active":"");
+  b.textContent=c;
+  b.onclick=()=>{selected=c;drawCategories();};
+  $("categories").appendChild(b);
+ });
+}
+function startQuiz(){
+ list=questions.filter(q=>selected==="सभी"||q.c===selected).sort(()=>Math.random()-.5);
+ const n=$("count").value;
+ if(n!=="all") list=list.slice(0,Number(n));
+ pos=0;score=0;locked=false;
+ $("score").textContent=score;
+ $("result").classList.add("hidden");
+ $("quiz").classList.remove("hidden");
+ showQuestion();
+ $("quiz").scrollIntoView({behavior:"smooth",block:"start"});
+}
+function showQuestion(){
+ locked=false;
+ const q=list[pos];
+ $("categoryName").textContent="📚 "+q.c;
+ $("number").textContent=(pos+1)+"/"+list.length;
+ $("bar").style.width=(pos/list.length*100)+"%";
+ $("question").textContent=(pos+1)+". "+q.q;
+ $("options").innerHTML="";
+ $("feedback").classList.add("hidden");
+ $("next").classList.add("hidden");
+ q.o.forEach((option,i)=>{
+  const b=document.createElement("button");
+  b.className="option";
+  b.textContent=String.fromCharCode(65+i)+". "+option;
+  b.onclick=()=>answer(i,b);
+  $("options").appendChild(b);
+ });
+}
+function answer(i,button){
+ if(locked)return;
+ locked=true;
+ const q=list[pos];
+ [...$("options").children].forEach((b,j)=>{
+  b.disabled=true;
+  if(j===q.a)b.classList.add("correct");
+ });
+ if(i===q.a){score++;$("score").textContent=score;}
+ else button.classList.add("wrong");
+ $("feedback").classList.remove("hidden");
+ $("feedback").innerHTML="<strong>"+(i===q.a?"✅ सही जवाब!":"❌ सही जवाब: "+q.o[q.a])+"</strong><br>"+q.e;
+ $("next").textContent=pos===list.length-1?"रिजल्ट देखें":"अगला सवाल →";
+ $("next").classList.remove("hidden");
+ $("bar").style.width=((pos+1)/list.length*100)+"%";
+}
+$("next").onclick=()=>{
+ pos++;
+ if(pos<list.length)showQuestion();
+ else{
+  $("quiz").classList.add("hidden");
+  $("result").classList.remove("hidden");
+  const percent=Math.round(score/list.length*100);
+  $("resultText").textContent="आपने "+list.length+" में से "+score+" सही जवाब दिए। आपका स्कोर "+percent+"% है।";
+  $("number").textContent=list.length+"/"+list.length;
+  $("result").scrollIntoView({behavior:"smooth"});
+ }
+};
+$("start").onclick=startQuiz;
+$("again").onclick=startQuiz;
+drawCategories();
+</script>
+</body>
+</html>
