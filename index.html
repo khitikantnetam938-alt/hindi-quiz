@@ -422,6 +422,37 @@ document.getElementById('saveQuestion').onclick=saveQuestion;document.getElement
 const sbScript=document.createElement('script');sbScript.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';sbScript.onload=()=>{sbClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);loadDbQuestions();};sbScript.onerror=()=>console.warn('Supabase JS failed to load');document.head.appendChild(sbScript);
 </script>
  <!-- EXTRA GK CONTENT -->
+ /* Professional design */
+body {
+  background:
+    radial-gradient(ellipse at top, #283b70 0%, transparent 55%),
+    linear-gradient(180deg, #080d1a, #10182a) !important;
+}
+
+header {
+  background: linear-gradient(135deg, #5141a5, #176f89) !important;
+  padding: 38px 18px !important;
+}
+
+.card, .stat {
+  border: 1px solid #3a4c6c !important;
+  border-radius: 20px !important;
+  box-shadow: 0 12px 32px #0004 !important;
+}
+
+.stat strong {
+  color: #a99aff !important;
+  font-weight: 900 !important;
+}
+
+.primary {
+  background: linear-gradient(135deg, #8b70ff, #4d72ff) !important;
+  border-radius: 14px !important;
+}
+
+.cat, .option, select {
+  border-radius: 14px !important;
+}
 <style>body {
   background: #18213a !important;
 }
