@@ -421,5 +421,140 @@ document.getElementById('adminLogout').onclick=async()=>{await sbClient.auth.sig
 document.getElementById('saveQuestion').onclick=saveQuestion;document.getElementById('cancelEdit').onclick=clearAdminForm;
 const sbScript=document.createElement('script');sbScript.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';sbScript.onload=()=>{sbClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);loadDbQuestions();};sbScript.onerror=()=>console.warn('Supabase JS failed to load');document.head.appendChild(sbScript);
 </script>
+ !-- EXTRA GK CONTENT: Paste this whole block just ABOVE the closing </body> tag in your existing index.html.
+     Do not replace your existing quiz, admin panel, or Supabase code. -->
+<style>
+  .gkx-wrap{max-width:1100px;margin:32px auto;padding:18px;font-family:inherit;color:inherit}
+  .gkx-hero{padding:24px;border-radius:18px;background:linear-gradient(135deg,#173b73,#2765a8);color:#fff;margin-bottom:20px}
+  .gkx-hero h2{margin:0 0 8px;font-size:clamp(1.4rem,3vw,2rem)}
+  .gkx-hero p{margin:0;line-height:1.6}
+  .gkx-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+  .gkx-card{border:1px solid #d8e1ed;border-radius:15px;padding:17px;background:var(--card-bg,#fff);box-shadow:0 3px 12px rgba(20,45,80,.06)}
+  .gkx-card h3{margin:0 0 10px;font-size:1.12rem;color:#225b9c}
+  .gkx-card ul{padding-left:20px;margin:0}
+  .gkx-card li{margin:8px 0;line-height:1.5}
+  .gkx-quiz{margin-top:24px}
+  .gkx-qa{padding:14px 0;border-bottom:1px solid #e1e7ef;line-height:1.55}
+  .gkx-qa:last-child{border-bottom:0}
+  .gkx-qa summary{cursor:pointer;font-weight:650}
+  .gkx-answer{margin:9px 0 0;padding:10px 12px;border-radius:9px;background:#edf5ff}
+  .gkx-note{margin-top:18px;font-size:.92rem;opacity:.8}
+  @media(prefers-color-scheme:dark){
+    .gkx-card{background:#171b23;border-color:#343b49}
+    .gkx-card h3{color:#8fc2ff}
+    .gkx-answer{background:#202f43}
+  }
+</style>
+
+<section class="gkx-wrap" aria-labelledby="gkx-title">
+  <div class="gkx-hero">
+    <h2 id="gkx-title">भारत GK: नए विषय और रोचक तथ्य</h2>
+    <p>इतिहास, भूगोल, विज्ञान, संविधान, छत्तीसगढ़ और कंप्यूटर से जुड़े छोटे-छोटे तथ्य पढ़ें। नीचे दिए गए सवालों के जवाब खोलकर अपनी तैयारी जाँचें।</p>
+  </div>
+
+  <div class="gkx-grid">
+    <article class="gkx-card">
+      <h3>🏛️ भारतीय इतिहास</h3>
+      <ul>
+        <li>भारत का संविधान 26 नवंबर 1949 को अपनाया गया।</li>
+        <li>भारत 15 अगस्त 1947 को स्वतंत्र हुआ।</li>
+        <li>दांडी मार्च 1930 में महात्मा गांधी के नेतृत्व में हुआ।</li>
+        <li>अशोक के अनेक शिलालेख ब्राह्मी लिपि में लिखे गए थे।</li>
+      </ul>
+    </article>
+
+    <article class="gkx-card">
+      <h3>🌍 भारत का भूगोल</h3>
+      <ul>
+        <li>क्षेत्रफल के आधार पर राजस्थान भारत का सबसे बड़ा राज्य है।</li>
+        <li>भारत की मुख्य भूमि का दक्षिणतम बिंदु कन्याकुमारी है।</li>
+        <li>गंगा नदी का उद्गम क्षेत्र गंगोत्री हिमनद से जुड़ा है।</li>
+        <li>थार मरुस्थल का बड़ा भाग राजस्थान में स्थित है।</li>
+      </ul>
+    </article>
+
+    <article class="gkx-card">
+      <h3>🔬 विज्ञान</h3>
+      <ul>
+        <li>पानी का रासायनिक सूत्र H₂O है।</li>
+        <li>पौधे प्रकाश संश्लेषण में सूर्य के प्रकाश का उपयोग करते हैं।</li>
+        <li>ध्वनि को फैलने के लिए माध्यम चाहिए; निर्वात में ध्वनि नहीं फैलती।</li>
+        <li>मानव शरीर में हृदय रक्त पंप करता है।</li>
+      </ul>
+    </article>
+
+    <article class="gkx-card">
+      <h3>📜 भारतीय संविधान</h3>
+      <ul>
+        <li>भारतीय संविधान 26 जनवरी 1950 को लागू हुआ।</li>
+        <li>मौलिक अधिकार संविधान के भाग III में हैं।</li>
+        <li>भारत में मतदान की न्यूनतम आयु 18 वर्ष है, निर्धारित शर्तों के अधीन।</li>
+        <li>भारत का राष्ट्रपति देश का संवैधानिक प्रमुख होता है।</li>
+      </ul>
+    </article>
+
+    <article class="gkx-card">
+      <h3>🌾 छत्तीसगढ़ GK</h3>
+      <ul>
+        <li>छत्तीसगढ़ राज्य का गठन 1 नवंबर 2000 को हुआ।</li>
+        <li>रायपुर छत्तीसगढ़ की राजधानी है।</li>
+        <li>चित्रकोट जलप्रपात बस्तर क्षेत्र में इंद्रावती नदी पर स्थित है।</li>
+        <li>छत्तीसगढ़ को धान की खेती के लिए जाना जाता है।</li>
+      </ul>
+    </article>
+
+    <article class="gkx-card">
+      <h3>💻 कंप्यूटर GK</h3>
+      <ul>
+        <li>CPU को अक्सर कंप्यूटर का मुख्य प्रोसेसिंग भाग कहा जाता है।</li>
+        <li>RAM अस्थायी मेमोरी है; बिजली बंद होने पर इसका डेटा सामान्यतः मिट जाता है।</li>
+        <li>HTML वेब पेज की संरचना बनाने के लिए इस्तेमाल होती है।</li>
+        <li>URL किसी वेब संसाधन का पता बताता है।</li>
+      </ul>
+    </article>
+
+    <article class="gkx-card">
+      <h3>🏅 खेल GK</h3>
+      <ul>
+        <li>ओलंपिक खेल सामान्यतः हर चार साल में आयोजित होते हैं।</li>
+        <li>क्रिकेट की एक टीम मैदान में 11 खिलाड़ियों के साथ खेलती है।</li>
+        <li>बैडमिंटन में शटल कॉक का उपयोग होता है।</li>
+        <li>शतरंज में प्रत्येक खिलाड़ी खेल की शुरुआत 16 मोहरों से करता है।</li>
+      </ul>
+    </article>
+
+    <article class="gkx-card">
+      <h3>🌱 पर्यावरण GK</h3>
+      <ul>
+        <li>पेड़ वातावरण से कार्बन डाइऑक्साइड लेते हैं और प्रकाश संश्लेषण के दौरान ऑक्सीजन छोड़ते हैं।</li>
+        <li>जैव विविधता का अर्थ जीवों और उनके पारिस्थितिक तंत्रों की विविधता है।</li>
+        <li>सौर ऊर्जा सूर्य से प्राप्त होती है।</li>
+        <li>कचरे को कम करना, दोबारा उपयोग करना और रीसायकल करना उपयोगी आदतें हैं।</li>
+      </ul>
+    </article>
+  </div>
+
+  <div class="gkx-card gkx-quiz">
+    <h3>🧠 अभ्यास प्रश्न — जवाब खोलें</h3>
+
+    <details class="gkx-qa">
+      <summary>1. भारतीय संविधान कब लागू हुआ?</summary>
+      <div class="gkx-answer">उत्तर: 26 जनवरी 1950।</div>
+    </details>
+
+    <details class="gkx-qa">
+      <summary>2. क्षेत्रफल के आधार पर भारत का सबसे बड़ा राज्य कौन-सा है?</summary>
+      <div class="gkx-answer">उत्तर: राजस्थान।</div>
+    </details>
+
+    <details class="gkx-qa">
+      <summary>3. पानी का रासायनिक सूत्र क्या है?</summary>
+      <div class="gkx-answer">उत्तर: H₂O।</div>
+    </details>
+
+    <details class="gkx-qa">
+      <summary>4. छत्तीसगढ़ राज्य का गठन किस तारीख को हुआ?</summary>
+      <div class="gkx-answer">उत्तर: 1 नवंबर 2000।</div>
+    </details>
 </body>
 </html>
