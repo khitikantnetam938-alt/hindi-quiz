@@ -3,239 +3,457 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b1020">
+<meta name="description" content="Hindi GK Quiz — भारत, इतिहास, भूगोल, विज्ञान, संविधान और छत्तीसगढ़ सामान्य ज्ञान के सवालों के साथ अपना ज्ञान बढ़ाएं।">
 <meta name="google-adsense-account" content="ca-pub-9037909886687902">
-<meta name="description" content="Hindi GK Quiz में भारत, इतिहास, भूगोल, विज्ञान, संविधान और छत्तीसगढ़ सामान्य ज्ञान के सवालों की प्रैक्टिस करें।">
-<title>Hindi GK Quiz Academy | ज्ञान चुनौती</title>
+<title>Hindi GK Quiz | Knowledge Arena</title>
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9037909886687902" crossorigin="anonymous"></script>
+
 <style>
-*{box-sizing:border-box}
-:root{--bg:#0b1120;--panel:#131d30;--panel2:#1b2940;--text:#f5f7ff;--muted:#a9b5ca;--accent:#8b5cf6;--green:#20c997;--border:#2a3952}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,"Noto Sans Devanagari",sans-serif;line-height:1.7}
-.container{max-width:1000px;margin:auto;padding:16px}
-header{padding:28px 18px;text-align:center;border-radius:22px;background:linear-gradient(135deg,#182747,#452478);margin:8px 0 20px}
-.logo{font-size:30px;font-weight:800}.muted{color:var(--muted);font-size:14px}
-.brand{font-size:11px;letter-spacing:3px;color:#ddd0ff;margin-top:8px}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
-.stat,.panel{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:16px}
-.stat{text-align:center}.stat strong{display:block;font-size:23px;color:var(--green)}
-h2{font-size:20px;margin:0 0 8px}h3{font-size:17px;margin:0 0 6px}
-.panel{margin-bottom:18px}
-.categories{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:14px 0}
-button,select{font:inherit}
-button,select{border-radius:11px;padding:12px;border:1px solid var(--border)}
+:root{
+  --bg:#080d1b;
+  --panel:#111a2e;
+  --panel2:#17233b;
+  --text:#f5f7ff;
+  --muted:#9ba9c6;
+  --purple:#8b5cf6;
+  --blue:#4f8cff;
+  --green:#22c997;
+  --border:rgba(255,255,255,.09);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,"Noto Sans Devanagari",system-ui,-apple-system,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(ellipse at 10% 0%,rgba(112,69,235,.18),transparent 38%),
+    radial-gradient(ellipse at 100% 30%,rgba(43,112,255,.12),transparent 35%),
+    var(--bg);
+  min-height:100vh;
+}
+button,input,select{font:inherit}
 button{cursor:pointer}
-.cat,.option{background:var(--panel2);color:var(--text)}
-.cat.active{background:#39266b;border-color:var(--accent)}
-.primary{width:100%;background:linear-gradient(135deg,#8b5cf6,#6d4aff);color:white;border:0;font-weight:bold;margin-top:10px}
-select{width:100%;background:var(--panel2);color:var(--text);margin:5px 0}
-.question{font-size:18px;font-weight:bold;margin:14px 0}
-.option{width:100%;text-align:left;margin:5px 0}
-.option.correct{background:#123d38;border-color:var(--green)}
-.option.wrong{background:#47212e;border-color:#fb7185}
-.option:disabled{opacity:1}
-.track{height:7px;background:#26344b;border-radius:20px;overflow:hidden;margin:12px 0}
-.bar{height:100%;width:0;background:var(--green)}
-.note{padding:13px;background:#10192a;border:1px solid var(--border);border-radius:12px;margin-top:10px}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,92%);margin:auto}
+header{
+  position:sticky;top:0;z-index:20;
+  background:rgba(8,13,27,.86);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
+}
+.nav{
+  min-height:72px;display:flex;align-items:center;
+  justify-content:space-between;gap:14px;
+}
+.brand{display:flex;align-items:center;gap:11px;font-weight:850;font-size:18px}
+.logo{
+  width:43px;height:43px;border-radius:14px;
+  display:grid;place-items:center;font-size:22px;
+  background:linear-gradient(135deg,var(--purple),var(--blue));
+  box-shadow:0 8px 28px #754cf544;
+}
+.brand small{display:block;font-size:10px;color:var(--muted);letter-spacing:2px;margin-top:3px}
+.nav-tag{
+  color:#b9c9ff;background:#172342;border:1px solid #34466e;
+  border-radius:999px;padding:8px 12px;font-size:12px;font-weight:700;
+}
+.hero{padding:52px 0 28px}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:22px;align-items:stretch}
+.hero-main,.hero-side,.panel,.stat,.category,.note-card{
+  background:linear-gradient(145deg,rgba(23,35,59,.96),rgba(14,22,40,.96));
+  border:1px solid var(--border);border-radius:25px;
+  box-shadow:0 18px 50px rgba(0,0,0,.12);
+}
+.hero-main{padding:34px;position:relative;overflow:hidden}
+.eyebrow{
+  display:inline-flex;gap:8px;align-items:center;
+  padding:7px 11px;border-radius:999px;
+  color:#c9bcff;background:#8b5cf61b;border:1px solid #8b5cf644;
+  font-size:12px;font-weight:750;margin-bottom:20px;
+}
+.eyebrow span{width:7px;height:7px;background:var(--green);border-radius:50%}
+h1{font-size:clamp(34px,5vw,57px);line-height:1.18;letter-spacing:-1.5px}
+.gradient-text{
+  background:linear-gradient(95deg,#b9a4ff,#72a9ff,#54e1cb);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p{color:var(--muted);line-height:1.8;margin-top:16px;max-width:540px;font-size:15px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:25px}
+.btn{
+  border:0;border-radius:13px;padding:13px 18px;
+  font-weight:800;transition:.2s;
+}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.btn-primary{color:white;background:linear-gradient(110deg,var(--purple),var(--blue));box-shadow:0 8px 24px #7655ed33}
+.btn-secondary{background:#ffffff08;color:var(--text);border:1px solid var(--border)}
+.hero-side{padding:24px;display:flex;flex-direction:column;justify-content:space-between}
+.side-icon{
+  height:70px;width:70px;border-radius:22px;display:grid;place-items:center;
+  font-size:34px;background:linear-gradient(135deg,#8b5cf62c,#4f8cff2c);
+  border:1px solid #8b5cf644;margin-bottom:20px;
+}
+.hero-side h2{font-size:21px}
+.hero-side p{font-size:13px;margin-top:10px}
+.mini-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}
+.mini-stat{background:#ffffff07;border:1px solid var(--border);border-radius:15px;padding:14px}
+.mini-stat strong{font-size:22px;display:block}
+.mini-stat span{font-size:11px;color:var(--muted)}
+.section{padding:22px 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:18px}
+.section-head h2{font-size:24px;letter-spacing:-.5px}
+.section-head p{color:var(--muted);font-size:13px;margin-top:6px}
+.search-wrap{margin:18px 0}
+.search{
+  width:100%;background:#111a2e;color:white;border:1px solid var(--border);
+  border-radius:15px;padding:15px 17px;outline:none;
+}
+.search:focus{border-color:#8b5cf6}
+.categories{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.category{
+  padding:20px;text-align:left;color:white;cursor:pointer;transition:.2s;
+}
+.category:hover,.category.active{border-color:#8b5cf6;transform:translateY(-3px);background:linear-gradient(145deg,#28234c,#15243d)}
+.cat-icon{font-size:27px;margin-bottom:14px}
+.category h3{font-size:15px}
+.category p{color:var(--muted);font-size:12px;margin-top:7px;line-height:1.6}
+.cat-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:16px;color:#b9c9ff;font-size:12px;font-weight:700}
+.panel{padding:24px;margin:18px 0}
+.quiz-top{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
+.pill{font-size:12px;padding:7px 10px;border-radius:999px;background:#8b5cf61e;color:#c8baff;border:1px solid #8b5cf644}
+.select{
+  background:#0d1628;color:white;border:1px solid var(--border);
+  border-radius:11px;padding:10px;outline:none;
+}
+.progress-meta{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;margin:22px 0 9px}
+.progress{height:7px;border-radius:99px;background:#26324b;overflow:hidden}
+.progress-bar{height:100%;width:0;background:linear-gradient(90deg,var(--purple),#59b5ff);transition:width .3s}
+#quizArea{margin-top:25px}
+.question-number{color:#a99aff;font-size:12px;font-weight:800;letter-spacing:1px}
+.question{font-size:clamp(20px,3vw,27px);line-height:1.55;margin:13px 0 22px}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.option{
+  background:#ffffff05;border:1px solid #ffffff16;color:var(--text);
+  padding:16px;text-align:left;border-radius:14px;line-height:1.6;
+  transition:.18s;min-height:58px;
+}
+.option:hover:not(:disabled){border-color:#8b5cf6;background:#8b5cf615}
+.option.correct{border-color:#22c997;background:#22c99716}
+.option.wrong{border-color:#fb7185;background:#fb718515}
+.option:disabled{cursor:default}
+.quiz-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:22px;flex-wrap:wrap}
+.feedback{font-size:13px;color:var(--muted);line-height:1.7}
+.result{text-align:center;padding:22px 0}
+.result-icon{font-size:58px;margin-bottom:14px}
+.result h2{font-size:30px}
+.result p{color:var(--muted);line-height:1.8;margin:12px auto;max-width:500px}
+.result-score{font-size:48px;font-weight:900;margin:18px 0;background:linear-gradient(90deg,#b9a4ff,#72a9ff);color:transparent;background-clip:text}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.stat{padding:19px}
+.stat .stat-icon{font-size:23px}
+.stat strong{display:block;font-size:25px;margin:12px 0 4px}
+.stat span{font-size:12px;color:var(--muted)}
+.notes{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.note-card{padding:20px}
+.note-card h3{font-size:15px;margin-bottom:9px}
+.note-card p{font-size:13px;color:var(--muted);line-height:1.8}
+footer{border-top:1px solid var(--border);margin-top:40px;padding:28px 0 35px}
+.footer-inner{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center}
+footer p{font-size:12px;color:var(--muted);line-height:1.8}
+.footer-links{display:flex;gap:16px;flex-wrap:wrap}
+.footer-links a{font-size:12px;color:#c7d2fe}
+.footer-links a:hover{color:white}
 .hidden{display:none!important}
-footer{text-align:center;color:var(--muted);font-size:13px;padding:22px 8px}
-footer a{color:#c4b5fd;margin:0 5px}
-@media(min-width:650px){.container{padding:24px}.categories{grid-template-columns:repeat(3,1fr)}.logo{font-size:36px}}
+@media(max-width:760px){
+  .hero{padding-top:28px}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-main{padding:25px}
+  .hero-side{padding:22px}
+  .categories{grid-template-columns:repeat(2,1fr)}
+  .notes{grid-template-columns:1fr}
+  .section-head h2{font-size:21px}
+}
+@media(max-width:480px){
+  .container{width:92%}
+  .nav{min-height:64px}
+  .brand{font-size:15px}
+  .logo{height:39px;width:39px}
+  .nav-tag{font-size:10px;padding:7px 9px}
+  .hero-main{padding:22px}
+  h1{font-size:35px}
+  .categories{gap:9px}
+  .category{padding:15px;border-radius:18px}
+  .cat-icon{font-size:24px}
+  .category h3{font-size:13px}
+  .category p{font-size:11px}
+  .panel{padding:17px}
+  .options{grid-template-columns:1fr}
+  .option{padding:14px}
+  .stats{gap:8px}
+  .stat{padding:13px}
+  .stat strong{font-size:21px}
+  .stat span{font-size:10px}
+  .section-head{align-items:start;flex-direction:column}
+}
 </style>
 </head>
+
 <body>
-<main class="container">
 <header>
-  <div class="logo">🧠 Hindi GK Quiz</div>
-  <p>हर दिन कुछ नया सीखने की आदत बनाओ!</p>
-  <div class="brand">LEARN • PLAY • GROW</div>
+  <div class="container nav">
+    <a class="brand" href="#">
+      <span class="logo">🧠</span>
+      <span>Hindi GK Quiz<small>KNOWLEDGE ARENA</small></span>
+    </a>
+    <span class="nav-tag">✦ LEARN • PLAY • GROW</span>
+  </div>
 </header>
 
-<div class="stats">
-  <div class="stat"><strong id="total">25</strong><span class="muted">उपलब्ध सवाल</span></div>
-  <div class="stat"><strong id="best">0</strong><span class="muted">बेस्ट स्कोर</span></div>
-</div>
+<main class="container">
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-main">
+        <div class="eyebrow"><span></span> YOUR DAILY KNOWLEDGE BOOST</div>
+        <h1>ज्ञान बढ़ाओ,<br><span class="gradient-text">आगे बढ़ते जाओ।</span></h1>
+        <p>हर दिन कुछ नया सीखें। भारत, इतिहास, विज्ञान और छत्तीसगढ़ सामान्य ज्ञान के मजेदार सवालों के साथ अपनी तैयारी बेहतर बनाएं।</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" onclick="startQuiz()">🚀 क्विज शुरू करें</button>
+          <a class="btn btn-secondary" href="#categories">कैटेगरी देखें ↘</a>
+        </div>
+      </div>
+      <aside class="hero-side">
+        <div>
+          <div class="side-icon">🏆</div>
+          <h2>आज खुद को चुनौती दें</h2>
+          <p>सवाल हल करें, अपना स्कोर देखें और हर दिन अपना ज्ञान बढ़ाएं।</p>
+        </div>
+        <div class="mini-stats">
+          <div class="mini-stat"><strong id="played">0</strong><span>कुल क्विज़ खेले</span></div>
+          <div class="mini-stat"><strong id="best">0%</strong><span>बेस्ट स्कोर</span></div>
+        </div>
+      </aside>
+    </div>
+  </section>
 
-<section class="panel">
-<h2>📚 अपनी कैटेगरी चुनें</h2>
-<div class="categories" id="categories">
-<button class="cat active" data-cat="all">🌟 सभी विषय</button>
-<button class="cat" data-cat="india">🇮🇳 भारत GK</button>
-<button class="cat" data-cat="history">🏛️ इतिहास</button>
-<button class="cat" data-cat="geography">🌍 भूगोल</button>
-<button class="cat" data-cat="science">🔬 विज्ञान</button>
-<button class="cat" data-cat="constitution">📜 संविधान</button>
-<button class="cat" data-cat="cg">🌾 छत्तीसगढ़ GK</button>
-</div>
-<label for="count">कितने सवाल खेलने हैं?</label>
-<select id="count">
-<option value="10">10 सवाल</option>
-<option value="15">15 सवाल</option>
-<option value="20">20 सवाल</option>
-<option value="all">सभी उपलब्ध सवाल</option>
-</select>
-<button class="primary" id="start">🚀 क्विज शुरू करें</button>
-</section>
+  <section class="section" id="categories">
+    <div class="section-head">
+      <div><h2>अपनी कैटेगरी चुनें</h2><p>अपनी पसंद के विषय से शुरुआत करें।</p></div>
+    </div>
+    <div class="search-wrap">
+      <input class="search" id="searchInput" type="search" placeholder="🔎 कैटेगरी खोजें..." oninput="searchCategories()">
+    </div>
+    <div class="categories" id="categoryGrid">
+      <button class="category active" data-cat="all" onclick="chooseCategory('all',this)">
+        <div class="cat-icon">🌟</div><h3>सभी विषय</h3><p>मिक्स सामान्य ज्ञान</p><div class="cat-bottom"><span>मिक्स क्विज</span><span>→</span></div>
+      </button>
+      <button class="category" data-cat="india" onclick="chooseCategory('india',this)">
+        <div class="cat-icon">🇮🇳</div><h3>भारत GK</h3><p>भारत से जुड़े सवाल</p><div class="cat-bottom"><span>सामान्य ज्ञान</span><span>→</span></div>
+      </button>
+      <button class="category" data-cat="history" onclick="chooseCategory('history',this)">
+        <div class="cat-icon">🏛️</div><h3>इतिहास</h3><p>भारत का गौरवशाली अतीत</p><div class="cat-bottom"><span>इतिहास</span><span>→</span></div>
+      </button>
+      <button class="category" data-cat="geography" onclick="chooseCategory('geography',this)">
+        <div class="cat-icon">🌍</div><h3>भूगोल</h3><p>धरती और पर्यावरण</p><div class="cat-bottom"><span>भूगोल</span><span>→</span></div>
+      </button>
+      <button class="category" data-cat="science" onclick="chooseCategory('science',this)">
+        <div class="cat-icon">🔬</div><h3>विज्ञान</h3><p>विज्ञान की रोचक बातें</p><div class="cat-bottom"><span>विज्ञान</span><span>→</span></div>
+      </button>
+      <button class="category" data-cat="constitution" onclick="chooseCategory('constitution',this)">
+        <div class="cat-icon">⚖️</div><h3>संविधान</h3><p>भारतीय संविधान</p><div class="cat-bottom"><span>संविधान</span><span>→</span></div>
+      </button>
+      <button class="category" data-cat="cg" onclick="chooseCategory('cg',this)">
+        <div class="cat-icon">🌾</div><h3>छत्तीसगढ़ GK</h3><p>अपने राज्य को जानें</p><div class="cat-bottom"><span>राज्य GK</span><span>→</span></div>
+      </button>
+    </div>
+  </section>
 
-<section class="panel hidden" id="quiz">
-<h2>📝 आपका GK Quiz</h2>
-<div class="muted" id="counter"></div>
-<div class="track"><div class="bar" id="bar"></div></div>
-<div class="question" id="question"></div>
-<div id="options"></div>
-<div class="note hidden" id="explanation"></div>
-<button class="primary hidden" id="next">अगला सवाल ➜</button>
-</section>
+  <section class="section" id="quiz">
+    <div class="section-head">
+      <div><h2>🎯 Knowledge Challenge</h2><p>सही जवाब चुनें और अपना स्कोर बनाएं।</p></div>
+    </div>
+    <div class="panel">
+      <div class="quiz-top">
+        <span class="pill" id="currentCategory">🌟 सभी विषय</span>
+        <label style="font-size:12px;color:var(--muted)">सवाल:
+          <select id="questionCount" class="select">
+            <option value="10">10 सवाल</option>
+            <option value="15">15 सवाल</option>
+            <option value="20">20 सवाल</option>
+            <option value="all">सभी सवाल</option>
+          </select>
+        </label>
+      </div>
+      <div class="progress-meta"><span id="progressText">क्विज शुरू करने के लिए तैयार?</span><span id="progressPercent">0%</span></div>
+      <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+      <div id="quizArea">
+        <div class="result">
+          <div class="result-icon">🧩</div>
+          <h2>अपना ज्ञान टेस्ट करें</h2>
+          <p>अपनी पसंद की कैटेगरी चुनें और नीचे दिए गए बटन से क्विज शुरू करें। हर सवाल का एक सही जवाब है।</p>
+          <button class="btn btn-primary" onclick="startQuiz()">क्विज शुरू करें →</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="panel hidden" id="result">
-<h2>🏆 आपका परिणाम</h2>
-<p id="score"></p><p id="message" class="muted"></p>
-<button class="primary" id="again">फिर से खेलें</button>
-</section>
+  <section class="section">
+    <div class="section-head"><div><h2>📊 आपका लर्निंग डैशबोर्ड</h2><p>अपनी प्रैक्टिस का रिकॉर्ड देखें।</p></div></div>
+    <div class="stats">
+      <div class="stat"><div class="stat-icon">🎮</div><strong id="statPlayed">0</strong><span>कुल क्विज़</span></div>
+      <div class="stat"><div class="stat-icon">⭐</div><strong id="statBest">0%</strong><span>बेस्ट स्कोर</span></div>
+      <div class="stat"><div class="stat-icon">📚</div><strong id="statQuestions">25</strong><span>उपलब्ध सवाल</span></div>
+    </div>
+  </section>
 
-<section class="panel" id="notes">
-<h2>📖 महत्वपूर्ण GK Notes</h2>
-<div class="note"><h3>🇮🇳 भारत</h3>भारत की राजधानी नई दिल्ली है। भारत का राष्ट्रीय पशु बाघ और राष्ट्रीय पक्षी मोर है। भारत का स्वतंत्रता दिवस 15 अगस्त को मनाया जाता है।</div>
-<div class="note"><h3>🏛️ इतिहास</h3>भारत छोड़ो आंदोलन 1942 में शुरू हुआ। महात्मा गांधी का जन्म 2 अक्टूबर 1869 को हुआ था। भारत 15 अगस्त 1947 को स्वतंत्र हुआ।</div>
-<div class="note"><h3>🌍 भूगोल</h3>क्षेत्रफल के आधार पर रूस विश्व का सबसे बड़ा देश है। प्रशांत महासागर विश्व का सबसे बड़ा महासागर है। हिमालय भारत के उत्तर में स्थित है।</div>
-<div class="note"><h3>🔬 विज्ञान</h3>पानी का रासायनिक सूत्र H₂O है। पौधे प्रकाश संश्लेषण द्वारा भोजन बनाते हैं। हृदय रक्त पंप करता है।</div>
-<div class="note"><h3>📜 संविधान</h3>भारतीय संविधान 26 नवंबर 1949 को अपनाया गया और 26 जनवरी 1950 को लागू हुआ। संविधान दिवस 26 नवंबर को मनाया जाता है।</div>
-<div class="note"><h3>🌾 छत्तीसगढ़</h3>छत्तीसगढ़ का गठन 1 नवंबर 2000 को हुआ। रायपुर इसकी राजधानी है। इसे धान का कटोरा भी कहा जाता है।</div>
-</section>
+  <section class="section">
+    <div class="section-head"><div><h2>💡 GK Learning Notes</h2><p>कुछ जरूरी सामान्य ज्ञान की बातें।</p></div></div>
+    <div class="notes">
+      <article class="note-card"><h3>🇮🇳 भारत</h3><p>भारत का संविधान 26 नवंबर 1949 को अपनाया गया और 26 जनवरी 1950 को लागू हुआ।</p></article>
+      <article class="note-card"><h3>🔬 विज्ञान</h3><p>प्रकाश संश्लेषण की प्रक्रिया में हरे पौधे सूर्य के प्रकाश की मदद से भोजन बनाते हैं।</p></article>
+      <article class="note-card"><h3>🌾 छत्तीसगढ़</h3><p>छत्तीसगढ़ राज्य का गठन 1 नवंबर 2000 को हुआ था। रायपुर इसकी राजधानी है।</p></article>
+    </div>
+  </section>
+</main>
 
 <footer>
-<p>© 2026 Hindi GK Quiz Academy</p>
-<p>सीखते रहें, आगे बढ़ते रहें! 📚</p>
-<p>
-<a href="about.html">About Us</a> |
-<a href="contact.html">Contact Us</a> |
-<a href="privacy.html">Privacy Policy</a>
-</p>
+  <div class="container footer-inner">
+    <div>
+      <a class="brand" href="#"><span class="logo">🧠</span><span>Hindi GK Quiz<small>LEARN • PLAY • GROW</small></span></a>
+      <p style="margin-top:12px">सीखते रहें, आगे बढ़ते रहें। ✨<br>© <span id="year"></span> Hindi GK Quiz</p>
+    </div>
+    <nav class="footer-links" aria-label="मुख्य लिंक">
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </nav>
+  </div>
 </footer>
-</main>
 
 <script>
 const questions = [
-{category:"india",q:"भारत की राजधानी क्या है?",o:["मुंबई","नई दिल्ली","जयपुर","लखनऊ"],a:1,e:"भारत की राजधानी नई दिल्ली है।"},
-{category:"india",q:"भारत का राष्ट्रीय पशु कौन है?",o:["शेर","हाथी","बाघ","तेंदुआ"],a:2,e:"भारत का राष्ट्रीय पशु बाघ है।"},
-{category:"india",q:"भारत का राष्ट्रीय पक्षी कौन है?",o:["तोता","मोर","कबूतर","हंस"],a:1,e:"भारत का राष्ट्रीय पक्षी मोर है।"},
-{category:"india",q:"भारत का स्वतंत्रता दिवस कब मनाया जाता है?",o:["26 जनवरी","2 अक्टूबर","15 अगस्त","14 नवंबर"],a:2,e:"15 अगस्त को स्वतंत्रता दिवस मनाया जाता है।"},
-{category:"india",q:"भारत का राष्ट्रीय गान किसने लिखा?",o:["रवींद्रनाथ टैगोर","प्रेमचंद","बंकिमचंद्र चट्टोपाध्याय","महादेवी वर्मा"],a:0,e:"जन गण मन रवींद्रनाथ टैगोर ने लिखा।"},
-{category:"history",q:"भारत को स्वतंत्रता किस वर्ष मिली?",o:["1942","1945","1947","1950"],a:2,e:"भारत 1947 में स्वतंत्र हुआ।"},
-{category:"history",q:"महात्मा गांधी का जन्म कब हुआ?",o:["2 अक्टूबर 1869","15 अगस्त 1872","26 जनवरी 1865","14 नवंबर 1889"],a:0,e:"महात्मा गांधी का जन्म 2 अक्टूबर 1869 को हुआ।"},
-{category:"history",q:"भारत छोड़ो आंदोलन किस वर्ष शुरू हुआ?",o:["1930","1942","1946","1920"],a:1,e:"भारत छोड़ो आंदोलन 1942 में शुरू हुआ।"},
-{category:"history",q:"ताजमहल किसने बनवाया?",o:["अकबर","बाबर","शाहजहाँ","जहाँगीर"],a:2,e:"ताजमहल मुगल सम्राट शाहजहाँ ने बनवाया।"},
-{category:"history",q:"भारत के प्रथम प्रधानमंत्री कौन थे?",o:["सरदार पटेल","जवाहरलाल नेहरू","डॉ. राजेंद्र प्रसाद","लाल बहादुर शास्त्री"],a:1,e:"जवाहरलाल नेहरू भारत के प्रथम प्रधानमंत्री थे।"},
-{category:"geography",q:"विश्व का सबसे बड़ा महासागर कौन-सा है?",o:["हिंद","अटलांटिक","प्रशांत","आर्कटिक"],a:2,e:"प्रशांत महासागर क्षेत्रफल में सबसे बड़ा है।"},
-{category:"geography",q:"क्षेत्रफल के आधार पर विश्व का सबसे बड़ा देश कौन है?",o:["चीन","कनाडा","रूस","अमेरिका"],a:2,e:"रूस क्षेत्रफल के आधार पर सबसे बड़ा देश है।"},
-{category:"geography",q:"भारत के उत्तर में कौन-सी पर्वतमाला है?",o:["अरावली","हिमालय","सतपुड़ा","नीलगिरि"],a:1,e:"हिमालय भारत के उत्तरी भाग में स्थित है।"},
-{category:"geography",q:"भारत की सबसे लंबी नदी प्रणाली कौन-सी है?",o:["गंगा","नर्मदा","कावेरी","ताप्ती"],a:0,e:"गंगा नदी प्रणाली भारत की प्रमुख और सबसे लंबी नदी प्रणालियों में से है।"},
-{category:"geography",q:"रेगिस्तान में सामान्यतः वर्षा कैसी होती है?",o:["बहुत अधिक","कम","रोज़ भारी","लगातार"],a:1,e:"रेगिस्तानी क्षेत्रों में वर्षा बहुत कम होती है।"},
-{category:"science",q:"पानी का रासायनिक सूत्र क्या है?",o:["CO₂","O₂","H₂O","NaCl"],a:2,e:"पानी का रासायनिक सूत्र H₂O है।"},
-{category:"science",q:"पौधे भोजन किस प्रक्रिया से बनाते हैं?",o:["श्वसन","प्रकाश संश्लेषण","पाचन","वाष्पीकरण"],a:1,e:"पौधे प्रकाश संश्लेषण द्वारा भोजन बनाते हैं।"},
-{category:"science",q:"मानव शरीर में रक्त पंप कौन करता है?",o:["फेफड़े","मस्तिष्क","हृदय","गुर्दे"],a:2,e:"हृदय रक्त को पूरे शरीर में पंप करता है।"},
-{category:"science",q:"सूर्य के सबसे निकट ग्रह कौन-सा है?",o:["शुक्र","पृथ्वी","मंगल","बुध"],a:3,e:"बुध सूर्य के सबसे निकट ग्रह है।"},
-{category:"science",q:"सामान्य वायुदाब पर पानी का क्वथनांक कितना है?",o:["50°C","75°C","100°C","150°C"],a:2,e:"सामान्य वायुदाब पर पानी लगभग 100°C पर उबलता है।"},
-{category:"constitution",q:"भारतीय संविधान कब लागू हुआ?",o:["15 अगस्त 1947","26 जनवरी 1950","26 नवंबर 1949","2 अक्टूबर 1950"],a:1,e:"संविधान 26 जनवरी 1950 को लागू हुआ।"},
-{category:"constitution",q:"भारत में संविधान दिवस कब मनाया जाता है?",o:["15 अगस्त","26 जनवरी","26 नवंबर","2 अक्टूबर"],a:2,e:"संविधान दिवस 26 नवंबर को मनाया जाता है।"},
-{category:"constitution",q:"भारत के प्रथम राष्ट्रपति कौन थे?",o:["डॉ. राजेंद्र प्रसाद","डॉ. राधाकृष्णन","जवाहरलाल नेहरू","ज़ाकिर हुसैन"],a:0,e:"डॉ. राजेंद्र प्रसाद भारत के प्रथम राष्ट्रपति थे।"},
-{category:"cg",q:"छत्तीसगढ़ राज्य का गठन कब हुआ?",o:["1 नवंबर 2000","1 मई 2001","15 अगस्त 2000","26 जनवरी 2000"],a:0,e:"छत्तीसगढ़ 1 नवंबर 2000 को राज्य बना।"},
-{category:"cg",q:"छत्तीसगढ़ की राजधानी क्या है?",o:["बिलासपुर","दुर्ग","रायपुर","जगदलपुर"],a:2,e:"छत्तीसगढ़ की राजधानी रायपुर है।"}
+{c:"india",q:"भारत की राजधानी क्या है?",o:["मुंबई","नई दिल्ली","कोलकाता","चेन्नई"],a:1},
+{c:"india",q:"भारत का राष्ट्रीय पशु कौन है?",o:["शेर","हाथी","बाघ","तेंदुआ"],a:2},
+{c:"india",q:"भारत का राष्ट्रीय फूल कौन-सा है?",o:["गुलाब","कमल","चमेली","सूरजमुखी"],a:1},
+{c:"india",q:"भारत का राष्ट्रीय गान किसने लिखा?",o:["प्रेमचंद","रवींद्रनाथ टैगोर","बंकिमचंद्र चट्टोपाध्याय","महात्मा गांधी"],a:1},
+{c:"india",q:"भारत की मुद्रा क्या है?",o:["टका","रुपया","दीनार","युआन"],a:1},
+{c:"india",q:"भारत का स्वतंत्रता दिवस कब मनाया जाता है?",o:["26 जनवरी","15 अगस्त","2 अक्टूबर","14 नवंबर"],a:1},
+{c:"history",q:"भारत को स्वतंत्रता किस वर्ष मिली?",o:["1942","1945","1947","1950"],a:2},
+{c:"history",q:"ताजमहल किसने बनवाया था?",o:["अकबर","शाहजहाँ","जहाँगीर","हुमायूँ"],a:1},
+{c:"history",q:"1857 के विद्रोह को किस नाम से भी जाना जाता है?",o:["स्वदेशी आंदोलन","भारत छोड़ो आंदोलन","प्रथम स्वतंत्रता संग्राम","असहयोग आंदोलन"],a:2},
+{c:"history",q:"भारत छोड़ो आंदोलन किस वर्ष शुरू हुआ?",o:["1920","1930","1942","1947"],a:2},
+{c:"geography",q:"क्षेत्रफल के आधार पर भारत का सबसे बड़ा राज्य कौन-सा है?",o:["मध्य प्रदेश","राजस्थान","उत्तर प्रदेश","महाराष्ट्र"],a:1},
+{c:"geography",q:"भारत की सबसे लंबी नदी कौन-सी मानी जाती है?",o:["गोदावरी","यमुना","गंगा","नर्मदा"],a:2},
+{c:"geography",q:"विश्व का सबसे बड़ा महासागर कौन-सा है?",o:["हिंद महासागर","अटलांटिक महासागर","प्रशांत महासागर","आर्कटिक महासागर"],a:2},
+{c:"geography",q:"पृथ्वी का प्राकृतिक उपग्रह कौन है?",o:["मंगल","चंद्रमा","शुक्र","सूर्य"],a:1},
+{c:"science",q:"पानी का रासायनिक सूत्र क्या है?",o:["CO₂","O₂","H₂O","NaCl"],a:2},
+{c:"science",q:"पौधे प्रकाश संश्लेषण में कौन-सी गैस लेते हैं?",o:["ऑक्सीजन","कार्बन डाइऑक्साइड","हाइड्रोजन","नाइट्रोजन"],a:1},
+{c:"science",q:"मानव शरीर में रक्त पंप करने वाला अंग कौन-सा है?",o:["फेफड़ा","गुर्दा","हृदय","यकृत"],a:2},
+{c:"science",q:"सूर्य के सबसे निकट कौन-सा ग्रह है?",o:["शुक्र","पृथ्वी","बुध","मंगल"],a:2},
+{c:"constitution",q:"भारत का संविधान कब लागू हुआ?",o:["15 अगस्त 1947","26 जनवरी 1950","26 नवंबर 1949","2 अक्टूबर 1950"],a:1},
+{c:"constitution",q:"भारतीय संविधान की प्रारूप समिति के अध्यक्ष कौन थे?",o:["जवाहरलाल नेहरू","डॉ. बी. आर. आंबेडकर","डॉ. राजेंद्र प्रसाद","सरदार पटेल"],a:1},
+{c:"constitution",q:"भारत में मतदान की न्यूनतम आयु कितनी है?",o:["16 वर्ष","18 वर्ष","21 वर्ष","25 वर्ष"],a:1},
+{c:"constitution",q:"भारत का राष्ट्राध्यक्ष कौन होता है?",o:["प्रधानमंत्री","मुख्य न्यायाधीश","राष्ट्रपति","राज्यपाल"],a:2},
+{c:"cg",q:"छत्तीसगढ़ राज्य का गठन कब हुआ?",o:["1 नवंबर 2000","1 मई 1960","15 अगस्त 1947","26 जनवरी 1950"],a:0},
+{c:"cg",q:"छत्तीसगढ़ की राजधानी क्या है?",o:["बिलासपुर","दुर्ग","रायपुर","जगदलपुर"],a:2},
+{c:"cg",q:"छत्तीसगढ़ को किस नाम से भी जाना जाता है?",o:["भारत का चाय बागान","धान का कटोरा","रेगिस्तान का राज्य","पहाड़ों की भूमि"],a:1}
 ];
 
-const $ = id => document.getElementById(id);
-let category = "all", list = [], index = 0, points = 0, locked = false;
-let best = Number(localStorage.getItem("gkBest") || 0);
-$("best").textContent = best;
+const names={
+ all:"🌟 सभी विषय",india:"🇮🇳 भारत GK",history:"🏛️ इतिहास",
+ geography:"🌍 भूगोल",science:"🔬 विज्ञान",
+ constitution:"⚖️ संविधान",cg:"🌾 छत्तीसगढ़ GK"
+};
+let category="all",quizQuestions=[],index=0,score=0,answered=false,finished=false;
 
-document.querySelectorAll(".cat").forEach(btn => {
-  btn.addEventListener("click", () => {
-    document.querySelectorAll(".cat").forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-    category = btn.dataset.cat;
-  });
-});
-
-$("start").addEventListener("click", startQuiz);
-$("again").addEventListener("click", startQuiz);
-
-function startQuiz() {
-  list = questions.filter(q => category === "all" || q.category === category);
-  if (!list.length) return alert("इस कैटेगरी में सवाल उपलब्ध नहीं हैं।");
-  const count = $("count").value;
-  if (count !== "all") list = list.slice(0, Number(count));
-  index = 0;
-  points = 0;
-  locked = false;
-  $("result").classList.add("hidden");
-  $("quiz").classList.remove("hidden");
-  $("quiz").scrollIntoView({behavior:"smooth"});
-  showQuestion();
+function updateStats(){
+ const played=Number(localStorage.getItem("gkPlayed")||0);
+ const best=Number(localStorage.getItem("gkBest")||0);
+ document.getElementById("played").textContent=played;
+ document.getElementById("best").textContent=best+"%";
+ document.getElementById("statPlayed").textContent=played;
+ document.getElementById("statBest").textContent=best+"%";
+ document.getElementById("statQuestions").textContent=questions.length;
 }
-
-function showQuestion() {
-  locked = false;
-  const q = list[index];
-  $("counter").textContent = `सवाल ${index + 1} / ${list.length}`;
-  $("bar").style.width = `${index / list.length * 100}%`;
-  $("question").textContent = q.q;
-  $("options").innerHTML = "";
-  $("explanation").classList.add("hidden");
-  $("next").classList.add("hidden");
-
-  q.o.forEach((text, i) => {
-    const btn = document.createElement("button");
-    btn.className = "option";
-    btn.textContent = `${String.fromCharCode(65+i)}. ${text}`;
-    btn.addEventListener("click", () => answer(i));
-    $("options").appendChild(btn);
-  });
+function chooseCategory(cat,el){
+ category=cat;
+ document.querySelectorAll(".category").forEach(x=>x.classList.remove("active"));
+ if(el)el.classList.add("active");
+ document.getElementById("currentCategory").textContent=names[cat];
+ document.getElementById("quizArea").innerHTML=
+ `<div class="result"><div class="result-icon">🎯</div><h2>${names[cat]}</h2><p>तैयार हैं? क्विज शुरू करें और अपना स्कोर बनाएं।</p><button class="btn btn-primary" onclick="startQuiz()">क्विज शुरू करें →</button></div>`;
+ document.getElementById("progressText").textContent="क्विज शुरू करने के लिए तैयार?";
+ document.getElementById("progressPercent").textContent="0%";
+ document.getElementById("progressBar").style.width="0%";
 }
-
-function answer(choice) {
-  if (locked) return;
-  locked = true;
-  const q = list[index];
-  [...$("options").children].forEach((btn, i) => {
-    btn.disabled = true;
-    if (i === q.a) btn.classList.add("correct");
-    if (i === choice && i !== q.a) btn.classList.add("wrong");
-  });
-
-  if (choice === q.a) {
-    points++;
-    $("explanation").textContent = "✅ सही जवाब! " + q.e;
-  } else {
-    $("explanation").textContent = "❌ सही जवाब: " + q.o[q.a] + "। " + q.e;
-  }
-
-  $("explanation").classList.remove("hidden");
-  $("bar").style.width = `${(index + 1) / list.length * 100}%`;
-  $("next").textContent = index === list.length - 1 ? "परिणाम देखें 🏆" : "अगला सवाल ➜";
-  $("next").classList.remove("hidden");
+function searchCategories(){
+ const term=document.getElementById("searchInput").value.trim().toLowerCase();
+ document.querySelectorAll(".category").forEach(card=>{
+ card.style.display=card.innerText.toLowerCase().includes(term)?"block":"none";
+ });
 }
-
-$("next").addEventListener("click", () => {
-  if (!locked) return;
-  index++;
-  if (index < list.length) showQuestion();
-  else showResult();
-});
-
-function showResult() {
-  $("quiz").classList.add("hidden");
-  $("result").classList.remove("hidden");
-  const percent = Math.round(points / list.length * 100);
-  $("score").textContent = `आपका स्कोर: ${points} / ${list.length} (${percent}%)`;
-  $("message").textContent = percent >= 80 ? "शानदार! आपकी GK बहुत अच्छी है। 🎉" : percent >= 50 ? "अच्छा प्रयास! अभ्यास जारी रखें। 💪" : "कोई बात नहीं, दोबारा कोशिश करें। 📚";
-
-  if (points > best) {
-    best = points;
-    localStorage.setItem("gkBest", String(best));
-    $("best").textContent = best;
-  }
-  $("result").scrollIntoView({behavior:"smooth"});
+function startQuiz(){
+ const pool=category==="all"?[...questions]:questions.filter(q=>q.c===category);
+ const count=document.getElementById("questionCount").value;
+ quizQuestions=pool.sort(()=>Math.random()-.5);
+ if(count!=="all")quizQuestions=quizQuestions.slice(0,Math.min(Number(count),pool.length));
+ index=0;score=0;answered=false;finished=false;
+ document.getElementById("currentCategory").textContent=names[category];
+ renderQuestion();
+ document.getElementById("quiz").scrollIntoView({behavior:"smooth",block:"start"});
 }
+function renderQuestion(){
+ if(index>=quizQuestions.length){showResult();return}
+ answered=false;
+ const q=quizQuestions[index];
+ const percent=Math.round(index/quizQuestions.length*100);
+ document.getElementById("progressText").textContent=`सवाल ${index+1} / ${quizQuestions.length}`;
+ document.getElementById("progressPercent").textContent=percent+"%";
+ document.getElementById("progressBar").style.width=percent+"%";
+ document.getElementById("quizArea").innerHTML=`
+ <div class="question-number">QUESTION ${String(index+1).padStart(2,"0")}</div>
+ <h3 class="question">${q.q}</h3>
+ <div class="options">${q.o.map((op,i)=>`<button class="option" onclick="checkAnswer(${i})">${String.fromCharCode(65+i)}. ${op}</button>`).join("")}</div>
+ <div class="quiz-bottom"><div class="feedback" id="feedback">एक सही विकल्प चुनें।</div>
+ <button class="btn btn-primary" id="nextBtn" disabled onclick="nextQuestion()">अगला सवाल →</button></div>`;
+}
+function checkAnswer(choice){
+ if(answered)return;
+ answered=true;
+ const q=quizQuestions[index];
+ const buttons=document.querySelectorAll(".option");
+ buttons.forEach((b,i)=>{b.disabled=true;if(i===q.a)b.classList.add("correct");});
+ if(choice===q.a){score++;document.getElementById("feedback").textContent="शानदार! आपका जवाब सही है 🎉";}
+ else{buttons[choice].classList.add("wrong");document.getElementById("feedback").textContent="कोई बात नहीं! सही जवाब हरे रंग में दिखाया गया है।";}
+ document.getElementById("nextBtn").disabled=false;
+ document.getElementById("nextBtn").style.opacity="1";
+ document.getElementById("progressBar").style.width=Math.round((index+1)/quizQuestions.length*100)+"%";
+ document.getElementById("progressPercent").textContent=Math.round((index+1)/quizQuestions.length*100)+"%";
+}
+function nextQuestion(){if(!answered)return;index++;renderQuestion();}
+function showResult(){
+ if(finished)return;
+ finished=true;
+ const percent=Math.round(score/quizQuestions.length*100);
+ const played=Number(localStorage.getItem("gkPlayed")||0)+1;
+ const best=Math.max(Number(localStorage.getItem("gkBest")||0),percent);
+ localStorage.setItem("gkPlayed",played);
+ localStorage.setItem("gkBest",best);
+ updateStats();
+ document.getElementById("progressText").textContent="क्विज पूरा हुआ!";
+ document.getElementById("progressPercent").textContent="100%";
+ document.getElementById("progressBar").style.width="100%";
+ let message=percent>=80?"कमाल कर दिया! आपकी तैयारी शानदार है। 🏆":percent>=50?"बहुत अच्छा! थोड़ी और प्रैक्टिस करें। 💪":"अच्छी शुरुआत! फिर से प्रयास करें और सीखते रहें। 🌱";
+ document.getElementById("quizArea").innerHTML=`
+ <div class="result"><div class="result-icon">${percent>=80?"🏆":percent>=50?"🎉":"📚"}</div>
+ <h2>क्विज पूरा हुआ!</h2><div class="result-score">${score}/${quizQuestions.length}</div>
+ <span class="pill">आपका स्कोर ${percent}%</span><p>${message}</p>
+ <button class="btn btn-primary" onclick="startQuiz()">फिर से खेलें ↻</button>
+ <button class="btn btn-secondary" style="margin-left:6px" onclick="chooseCategory('all',document.querySelector('[data-cat=all]'))">नई कैटेगरी</button></div>`;
+}
+document.getElementById("year").textContent=new Date().getFullYear();
+updateStats();
 </script>
 </body>
 </html>
