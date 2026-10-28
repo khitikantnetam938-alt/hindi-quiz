@@ -1,1545 +1,241 @@
+
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta name="google-adsense-account" content="ca-pub-9037909886687902">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9037909886687902"
-     crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#101827">
-<meta name="description" content="Hindi GK Quiz — भारत, इतिहास, भूगोल, विज्ञान, संविधान और छत्तीसगढ़ सामान्य ज्ञान के 300 सवाल, GK Notes और Important Facts।">
-  <title>GK Academy | हिंदी GK Quiz</title>
-<style>:root {
-  --bg: #f4f7fb;
-  --card: #ffffff;
-  --text: #172033;
-  --muted: #64748b;
-  --primary: #4f46e5;
-  --primary-dark: #3730a3;
-  --accent: #f97316;
-  --border: #e2e8f0;
-  --success: #16a34a;
-  --shadow: 0 12px 35px rgba(30, 41, 59, 0.08);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: "Noto Sans Devanagari", "Segoe UI", Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.7;
-}
-
-header {
-  position: relative;
-  overflow: hidden;
-  padding: 48px 20px 42px;
-  text-align: center;
-  color: white;
-  background: linear-gradient(135deg, #312e81, #4f46e5 55%, #7c3aed);
-}
-
-header::before {
-  content: "";
-  position: absolute;
-  width: 230px;
-  height: 230px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  top: -100px;
-  right: -50px;
-}
-
-header::after {
-  content: "";
-  position: absolute;
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  background: rgba(249, 115, 22, 0.18);
-  bottom: -90px;
-  left: -35px;
-}
-
-header h1,
-header p,
-.hero,
-.hero h1,
-.hero p {
-  position: relative;
-  z-index: 1;
-}
-
-header h1,
-.hero h1 {
-  margin: 0 0 12px;
-  font-size: clamp(28px, 5vw, 44px);
-  font-weight: 900;
-  line-height: 1.35;
-  letter-spacing: -0.5px;
-}
-
-header p,
-.hero p {
-  max-width: 650px;
-  margin: 0 auto;
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 16px;
-}
-
-main {
-  width: min(100% - 32px, 1050px);
-  margin: 30px auto 50px;
-}
-
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  margin-bottom: 24px;
-}
-
-.stat {
-  padding: 20px 14px;
-  text-align: center;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  box-shadow: var(--shadow);
-}
-
-.stat h2,
-.stat h3,
-.stat strong {
-  color: var(--primary);
-}
-
-.stat p {
-  margin: 4px 0 0;
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.card {
-  margin: 20px 0;
-  padding: 26px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 22px;
-  box-shadow: var(--shadow);
-}
-
-.label {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 5px 12px;
-  color: var(--primary-dark);
-  background: #eef2ff;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 800;
-}
-
-.categories {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  gap: 12px;
-  margin: 20px 0;
-}
-
-.cat {
-  padding: 15px 12px;
-  color: var(--text);
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  text-align: center;
-  font: inherit;
-  font-weight: 700;
-  cursor: pointer;
-  transition: transform 0.2s, background 0.2s, border-color 0.2s;
-}
-
-.cat:hover {
-  transform: translateY(-3px);
-  border-color: var(--primary);
-  background: #eef2ff;
-}
-
-button,
-.primary,
-.secondary {
-  font: inherit;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
-}
-
-.primary,
-.secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-height: 46px;
-  padding: 11px 20px;
-  border: 0;
-  border-radius: 12px;
-  font-weight: 800;
-  text-decoration: none;
-}
-
-.primary {
-  color: #fff;
-  background: linear-gradient(135deg, var(--primary), #7c3aed);
-  box-shadow: 0 7px 18px rgba(79, 70, 229, 0.2);
-}
-
-.primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(79, 70, 229, 0.3);
-}
-
-.secondary {
-  color: var(--text);
-  background: #f1f5f9;
-  border: 1px solid var(--border);
-}
-
-.secondary:hover {
-  background: #e2e8f0;
-}
-
-#quiz {
-  scroll-margin-top: 20px;
-}
-
-.track {
-  width: 100%;
-  height: 10px;
-  overflow: hidden;
-  background: #e2e8f0;
-  border-radius: 99px;
-}
-
-.fill {
-  width: 0;
-  height: 100%;
-  background: linear-gradient(90deg, #4f46e5, #a855f7);
-  border-radius: inherit;
-  transition: width 0.3s ease;
-}
-
-#question {
-  margin: 22px 0;
-  font-size: clamp(20px, 3vw, 27px);
-  line-height: 1.6;
-  font-weight: 800;
-}
-
-.option {
-  display: block;
-  width: 100%;
-  margin: 12px 0;
-  padding: 15px 17px;
-  color: var(--text);
-  background: #fff;
-  border: 2px solid var(--border);
-  border-radius: 14px;
-  text-align: left;
-  font-size: 16px;
-  line-height: 1.6;
-  transition: border-color 0.2s, background 0.2s, transform 0.2s;
-}
-
-.option:hover {
-  border-color: var(--primary);
-  background: #f5f3ff;
-  transform: translateX(3px);
-}
-
-.option:focus-visible,
-button:focus-visible,
-.cat:focus-visible {
-  outline: 3px solid #a5b4fc;
-  outline-offset: 3px;
-}
-
-.explanation {
-  margin-top: 18px;
-  padding: 16px;
-  color: #166534;
-  background: #f0fdf4;
-  border: 1px solid #bbf7d0;
-  border-radius: 14px;
-}
-
-.section-title {
-  margin: 0 0 16px;
-  font-size: clamp(22px, 3vw, 29px);
-  font-weight: 900;
-  line-height: 1.4;
-}
-
-.note-list {
-  padding-left: 24px;
-  color: var(--muted);
-}
-
-.note-list li {
-  margin: 9px 0;
-}
-
-.foot {
-  padding: 22px;
-  color: var(--muted);
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  text-align: center;
-}
-
-footer {
-  padding: 25px 16px;
-  color: #cbd5e1;
-  background: #172033;
-  text-align: center;
-  font-size: 14px;
-}
-
-.admin-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-}
-
-input,
-select,
-textarea {
-  width: 100%;
-  max-width: 100%;
-  padding: 12px 14px;
-  color: var(--text);
-  background: #fff;
-  border: 1px solid #cbd5e1;
-  border-radius: 10px;
-  font: inherit;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-  border-color: var(--primary);
-  outline: 3px solid #e0e7ff;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-@media (max-width: 600px) {
-  header {
-    padding: 36px 18px;
-  }
-
-  main {
-    width: calc(100% - 22px);
-    margin-top: 18px;
-  }
-
-  .stats {
-    gap: 8px;
-  }
-
-  .stat {
-    padding: 14px 7px;
-    border-radius: 14px;
-  }
-
-  .card {
-    padding: 18px;
-    border-radius: 17px;
-  }
-
-  .categories {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 9px;
-  }
-
-  .cat {
-    padding: 12px 8px;
-    font-size: 14px;
-  }
-
-  .option {
-    padding: 13px;
-    font-size: 15px;
-  }
-
-  .primary,
-  .secondary {
-    max-width: 100%;
-  }
-}
-:root{--bg:#0b1120;--panel:#131d30;--panel2:#1a2740;--text:#f4f7ff;--muted:#aab7cf;--line:#2b3a55;--a:#7c5cff;--b:#20c997;--bad:#ff667a}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#1a2850 0,#0b1120 55%);color:var(--text);font-family:system-ui,-apple-system,"Noto Sans Devanagari",Arial,sans-serif;min-height:100vh}
-header{padding:28px 16px 22px;text-align:center;background:linear-gradient(135deg,#5b42d6,#177d9b);border-bottom:1px solid #ffffff22}
-.logo{font-size:13px;letter-spacing:2px;font-weight:800;color:#e8e3ff}.hero h1{font-size:clamp(28px,6vw,42px);margin:8px 0}.hero p{margin:0;color:#e7efff}
-main{width:min(760px,100%);padding:18px 14px 40px;margin:auto}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 16px}.stat,.card{background:linear-gradient(160deg,var(--panel),#10192a);border:1px solid var(--line);border-radius:18px}.stat{text-align:center;padding:13px 5px}.stat strong{display:block;font-size:22px}.stat span{font-size:12px;color:var(--muted)}
-.card{padding:18px;margin-bottom:14px;box-shadow:0 12px 35px #0002}.label{font-size:13px;color:var(--muted);font-weight:700}.categories{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:12px}
-button,select{font:inherit}button{cursor:pointer;touch-action:manipulation}.cat,.option,.primary,.secondary,select{border:1px solid var(--line);border-radius:12px;padding:12px;background:var(--panel2);color:var(--text)}.cat{text-align:left;min-height:60px;font-weight:700}.cat small{display:block;color:var(--muted);font-weight:500;margin-top:3px}.cat.active{border-color:#a99aff;background:#382d72;box-shadow:0 0 0 2px #7c5cff33}
-.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.row select{flex:1;min-width:140px}.primary{border:0;background:linear-gradient(135deg,#7c5cff,#4b70ff);font-weight:800;padding:13px 18px}.secondary{background:transparent}.primary:active,.cat:active,.option:active{transform:scale(.99)}
-#quiz{display:none}.quiz-top{display:flex;justify-content:space-between;gap:8px;align-items:center;color:var(--muted);font-size:13px}.track{height:8px;background:#26344c;border-radius:20px;overflow:hidden;margin:12px 0 20px}.fill{height:100%;width:0;background:linear-gradient(90deg,#20c997,#7c5cff);transition:width .2s}
-#question{font-size:clamp(20px,4.5vw,25px);line-height:1.5;margin:10px 0 18px}.options{display:grid;gap:10px}.option{text-align:left;line-height:1.45;min-height:52px}.option.correct{background:#123e37;border-color:#20c997}.option.wrong{background:#482431;border-color:var(--bad)}.option:disabled{cursor:default;opacity:1}.feedback{min-height:28px;margin:12px 0;color:var(--muted);font-weight:700}.feedback.good{color:#5be0b7}.feedback.bad{color:#ff91a0}
-.explanation{background:#101a2b;border:1px solid #2b3a55;border-left:4px solid #20c997;border-radius:12px;padding:12px;margin:12px 0;color:#dbe7fa;line-height:1.65}.quiz-actions{display:flex;gap:10px;justify-content:space-between;align-items:center}.quiz-actions button{flex:1}
-#result{display:none;text-align:center}.score-big{font-size:48px;font-weight:900;color:#8cdecb}.result-icon{font-size:45px}.hidden{display:none!important}.foot{text-align:center;color:var(--muted);font-size:12px;padding:10px}
-.note-list{line-height:1.8;color:#e1e9f8;padding-left:22px}.note-list li{margin:6px 0}.section-title{font-size:21px;margin:0 0 10px}.small-note{font-size:13px;color:var(--muted);line-height:1.7}
-footer a{color:#c9c0ff;text-decoration:none}footer a:hover{text-decoration:underline}
-@media(min-width:600px){.categories{grid-template-columns:repeat(3,minmax(0,1fr))}.card{padding:24px}.cat{min-height:72px}}
-.admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 12px}.admin-grid input,#adminPanel input,#adminPanel textarea,#adminPanel select{box-sizing:border-box;color:#111;background:#fff;border:1px solid #9ca3af}.admin-item{padding:10px;border:1px solid var(--line);border-radius:10px;margin:8px 0;overflow-wrap:anywhere}.admin-item button{margin:4px 4px 0 0}@media(max-width:480px){.admin-grid{grid-template-columns:1fr}}
-/* Modern Hindi GK Quiz Design */
-body {
-  background:
-    radial-gradient(ellipse at top, #263b70 0%, #10172b 55%, #080d19 100%);
-  font-family: system-ui, "Noto Sans Devanagari", sans-serif;
-  letter-spacing: 0.1px;
-}
-header {
-  padding: 38px 16px 32px;
-  background: linear-gradient(135deg, #6d28d9, #2563eb, #0891b2);
-  border-bottom: 1px solid #ffffff35;
-  box-shadow: 0 12px 35px #0003;
-}
-
-.hero h1 {
-  font-size: clamp(30px, 6vw, 44px);
-  font-weight: 900;
-  letter-spacing: -0.7px;
-}
-
-.hero p {
-  font-size: 15px;
-  line-height: 1.8;
-}
-
-main {
-  width: min(900px, 100%);
-  padding: 22px 15px 42px;
-}
-
-.stats {
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-.stat {
-  padding: 18px 8px;
-  background: linear-gradient(145deg, #202e4b, #141e33);
-  border: 1px solid #ffffff18;
-  border-radius: 20px;
-  box-shadow: 0 8px 24px #0002;
-}
-
-.stat strong {
-  font-size: clamp(20px, 4vw, 27px);
-  color: #a5b4fc;
-}
-
-.stat span {
-  display: block;
-  margin-top: 5px;
-  line-height: 1.5;
-}
-
-.card {
-  padding: 22px;
-  margin-bottom: 18px;
-  background: linear-gradient(145deg, #192641, #111a2d);
-  border: 1px solid #ffffff20;
-  border-radius: 22px;
-  box-shadow: 0 14px 35px #0003;
-}
-
-.label {
-  font-size: 16px;
-  color: #e0e7ff;
-}
-
-.categories {
-  gap: 12px;
-  margin-top: 16px;
-}
-
-.cat {
-  min-height: 72px;
-  border: 1px solid #ffffff20;
-  border-radius: 16px;
-  padding: 15px;
-  background: linear-gradient(145deg, #253657, #192640);
-  transition: transform .2s, border-color .2s, background .2s;
-}
-
-.cat:hover {
-  transform: translateY(-3px);
-  border-color: #a5b4fc;
-}
-
-.cat.active {
-  border: 1px solid #a5b4fc;
-  background: linear-gradient(135deg, #49369b, #263d80);
-  box-shadow: 0 0 0 3px #8b5cf633;
-}
-
-button,
-select {
-  font: inherit;
-}
-
-.cat,
-.option,
-.primary,
-.secondary,
-select {
-  border-radius: 14px;
-}
-
-.primary {
-  background: linear-gradient(135deg, #8b5cf6, #3b82f6);
-  color: white;
-  font-weight: 800;
-  box-shadow: 0 7px 18px #4f46e544;
-  transition: transform .2s, filter .2s;
-}
-
-.primary:hover {
-  filter: brightness(1.12);
-  transform: translateY(-1px);
-}
-
-.secondary {
-  border: 1px solid #ffffff30;
-  background: #ffffff08;
-}
-
-select {
-  min-height: 48px;
-}
-
-#question {
-  font-weight: 800;
-  line-height: 1.65;
-}
-
-.option {
-  padding: 15px;
-  min-height: 56px;
-  border: 1px solid #ffffff20;
-  background: #202e49;
-  transition: background .2s, border-color .2s;
-}
-
-.option:hover:not(:disabled) {
-  border-color: #818cf8;
-  background: #2b3c60;
-}
-
-.option.correct {
-  background: #104b40;
-  border-color: #34d399;
-}
-
-.option.wrong {
-  background: #542735;
-  border-color: #fb7185;
-}
-
-.track {
-  height: 10px;
-  background: #ffffff18;
-  border-radius: 20px;
-}
-
-.fill {
-  background: linear-gradient(90deg, #34d399, #818cf8);
-  border-radius: 20px;
-}
-
-.explanation {
-  background: #102c2b;
-  border-color: #34d399;
-  border-left-width: 4px;
-  border-radius: 15px;
-  line-height: 1.8;
-}
-
-.section-title {
-  font-size: 22px;
-  line-height: 1.5;
-}
-
-.note-list {
-  line-height: 1.95;
-}
-
-.foot,
-footer {
-  color: #b7c4dd;
-}
-
-footer a {
-  color: #c4b5fd;
-}
-
-button:focus-visible,
-select:focus-visible {
-  outline: 3px solid #a5b4fc;
-  outline-offset: 3px;
-}
-
-@media (max-width: 480px) {
-  main {
-    padding: 16px 12px 30px;
-  }
-
-  .card {
-    padding: 17px;
-    border-radius: 18px;
-  }
-
-  .stats {
-    gap: 7px;
-  }
-
-  .stat {
-    padding: 14px 4px;
-  }
-
-  .categories {
-    gap: 9px;
-  }
-
-  .cat {
-    padding: 12px 10px;
-    font-size: 14px;
-  }
-
-  .row {
-    align-items: stretch;
-  }
-
-  .row select,
-  .row button {
-    width: 100%;
-  }
-  .quiz-actions {
-    gap: 8px;
-  }
-
-  .quiz-actions button {
-    padding: 12px 8px;
-  }
-
-/* PREMIUM WHITE & BLUE MODERN DESIGN */
-:root {
-  --bg: #f3f7ff;
-  --panel: #ffffff;
-  --panel2: #edf4ff;
-  --text: #172b4d;
-  --muted: #63748b;
-  --line: #dce6f5;
-  --a: #2563eb;
-  --b: #0d9488;
-  --bad: #e5484d;
-}
-
-body {
-  background: #f3f7ff;
-  color: var(--text);
-  font-family: system-ui, -apple-system,
-    "Noto Sans Devanagari", Arial, sans-serif;
-}
-
-header {
-  background: linear-gradient(135deg, #1746a2, #2784e8);
-  padding: 38px 16px;
-  border: none;
-  border-radius: 0 0 28px 28px;
-  box-shadow: 0 12px 30px #1746a21c;
-}
-
-.logo {
-  color: #dceaff;
-  letter-spacing: 2px;
-}
-
-.hero h1 {
-  color: #ffffff;
-  font-weight: 850;
-}
-
-.hero p {
-  color: #eaf3ff;
-}
-
-main {
-  width: min(100%, 900px);
-  padding: 24px 16px 42px;
-}
-
-.stat, .card {
-  background: #ffffff;
-  border: 1px solid #e1eaf7;
-  border-radius: 20px;
-  box-shadow: 0 8px 28px #24466d0c;
-}
-
-.stat {
-  padding: 17px 6px;
-}
-
-.stat strong {
-  color: #1d5fd0;
-}
-
-.stat span, .label {
-  color: #63748b;
-}
-
-.card {
-  padding: 22px;
-  margin-bottom: 18px;
-}
-
-.cat, .option, select, .secondary {
-  background: #f5f8ff;
-  color: #172b4d;
-  border: 1px solid #dce6f5;
-  border-radius: 14px;
-}
-
-.cat {
-  padding: 15px;
-  transition: .2s ease;
-}
-
-.cat small {
-  color: #63748b;
-}
-
-.cat.active {
-  background: #e8f1ff;
-  border-color: #2563eb;
-  color: #1746a2;
-  box-shadow: 0 0 0 2px #2563eb18;
-}
-
-.primary {
-  background: linear-gradient(135deg, #2563eb, #1746a2);
-  color: #ffffff;
-  border: none;
-  border-radius: 14px;
-  box-shadow: 0 6px 16px #2563eb26;
-}
-
-.option {
-  padding: 15px;
-  min-height: 56px;
-}
-
-.option.correct {
-  background: #e2f8ed;
-  border-color: #19a66a;
-  color: #12643f;
-}
-
-.option.wrong {
-  background: #fff0f0;
-  border-color: #e5484d;
-  color: #a5232a;
-}
-
-.track {
-  background: #e4ebf6;
-}
-
-.fill {
-  background: linear-gradient(90deg, #2563eb, #20b7a4);
-}
-
-.feedback.good {
-  color: #12805c;
-}
-
-.feedback.bad {
-  color: #d52b36;
-}
-
-.score-big {
-  color: #1d5fd0;
-}
-
-.foot, footer {
-  color: #63748b;
-}
-
-footer a {
-  color: #1d5fd0;
-  text-decoration: none;
-  font-weight: 650;
-}
-
-button {
-  transition: transform .15s ease, box-shadow .15s ease;
-}
-
-button:active {
-  transform: scale(.98);
-}
-
-@media (max-width: 480px) {
-  .stats {
-    gap: 7px;
-  }
-
-  .stat strong {
-    font-size: 19px;
-  }
-
-  .card {
-    padding: 17px;
-  }
-
-  header {
-    padding: 30px 14px;
-  }
-}
-/* FORCE LIGHT BLUE DESIGN */
-html body {
-  background: #f3f7ff !important;
-  color: #172b4d !important;
-}
-
-body header {
-  background: linear-gradient(135deg, #1746a2, #2784e8) !important;
-  color: white !important;
-  border-radius: 0 0 24px 24px !important;
-}
-
-body .card,
-body .stat {
-  background: #ffffff !important;
-  color: #172b4d !important;
-  border: 1px solid #dce6f5 !important;
-  border-radius: 18px !important;
-}
-
-body .primary {
-  background: #2563eb !important;
-  color: #ffffff !important;
-  }
+<meta name="google-adsense-account" content="ca-pub-9037909886687902">
+<meta name="description" content="Hindi GK Quiz में भारत, इतिहास, भूगोल, विज्ञान, संविधान और छत्तीसगढ़ सामान्य ज्ञान के सवालों की प्रैक्टिस करें।">
+<title>Hindi GK Quiz Academy | ज्ञान चुनौती</title>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9037909886687902" crossorigin="anonymous"></script>
+<style>
+*{box-sizing:border-box}
+:root{--bg:#0b1120;--panel:#131d30;--panel2:#1b2940;--text:#f5f7ff;--muted:#a9b5ca;--accent:#8b5cf6;--green:#20c997;--border:#2a3952}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,"Noto Sans Devanagari",sans-serif;line-height:1.7}
+.container{max-width:1000px;margin:auto;padding:16px}
+header{padding:28px 18px;text-align:center;border-radius:22px;background:linear-gradient(135deg,#182747,#452478);margin:8px 0 20px}
+.logo{font-size:30px;font-weight:800}.muted{color:var(--muted);font-size:14px}
+.brand{font-size:11px;letter-spacing:3px;color:#ddd0ff;margin-top:8px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
+.stat,.panel{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:16px}
+.stat{text-align:center}.stat strong{display:block;font-size:23px;color:var(--green)}
+h2{font-size:20px;margin:0 0 8px}h3{font-size:17px;margin:0 0 6px}
+.panel{margin-bottom:18px}
+.categories{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:14px 0}
+button,select{font:inherit}
+button,select{border-radius:11px;padding:12px;border:1px solid var(--border)}
+button{cursor:pointer}
+.cat,.option{background:var(--panel2);color:var(--text)}
+.cat.active{background:#39266b;border-color:var(--accent)}
+.primary{width:100%;background:linear-gradient(135deg,#8b5cf6,#6d4aff);color:white;border:0;font-weight:bold;margin-top:10px}
+select{width:100%;background:var(--panel2);color:var(--text);margin:5px 0}
+.question{font-size:18px;font-weight:bold;margin:14px 0}
+.option{width:100%;text-align:left;margin:5px 0}
+.option.correct{background:#123d38;border-color:var(--green)}
+.option.wrong{background:#47212e;border-color:#fb7185}
+.option:disabled{opacity:1}
+.track{height:7px;background:#26344b;border-radius:20px;overflow:hidden;margin:12px 0}
+.bar{height:100%;width:0;background:var(--green)}
+.note{padding:13px;background:#10192a;border:1px solid var(--border);border-radius:12px;margin-top:10px}
+.hidden{display:none!important}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:22px 8px}
+footer a{color:#c4b5fd;margin:0 5px}
+@media(min-width:650px){.container{padding:24px}.categories{grid-template-columns:repeat(3,1fr)}.logo{font-size:36px}}
 </style>
 </head>
 <body>
-<div style="text-align:center; padding:12px;">
-  <a href="new-questions.html" style="display:inline-block; background:#2563eb; color:white; padding:12px 22px; border-radius:12px; text-decoration:none; font-weight:bold;">
-    🧠 नए सवाल खेलें
-  </a>
-</div>
-<header><div class="hero"><div class="logo">LEARN • PLAY • GROW</div><h1>🧠 हिंदी GK Quiz</h1><p>हर दिन कुछ नया सीखने की आदत बनाओ!</p></div></header>
-<main>⁸
+<main class="container">
+<header>
+  <div class="logo">🧠 Hindi GK Quiz</div>
+  <p>हर दिन कुछ नया सीखने की आदत बनाओ!</p>
+  <div class="brand">LEARN • PLAY • GROW</div>
+</header>
+
 <div class="stats">
- <div class="stat"><strong id="totalStat">300</strong><span>कुल सवाल</span></div>
- <div class="stat"><strong id="playedStat">0</strong><span>आज खेले</span></div>
- <div class="stat"><strong id="bestStat">0%</strong><span>सबसे अच्छा स्कोर</span></div>
+  <div class="stat"><strong id="total">25</strong><span class="muted">उपलब्ध सवाल</span></div>
+  <div class="stat"><strong id="best">0</strong><span class="muted">बेस्ट स्कोर</span></div>
 </div>
-<section id="home">
- <div class="card"><div class="label">📚 अपनी कैटेगरी चुनें</div><div id="categories" class="categories"></div></div>
- <div class="card"><div class="label">⚙️ Quiz सेटिंग</div><div class="row" style="margin-top:12px"><select id="count"><option value="10">10 सवाल</option><option value="15">15 सवाल</option><option value="20">20 सवाल</option><option value="all">सभी सवाल</option></select><button id="start" class="primary">Quiz शुरू करें →</button></div><p class="small-note">हर सवाल में 4 विकल्प होंगे। जवाब चुनने के बाद सही उत्तर और उसका explanation दिखेगा। “सभी सवाल” चुनकर पूरे 300 सवाल खेलें।</p></div>
- <div class="card"><h2 class="section-title">📒 GK Notes</h2><ul class="note-list">
- <li><b>भारतीय संविधान:</b> 26 नवंबर 1949 को अपनाया गया और 26 जनवरी 1950 को लागू हुआ।</li>
- <li><b>मौलिक अधिकार:</b> संविधान के भाग III में हैं; मौलिक कर्तव्य अनुच्छेद 51A में दिए गए हैं।</li>
- <li><b>स्वतंत्रता आंदोलन:</b> असहयोग आंदोलन 1920, दांडी मार्च 1930 और भारत छोड़ो आंदोलन 1942 में हुआ।</li>
- <li><b>भूगोल:</b> भारत का मानक समय 82°30′ पूर्व देशांतर पर आधारित है। कर्क रेखा भारत के 8 राज्यों से गुजरती है।</li>
- <li><b>विज्ञान:</b> पानी का सूत्र H₂O है; बल की SI इकाई न्यूटन, ऊर्जा की जूल और शक्ति की वाट है।</li>
- <li><b>छत्तीसगढ़:</b> राज्य का गठन 1 नवंबर 2000 को हुआ। राजधानी रायपुर और उच्च न्यायालय बिलासपुर में है।</li>
- <li><b>कंप्यूटर:</b> HTML वेब पेज की संरचना, CSS उसका रूप और JavaScript इंटरैक्टिव व्यवहार बनाने में काम आते हैं।</li>
- </ul></div>
- <div class="card"><h2 class="section-title">⭐ Important Facts</h2><ul class="note-list">
- <li>भारत का राष्ट्रीय गान “जन गण मन” और राष्ट्रीय गीत “वंदे मातरम्” है।</li>
- <li>भारत का राष्ट्रीय जलीय जीव गंगा डॉल्फिन है; राष्ट्रीय पशु बाघ और राष्ट्रीय पक्षी मोर है।</li>
- <li>भारत ने किसी खेल को आधिकारिक राष्ट्रीय खेल घोषित नहीं किया है।</li>
- <li>सौरमंडल का सबसे बड़ा ग्रह बृहस्पति है और सूर्य के सबसे निकट ग्रह बुध है।</li>
- <li>विश्व पर्यावरण दिवस 5 जून, अंतरराष्ट्रीय योग दिवस 21 जून और संविधान दिवस 26 नवंबर को मनाया जाता है।</li>
- <li>छत्तीसगढ़ का चित्रकोट जलप्रपात इंद्रावती नदी पर है और भिलाई इस्पात संयंत्र दुर्ग क्षेत्र में स्थित है।</li>
- <li>यह वेबसाइट अभ्यास के लिए है। परीक्षा से पहले बदल सकने वाले तथ्यों को आधिकारिक स्रोत से भी जाँचें।</li>
- </ul></div>
+
+<section class="panel">
+<h2>📚 अपनी कैटेगरी चुनें</h2>
+<div class="categories" id="categories">
+<button class="cat active" data-cat="all">🌟 सभी विषय</button>
+<button class="cat" data-cat="india">🇮🇳 भारत GK</button>
+<button class="cat" data-cat="history">🏛️ इतिहास</button>
+<button class="cat" data-cat="geography">🌍 भूगोल</button>
+<button class="cat" data-cat="science">🔬 विज्ञान</button>
+<button class="cat" data-cat="constitution">📜 संविधान</button>
+<button class="cat" data-cat="cg">🌾 छत्तीसगढ़ GK</button>
+</div>
+<label for="count">कितने सवाल खेलने हैं?</label>
+<select id="count">
+<option value="10">10 सवाल</option>
+<option value="15">15 सवाल</option>
+<option value="20">20 सवाल</option>
+<option value="all">सभी उपलब्ध सवाल</option>
+</select>
+<button class="primary" id="start">🚀 क्विज शुरू करें</button>
 </section>
-<section id="quiz" class="card">
- <div class="quiz-top"><span id="categoryLabel">सामान्य ज्ञान</span><span id="progressText">सवाल 1/10</span></div><div class="track"><div id="fill" class="fill"></div></div>
- <h2 id="question"></h2><div id="options" class="options"></div><p id="feedback" class="feedback" aria-live="polite"></p><div id="explanation" class="explanation hidden" aria-live="polite"></div>
- <div class="quiz-actions"><button id="quit" class="secondary">← बाहर जाएँ</button><button id="next" class="primary" disabled>अगला सवाल →</button></div>
+
+<section class="panel hidden" id="quiz">
+<h2>📝 आपका GK Quiz</h2>
+<div class="muted" id="counter"></div>
+<div class="track"><div class="bar" id="bar"></div></div>
+<div class="question" id="question"></div>
+<div id="options"></div>
+<div class="note hidden" id="explanation"></div>
+<button class="primary hidden" id="next">अगला सवाल ➜</button>
 </section>
-<section id="result" class="card"><div class="result-icon">🏆</div><h2>Quiz पूरा हुआ!</h2><div id="scoreBig" class="score-big">0/10</div><p id="resultText"></p><button id="again" class="primary">फिर से खेलें ↻</button> <button id="homeBtn" class="secondary">कैटेगरी बदलें</button></section>
-<div class="foot">Hindi GK Quiz • सीखते रहें, आगे बढ़ते रहें ✨</div>
-</main>
-<section id="adminPanel" class="card" style="display:none;max-width:760px;margin:18px auto;padding:18px;">
-<h2>🔐 Admin Panel</h2><p>सवाल जोड़ने, बदलने या हटाने के लिए Admin login करें।</p>
-<div id="adminLogin"><label>Email</label><input id="adminEmail" type="email" autocomplete="username" style="display:block;width:100%;padding:12px;margin:6px 0 12px;border-radius:10px" placeholder="Admin email"><label>Password</label><input id="adminPassword" type="password" autocomplete="current-password" style="display:block;width:100%;padding:12px;margin:6px 0 12px;border-radius:10px" placeholder="Admin password"><button id="adminLoginBtn" class="primary">Login</button></div>
-<div id="adminTools" style="display:none"><button id="adminLogout" class="secondary">Logout</button><hr><h3 id="formTitle">नया सवाल जोड़ें</h3>
-<input id="editId" type="hidden"><label>Subject / Category</label><input id="qSubject" placeholder="जैसे इतिहास, भूगोल, विज्ञान, राजनीति" style="display:block;width:100%;padding:12px;margin:6px 0 12px;border-radius:10px">
-<label>सवाल</label><textarea id="qText" placeholder="सवाल लिखें" style="display:block;width:100%;padding:12px;margin:6px 0 12px;border-radius:10px"></textarea>
-<div class="admin-grid"><input id="qA" placeholder="विकल्प A"><input id="qB" placeholder="विकल्प B"><input id="qC" placeholder="विकल्प C"><input id="qD" placeholder="विकल्प D"></div>
-<label>सही उत्तर</label><select id="qCorrect" style="display:block;width:100%;margin:6px 0 12px"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option></select>
-<label>Explanation (वैकल्पिक)</label><textarea id="qExplanation" placeholder="उत्तर की जानकारी" style="display:block;width:100%;padding:12px;margin:6px 0 12px;border-radius:10px"></textarea>
-<button id="saveQuestion" class="primary">सवाल Save करें</button> <button id="cancelEdit" class="secondary">Cancel edit</button><p id="adminMessage" aria-live="polite"></p><hr><h3>Database वाले सवाल</h3><div id="adminQuestionList"></div></div></section>
-<div style="text-align:center;margin:14px"><button id="showAdmin" class="secondary">🔐 Admin Panel</button></div>
-<hr><footer style="text-align:center; padding:20px; line-height:2;">
-  <a href="about.html">About Us</a> |
-  <a href="contact.html">Contact Us</a> |
-  <a href="privacy.html">Privacy Policy</a>
-  <p>© 2026 Hindi GK Quiz. All rights reserved.</p>
+
+<section class="panel hidden" id="result">
+<h2>🏆 आपका परिणाम</h2>
+<p id="score"></p><p id="message" class="muted"></p>
+<button class="primary" id="again">फिर से खेलें</button>
+</section>
+
+<section class="panel" id="notes">
+<h2>📖 महत्वपूर्ण GK Notes</h2>
+<div class="note"><h3>🇮🇳 भारत</h3>भारत की राजधानी नई दिल्ली है। भारत का राष्ट्रीय पशु बाघ और राष्ट्रीय पक्षी मोर है। भारत का स्वतंत्रता दिवस 15 अगस्त को मनाया जाता है।</div>
+<div class="note"><h3>🏛️ इतिहास</h3>भारत छोड़ो आंदोलन 1942 में शुरू हुआ। महात्मा गांधी का जन्म 2 अक्टूबर 1869 को हुआ था। भारत 15 अगस्त 1947 को स्वतंत्र हुआ।</div>
+<div class="note"><h3>🌍 भूगोल</h3>क्षेत्रफल के आधार पर रूस विश्व का सबसे बड़ा देश है। प्रशांत महासागर विश्व का सबसे बड़ा महासागर है। हिमालय भारत के उत्तर में स्थित है।</div>
+<div class="note"><h3>🔬 विज्ञान</h3>पानी का रासायनिक सूत्र H₂O है। पौधे प्रकाश संश्लेषण द्वारा भोजन बनाते हैं। हृदय रक्त पंप करता है।</div>
+<div class="note"><h3>📜 संविधान</h3>भारतीय संविधान 26 नवंबर 1949 को अपनाया गया और 26 जनवरी 1950 को लागू हुआ। संविधान दिवस 26 नवंबर को मनाया जाता है।</div>
+<div class="note"><h3>🌾 छत्तीसगढ़</h3>छत्तीसगढ़ का गठन 1 नवंबर 2000 को हुआ। रायपुर इसकी राजधानी है। इसे धान का कटोरा भी कहा जाता है।</div>
+</section>
+
+<footer>
+<p>© 2026 Hindi GK Quiz Academy</p>
+<p>सीखते रहें, आगे बढ़ते रहें! 📚</p>
+<p>
+<a href="about.html">About Us</a> |
+<a href="contact.html">Contact Us</a> |
+<a href="privacy.html">Privacy Policy</a>
+</p>
 </footer>
+</main>
+
 <script>
-const data = [
-  ["भारत सामान्य ज्ञान","भारत की राजधानी क्या है?",["मुंबई", "नई दिल्ली", "जयपुर", "भोपाल"],1,"भारत की राजधानी नई दिल्ली है। यहाँ संसद भवन, राष्ट्रपति भवन और केंद्र सरकार के कई प्रमुख कार्यालय स्थित हैं।"],
-  ["भारत सामान्य ज्ञान","भारत का राष्ट्रीय पशु कौन-सा है?",["शेर", "हाथी", "बाघ", "चीता"],2,"भारत का राष्ट्रीय पशु बाघ है। बाघ भारतीय वन्यजीव संरक्षण का एक प्रमुख प्रतीक है।"],
-  ["भारत सामान्य ज्ञान","भारत का राष्ट्रीय पक्षी कौन-सा है?",["मोर", "तोता", "हंस", "कबूतर"],0,"भारत का राष्ट्रीय पक्षी मोर है। भारतीय मोर अपने रंगीन पंखों और नृत्य के लिए प्रसिद्ध है।"],
-  ["भारत सामान्य ज्ञान","भारत का राष्ट्रीय फूल कौन-सा है?",["गुलाब", "कमल", "चमेली", "सूरजमुखी"],1,"भारत का राष्ट्रीय फूल कमल है। कमल भारतीय संस्कृति और कला में भी महत्वपूर्ण स्थान रखता है।"],
-  ["भारत सामान्य ज्ञान","भारत की मुद्रा क्या है?",["डॉलर", "टका", "रुपया", "येन"],2,"सही उत्तर «रुपया» है। यह प्रश्न भारत सामान्य ज्ञान विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["भारत सामान्य ज्ञान","भारत का स्वतंत्रता दिवस कब मनाया जाता है?",["26 जनवरी", "15 अगस्त", "2 अक्टूबर", "14 नवंबर"],1,"सही उत्तर «15 अगस्त» है। यह प्रश्न भारत सामान्य ज्ञान विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["भारत सामान्य ज्ञान","गणतंत्र दिवस कब होता है?",["15 अगस्त", "26 जनवरी", "5 सितंबर", "1 मई"],1,"सही उत्तर «26 जनवरी» है। यह प्रश्न भारत सामान्य ज्ञान विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["भारत सामान्य ज्ञान","भारत का राष्ट्रीय गान किसने लिखा?",["प्रेमचंद", "रवींद्रनाथ टैगोर", "महात्मा गांधी", "बंकिमचंद्र चट्टोपाध्याय"],1,"‘जन गण मन’ रवींद्रनाथ टैगोर ने लिखा था। इसे भारत के राष्ट्रगान के रूप में अपनाया गया।"],
-  ["भारत सामान्य ज्ञान","भारत का राष्ट्रीय गीत कौन-सा है?",["जन गण मन", "वंदे मातरम्", "सारे जहाँ से अच्छा", "ऐ मेरे वतन"],1,"‘वंदे मातरम्’ भारत का राष्ट्रीय गीत है। इसे बंकिमचंद्र चट्टोपाध्याय ने लिखा था।"],
-  ["भारत सामान्य ज्ञान","भारत के पहले प्रधानमंत्री कौन थे?",["सरदार पटेल", "जवाहरलाल नेहरू", "लाल बहादुर शास्त्री", "राजेंद्र प्रसाद"],1,"जवाहरलाल नेहरू स्वतंत्र भारत के पहले प्रधानमंत्री बने और 1947 से 1964 तक इस पद पर रहे।"],
-  ["भारत सामान्य ज्ञान","भारत की पहली महिला प्रधानमंत्री कौन थीं?",["प्रतिभा पाटिल", "सरोजिनी नायडू", "इंदिरा गांधी", "सुषमा स्वराज"],2,"सही उत्तर «इंदिरा गांधी» है। यह प्रश्न भारत सामान्य ज्ञान विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["भारत सामान्य ज्ञान","क्षेत्रफल के अनुसार भारत का सबसे बड़ा राज्य कौन-सा है?",["मध्य प्रदेश", "राजस्थान", "महाराष्ट्र", "उत्तर प्रदेश"],1,"सही उत्तर «राजस्थान» है। यह प्रश्न भारत सामान्य ज्ञान विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["भारत सामान्य ज्ञान","जनसंख्या के अनुसार भारत का सबसे बड़ा राज्य कौन-सा है?",["बिहार", "महाराष्ट्र", "उत्तर प्रदेश", "राजस्थान"],2,"सही उत्तर «उत्तर प्रदेश» है। यह प्रश्न भारत सामान्य ज्ञान विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["भारत सामान्य ज्ञान","भारत का सबसे छोटा राज्य (क्षेत्रफल) कौन-सा है?",["गोवा", "सिक्किम", "त्रिपुरा", "मणिपुर"],0,"सही उत्तर «गोवा» है। यह प्रश्न भारत सामान्य ज्ञान विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["भारत सामान्य ज्ञान","भारत का सर्वोच्च नागरिक सम्मान कौन-सा है?",["पद्मश्री", "पद्म भूषण", "भारत रत्न", "परमवीर चक्र"],2,"सही उत्तर «भारत रत्न» है। यह प्रश्न भारत सामान्य ज्ञान विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["इतिहास","ताजमहल किसने बनवाया था?",["अकबर", "शाहजहाँ", "जहाँगीर", "बाबर"],1,"सही उत्तर «शाहजहाँ» है। यह प्रश्न इतिहास विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["इतिहास","कुतुब मीनार किस शहर में है?",["आगरा", "जयपुर", "दिल्ली", "लखनऊ"],2,"सही उत्तर «दिल्ली» है। यह प्रश्न इतिहास विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["इतिहास","1857 के विद्रोह की शुरुआत कहाँ से मानी जाती है?",["मेरठ", "कानपुर", "झाँसी", "दिल्ली"],0,"सही उत्तर «मेरठ» है। यह प्रश्न इतिहास विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["इतिहास","महात्मा गांधी का जन्म कब हुआ था?",["2 अक्टूबर 1869", "15 अगस्त 1872", "26 जनवरी 1869", "14 नवंबर 1889"],0,"सही उत्तर «2 अक्टूबर 1869» है। यह प्रश्न इतिहास विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["इतिहास","भारत छोड़ो आंदोलन किस वर्ष शुरू हुआ?",["1930", "1942", "1947", "1920"],1,"सही उत्तर «1942» है। यह प्रश्न इतिहास विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["इतिहास","जलियाँवाला बाग हत्याकांड किस वर्ष हुआ?",["1905", "1919", "1922", "1931"],1,"सही उत्तर «1919» है। यह प्रश्न इतिहास विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["इतिहास","आज़ाद हिंद फ़ौज से प्रमुख रूप से कौन जुड़े थे?",["सुभाष चंद्र बोस", "गोपाल कृष्ण गोखले", "दादाभाई नौरोजी", "बाल गंगाधर तिलक"],0,"सही उत्तर «सुभाष चंद्र बोस» है। यह प्रश्न इतिहास विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["इतिहास","सम्राट अशोक किस वंश से थे?",["गुप्त", "मौर्य", "चोल", "मुगल"],1,"सही उत्तर «मौर्य» है। यह प्रश्न इतिहास विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["इतिहास","हड़प्पा सभ्यता किस युग की सभ्यता थी?",["पाषाण युग", "कांस्य युग", "लौह युग", "आधुनिक युग"],1,"सही उत्तर «कांस्य युग» है। यह प्रश्न इतिहास विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["इतिहास","भारत के पहले राष्ट्रपति कौन थे?",["डॉ. राजेंद्र प्रसाद", "डॉ. राधाकृष्णन", "ज़ाकिर हुसैन", "वी. वी. गिरि"],0,"डॉ. राजेंद्र प्रसाद भारत के पहले राष्ट्रपति थे। उन्होंने 1950 में पद संभाला।"],
-  ["इतिहास","‘स्वराज मेरा जन्मसिद्ध अधिकार है’ किसने कहा?",["भगत सिंह", "बाल गंगाधर तिलक", "गांधीजी", "नेहरू"],1,"सही उत्तर «बाल गंगाधर तिलक» है। यह प्रश्न इतिहास विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["इतिहास","झाँसी की रानी का नाम क्या था?",["लक्ष्मीबाई", "अहिल्याबाई", "दुर्गावती", "पद्मिनी"],0,"सही उत्तर «लक्ष्मीबाई» है। यह प्रश्न इतिहास विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["इतिहास","दिल्ली सल्तनत की पहली महिला शासक कौन थीं?",["नूरजहाँ", "रज़िया सुल्तान", "चाँद बीबी", "रानी दुर्गावती"],1,"सही उत्तर «रज़िया सुल्तान» है। यह प्रश्न इतिहास विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["इतिहास","विक्रमशिला प्राचीन विश्वविद्यालय वर्तमान में किस राज्य में था?",["बिहार", "गुजरात", "ओडिशा", "पंजाब"],0,"सही उत्तर «बिहार» है। यह प्रश्न इतिहास विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["इतिहास","भारत में मुगल साम्राज्य की स्थापना किसने की?",["अकबर", "बाबर", "हुमायूँ", "औरंगज़ेब"],1,"सही उत्तर «बाबर» है। यह प्रश्न इतिहास विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["भूगोल","भारत की सबसे लंबी नदी कौन-सी मानी जाती है?",["गोदावरी", "गंगा", "नर्मदा", "कावेरी"],1,"सही उत्तर «गंगा» है। यह प्रश्न भूगोल विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["भूगोल","विश्व का सबसे ऊँचा पर्वत कौन-सा है?",["K2", "कंचनजंघा", "माउंट एवरेस्ट", "नंदा देवी"],2,"सही उत्तर «माउंट एवरेस्ट» है। यह प्रश्न भूगोल विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["भूगोल","भारत के दक्षिण में कौन-सा महासागर है?",["अटलांटिक", "हिंद महासागर", "आर्कटिक", "प्रशांत"],1,"सही उत्तर «हिंद महासागर» है। यह प्रश्न भूगोल विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["भूगोल","थार मरुस्थल मुख्यतः किस राज्य में है?",["राजस्थान", "असम", "केरल", "बिहार"],0,"सही उत्तर «राजस्थान» है। यह प्रश्न भूगोल विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["भूगोल","सुंदरबन डेल्टा किस नदी प्रणाली से जुड़ा है?",["गंगा-ब्रह्मपुत्र", "नर्मदा-तापी", "गोदावरी-कृष्णा", "सिंधु-झेलम"],0,"सही उत्तर «गंगा-ब्रह्मपुत्र» है। यह प्रश्न भूगोल विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["भूगोल","भारत में चाय उत्पादन के लिए कौन-सा राज्य प्रसिद्ध है?",["असम", "हरियाणा", "पंजाब", "गोवा"],0,"सही उत्तर «असम» है। यह प्रश्न भूगोल विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["भूगोल","कर्क रेखा भारत के कितने राज्यों से गुजरती है?",["6", "8", "10", "12"],1,"सही उत्तर «8» है। यह प्रश्न भूगोल विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["भूगोल","भारत का सबसे बड़ा पठार कौन-सा है?",["मालवा", "दक्कन का पठार", "छोटानागपुर", "मेघालय"],1,"सही उत्तर «दक्कन का पठार» है। यह प्रश्न भूगोल विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["भूगोल","विश्व का सबसे बड़ा महाद्वीप कौन-सा है?",["अफ्रीका", "यूरोप", "एशिया", "ऑस्ट्रेलिया"],2,"सही उत्तर «एशिया» है। यह प्रश्न भूगोल विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["भूगोल","विश्व का सबसे बड़ा महासागर कौन-सा है?",["हिंद महासागर", "प्रशांत महासागर", "अटलांटिक महासागर", "आर्कटिक महासागर"],1,"सही उत्तर «प्रशांत महासागर» है। यह प्रश्न भूगोल विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["भूगोल","भारत का सबसे लंबा समुद्री तट किस राज्य का है?",["गुजरात", "गोवा", "ओडिशा", "केरल"],0,"सही उत्तर «गुजरात» है। यह प्रश्न भूगोल विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["भूगोल","चिल्का झील किस राज्य में है?",["ओडिशा", "मणिपुर", "राजस्थान", "महाराष्ट्र"],0,"सही उत्तर «ओडिशा» है। यह प्रश्न भूगोल विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["भूगोल","नर्मदा नदी किस दिशा में बहती है?",["पूर्व", "पश्चिम", "उत्तर", "दक्षिण"],1,"सही उत्तर «पश्चिम» है। यह प्रश्न भूगोल विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["भूगोल","भारत का दक्षिणतम मुख्यभूमि बिंदु कौन-सा है?",["इंदिरा पॉइंट", "कन्याकुमारी", "रामेश्वरम", "कोच्चि"],1,"सही उत्तर «कन्याकुमारी» है। यह प्रश्न भूगोल विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["भूगोल","जापान की राजधानी क्या है?",["ओसाका", "टोक्यो", "क्योटो", "नारा"],1,"सही उत्तर «टोक्यो» है। यह प्रश्न भूगोल विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["विज्ञान","पानी का रासायनिक सूत्र क्या है?",["CO2", "H2O", "O2", "NaCl"],1,"पानी का रासायनिक सूत्र H₂O है। प्रत्येक पानी के अणु में दो हाइड्रोजन परमाणु और एक ऑक्सीजन परमाणु होता है।"],
-  ["विज्ञान","पौधे भोजन किस प्रक्रिया से बनाते हैं?",["श्वसन", "प्रकाश संश्लेषण", "वाष्पीकरण", "पाचन"],1,"पौधे प्रकाश संश्लेषण के दौरान प्रकाश ऊर्जा की मदद से पानी और कार्बन डाइऑक्साइड से भोजन बनाते हैं।"],
-  ["विज्ञान","मानव शरीर का सबसे बड़ा अंग कौन-सा है?",["हृदय", "त्वचा", "यकृत", "फेफड़ा"],1,"सही उत्तर «त्वचा» है। यह प्रश्न विज्ञान विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["विज्ञान","रक्त का लाल रंग किसके कारण होता है?",["क्लोरोफिल", "हीमोग्लोबिन", "प्लाज्मा", "कैल्शियम"],1,"सही उत्तर «हीमोग्लोबिन» है। यह प्रश्न विज्ञान विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["विज्ञान","पृथ्वी के सबसे निकट तारा कौन-सा है?",["ध्रुव तारा", "सूर्य", "सीरियस", "प्रॉक्सिमा सेंटॉरी"],1,"सही उत्तर «सूर्य» है। यह प्रश्न विज्ञान विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["विज्ञान","ध्वनि किस माध्यम में यात्रा नहीं कर सकती?",["पानी", "हवा", "निर्वात", "लोहा"],2,"ध्वनि को फैलने के लिए माध्यम चाहिए। इसलिए ध्वनि निर्वात में यात्रा नहीं कर सकती।"],
-  ["विज्ञान","सामान्य वायुदाब पर पानी कितने °C पर उबलता है?",["50", "75", "100", "120"],2,"सही उत्तर «100» है। यह प्रश्न विज्ञान विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["विज्ञान","विटामिन C की कमी से कौन-सा रोग होता है?",["रिकेट्स", "स्कर्वी", "बेरी-बेरी", "रतौंधी"],1,"सही उत्तर «स्कर्वी» है। यह प्रश्न विज्ञान विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["विज्ञान","मानव हृदय में कितने कक्ष होते हैं?",["2", "3", "4", "5"],2,"सही उत्तर «4» है। यह प्रश्न विज्ञान विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["विज्ञान","सौरमंडल का सबसे बड़ा ग्रह कौन-सा है?",["पृथ्वी", "शनि", "बृहस्पति", "मंगल"],2,"बृहस्पति सौरमंडल का सबसे बड़ा ग्रह है। यह एक गैसीय विशाल ग्रह है।"],
-  ["विज्ञान","विद्युत धारा की SI इकाई क्या है?",["वोल्ट", "एम्पियर", "ओम", "वाट"],1,"सही उत्तर «एम्पियर» है। यह प्रश्न विज्ञान विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["विज्ञान","प्रकाश की गति सबसे अधिक किसमें होती है?",["पानी", "काँच", "निर्वात", "हवा"],2,"सही उत्तर «निर्वात» है। यह प्रश्न विज्ञान विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["विज्ञान","मानव शरीर में सामान्यतः कितनी हड्डियाँ होती हैं?",["206", "201", "212", "220"],0,"सही उत्तर «206» है। यह प्रश्न विज्ञान विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["विज्ञान","कौन-सी गैस पौधे प्रकाश संश्लेषण में लेते हैं?",["ऑक्सीजन", "कार्बन डाइऑक्साइड", "नाइट्रोजन", "हाइड्रोजन"],1,"सही उत्तर «कार्बन डाइऑक्साइड» है। यह प्रश्न विज्ञान विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["विज्ञान","DNA का पूरा नाम क्या है?",["डिऑक्सीराइबोन्यूक्लिक एसिड", "डाइनाइट्रिक एसिड", "डबल न्यूक्लियर एजेंट", "इनमें से कोई नहीं"],0,"सही उत्तर «डिऑक्सीराइबोन्यूक्लिक एसिड» है। यह प्रश्न विज्ञान विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["विज्ञान","तापमान मापने का यंत्र क्या है?",["बैरोमीटर", "थर्मामीटर", "अमीटर", "हाइग्रोमीटर"],1,"सही उत्तर «थर्मामीटर» है। यह प्रश्न विज्ञान विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["विज्ञान","लाल ग्रह किसे कहा जाता है?",["शुक्र", "मंगल", "बुध", "शनि"],1,"सही उत्तर «मंगल» है। यह प्रश्न विज्ञान विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["विज्ञान","मानव शरीर में रक्त को छानने में मुख्य भूमिका किसकी है?",["गुर्दे", "फेफड़े", "आँखें", "अग्न्याशय"],0,"सही उत्तर «गुर्दे» है। यह प्रश्न विज्ञान विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["विज्ञान","ओजोन परत हमें किससे बचाती है?",["अवरक्त किरणों", "पराबैंगनी किरणों", "ध्वनि तरंगों", "रेडियो तरंगों"],1,"सही उत्तर «पराबैंगनी किरणों» है। यह प्रश्न विज्ञान विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["संविधान","भारतीय संविधान कब अपनाया गया?",["15 अगस्त 1947", "26 नवंबर 1949", "26 जनवरी 1950", "2 अक्टूबर 1950"],1,"संविधान सभा ने भारतीय संविधान को 26 नवंबर 1949 को अपनाया।"],
-  ["संविधान","भारतीय संविधान कब लागू हुआ?",["26 जनवरी 1950", "26 नवंबर 1949", "15 अगस्त 1947", "1 जनवरी 1950"],0,"भारतीय संविधान 26 जनवरी 1950 को लागू हुआ। इसी कारण 26 जनवरी को गणतंत्र दिवस मनाते हैं।"],
-  ["संविधान","संविधान की प्रारूप समिति के अध्यक्ष कौन थे?",["डॉ. बी. आर. आंबेडकर", "डॉ. राजेंद्र प्रसाद", "जवाहरलाल नेहरू", "सरदार पटेल"],0,"सही उत्तर «डॉ. बी. आर. आंबेडकर» है। यह प्रश्न संविधान विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["संविधान","मौलिक अधिकार संविधान के किस भाग में हैं?",["भाग I", "भाग II", "भाग III", "भाग IV"],2,"सही उत्तर «भाग III» है। यह प्रश्न संविधान विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["संविधान","भारत में मतदान की न्यूनतम आयु कितनी है?",["16 वर्ष", "18 वर्ष", "21 वर्ष", "25 वर्ष"],1,"सही उत्तर «18 वर्ष» है। यह प्रश्न संविधान विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["संविधान","लोकसभा का सामान्य कार्यकाल कितना होता है?",["4 वर्ष", "5 वर्ष", "6 वर्ष", "7 वर्ष"],1,"सही उत्तर «5 वर्ष» है। यह प्रश्न संविधान विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["संविधान","भारत के राष्ट्रपति का चुनाव कौन करता है?",["केवल जनता सीधे", "निर्वाचक मंडल", "केवल लोकसभा", "केवल राज्यसभा"],1,"सही उत्तर «निर्वाचक मंडल» है। यह प्रश्न संविधान विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["संविधान","भारतीय संसद के कितने सदन हैं?",["एक", "दो", "तीन", "चार"],1,"सही उत्तर «दो» है। यह प्रश्न संविधान विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["संविधान","राज्यसभा को क्या कहा जाता है?",["अस्थायी सदन", "स्थायी सदन", "न्यायालय", "ग्राम सभा"],1,"सही उत्तर «स्थायी सदन» है। यह प्रश्न संविधान विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["संविधान","भारत में सरकार का संवैधानिक प्रमुख कौन है?",["प्रधानमंत्री", "राष्ट्रपति", "मुख्य न्यायाधीश", "राज्यपाल"],1,"सही उत्तर «राष्ट्रपति» है। यह प्रश्न संविधान विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["छत्तीसगढ़ GK","छत्तीसगढ़ राज्य का गठन कब हुआ?",["1 नवंबर 2000", "1 नवंबर 2001", "15 अगस्त 2000", "26 जनवरी 2000"],0,"छत्तीसगढ़ 1 नवंबर 2000 को मध्य प्रदेश से अलग होकर भारत का नया राज्य बना।"],
-  ["छत्तीसगढ़ GK","छत्तीसगढ़ की राजधानी क्या है?",["बिलासपुर", "रायपुर", "दुर्ग", "जगदलपुर"],1,"छत्तीसगढ़ की राजधानी रायपुर है।"],
-  ["छत्तीसगढ़ GK","छत्तीसगढ़ उच्च न्यायालय कहाँ है?",["रायपुर", "बिलासपुर", "दुर्ग", "अंबिकापुर"],1,"सही उत्तर «बिलासपुर» है। यह प्रश्न छत्तीसगढ़ GK विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["छत्तीसगढ़ GK","चित्रकोट जलप्रपात किस नदी पर है?",["महानदी", "इंद्रावती", "शिवनाथ", "अरपा"],1,"सही उत्तर «इंद्रावती» है। यह प्रश्न छत्तीसगढ़ GK विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["छत्तीसगढ़ GK","छत्तीसगढ़ का राजकीय पशु कौन-सा है?",["बाघ", "वन भैंसा", "हाथी", "बारहसिंगा"],1,"सही उत्तर «वन भैंसा» है। यह प्रश्न छत्तीसगढ़ GK विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["छत्तीसगढ़ GK","छत्तीसगढ़ का राजकीय पक्षी कौन-सा है?",["पहाड़ी मैना", "मोर", "तोता", "सारस"],0,"सही उत्तर «पहाड़ी मैना» है। यह प्रश्न छत्तीसगढ़ GK विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["छत्तीसगढ़ GK","महानदी का उद्गम किस क्षेत्र से होता है?",["सिहावा", "मैकाल", "बस्तर", "सरगुजा"],0,"सही उत्तर «सिहावा» है। यह प्रश्न छत्तीसगढ़ GK विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["छत्तीसगढ़ GK","बस्तर दशहरा किस राज्य की प्रसिद्ध परंपरा है?",["झारखंड", "छत्तीसगढ़", "ओडिशा", "मध्य प्रदेश"],1,"सही उत्तर «छत्तीसगढ़» है। यह प्रश्न छत्तीसगढ़ GK विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["छत्तीसगढ़ GK","भिलाई इस्पात संयंत्र किस जिले में है?",["दुर्ग", "रायगढ़", "कोरबा", "रायपुर"],0,"सही उत्तर «दुर्ग» है। यह प्रश्न छत्तीसगढ़ GK विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["छत्तीसगढ़ GK","कांगेर घाटी राष्ट्रीय उद्यान किस क्षेत्र में है?",["बस्तर", "सरगुजा", "रायपुर", "बिलासपुर"],0,"सही उत्तर «बस्तर» है। यह प्रश्न छत्तीसगढ़ GK विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["छत्तीसगढ़ GK","छत्तीसगढ़ का प्रसिद्ध पंथी नृत्य किस समुदाय से जुड़ा है?",["सतनामी", "गोंड", "बैगा", "हल्बा"],0,"सही उत्तर «सतनामी» है। यह प्रश्न छत्तीसगढ़ GK विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["छत्तीसगढ़ GK","सिरपुर पुरातात्विक स्थल किस जिले में है?",["महासमुंद", "कोरिया", "जशपुर", "कांकेर"],0,"सही उत्तर «महासमुंद» है। यह प्रश्न छत्तीसगढ़ GK विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["छत्तीसगढ़ GK","छत्तीसगढ़ का प्रमुख कोयला उत्पादक क्षेत्र कौन-सा है?",["कोरबा", "धमतरी", "बेमेतरा", "बलरामपुर"],0,"सही उत्तर «कोरबा» है। यह प्रश्न छत्तीसगढ़ GK विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["छत्तीसगढ़ GK","राजिम किस कारण प्रसिद्ध है?",["त्रिवेणी संगम", "समुद्र तट", "रेगिस्तान", "हिमनद"],0,"सही उत्तर «त्रिवेणी संगम» है। यह प्रश्न छत्तीसगढ़ GK विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["खेल","क्रिकेट टीम में मैदान पर एक टीम के कितने खिलाड़ी होते हैं?",["9", "10", "11", "12"],2,"सही उत्तर «11» है। यह प्रश्न खेल विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["खेल","ओलंपिक के प्रतीक में कितने छल्ले होते हैं?",["4", "5", "6", "7"],1,"सही उत्तर «5» है। यह प्रश्न खेल विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["खेल","फुटबॉल विश्व कप सामान्यतः कितने वर्ष में होता है?",["2", "3", "4", "5"],2,"सही उत्तर «4» है। यह प्रश्न खेल विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["खेल","शतरंज की बिसात में कितने खाने होते हैं?",["32", "64", "72", "100"],1,"सही उत्तर «64» है। यह प्रश्न खेल विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["खेल","बैडमिंटन में किस वस्तु को मारा जाता है?",["पक", "शटल कॉक", "गेंद", "डिस्क"],1,"सही उत्तर «शटल कॉक» है। यह प्रश्न खेल विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["खेल","भारत का आधिकारिक राष्ट्रीय खेल कौन-सा है?",["हॉकी", "क्रिकेट", "कबड्डी", "भारत ने कोई आधिकारिक राष्ट्रीय खेल घोषित नहीं किया है"],3,"भारत सरकार ने किसी खेल को आधिकारिक राष्ट्रीय खेल घोषित नहीं किया है।"],
-  ["खेल","कबड्डी की एक टीम के कितने खिलाड़ी मैदान पर होते हैं?",["5", "6", "7", "9"],2,"सही उत्तर «7» है। यह प्रश्न खेल विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["कंप्यूटर","CPU का पूरा नाम क्या है?",["Central Processing Unit", "Computer Personal Unit", "Central Program Utility", "Control Processing User"],0,"सही उत्तर «Central Processing Unit» है। यह प्रश्न कंप्यूटर विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["कंप्यूटर","वेब पेज खोलने के लिए किसका उपयोग करते हैं?",["ब्राउज़र", "कैलकुलेटर", "कंपाइलर", "पेंट"],0,"सही उत्तर «ब्राउज़र» है। यह प्रश्न कंप्यूटर विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["कंप्यूटर","HTML मुख्यतः किस काम आता है?",["वेब पेज की संरचना", "वीडियो रिकॉर्डिंग", "वायरस हटाना", "फोटो प्रिंट करना"],0,"सही उत्तर «वेब पेज की संरचना» है। यह प्रश्न कंप्यूटर विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["कंप्यूटर","कीबोर्ड किस प्रकार का उपकरण है?",["इनपुट", "आउटपुट", "स्टोरेज", "नेटवर्क"],0,"सही उत्तर «इनपुट» है। यह प्रश्न कंप्यूटर विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["कंप्यूटर","कंप्यूटर में अस्थायी मेमोरी कौन-सी है?",["ROM", "RAM", "DVD", "SSD"],1,"सही उत्तर «RAM» है। यह प्रश्न कंप्यूटर विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["कंप्यूटर","URL का संबंध किससे है?",["वेब पते", "प्रिंटर की स्याही", "बैटरी", "स्क्रीन की चमक"],0,"सही उत्तर «वेब पते» है। यह प्रश्न कंप्यूटर विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["कंप्यूटर","1 किलोबाइट का पारंपरिक बाइनरी मान कितना है?",["100 बाइट", "512 बाइट", "1024 बाइट", "2048 बाइट"],2,"सही उत्तर «1024 बाइट» है। यह प्रश्न कंप्यूटर विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["कंप्यूटर","ईमेल पते में सामान्यतः कौन-सा चिन्ह होता है?",["#", "@", "%", "&"],1,"सही उत्तर «@» है। यह प्रश्न कंप्यूटर विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["कंप्यूटर","इनमें से कौन-सा ऑपरेटिंग सिस्टम है?",["Android", "HTML", "Google Search", "Bluetooth"],0,"सही उत्तर «Android» है। यह प्रश्न कंप्यूटर विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["कंप्यूटर","वेबसाइट को इंटरनेट पर उपलब्ध कराने की सेवा क्या कहलाती है?",["होस्टिंग", "स्कैनिंग", "टाइपिंग", "फॉर्मेटिंग"],0,"सही उत्तर «होस्टिंग» है। यह प्रश्न कंप्यूटर विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["मिश्रित GK","एक सप्ताह में कितने दिन होते हैं?",["5", "6", "7", "8"],2,"सही उत्तर «7» है। यह प्रश्न मिश्रित GK विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["मिश्रित GK","इंद्रधनुष में परंपरागत रूप से कितने रंग बताए जाते हैं?",["5", "6", "7", "8"],2,"सही उत्तर «7» है। यह प्रश्न मिश्रित GK विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["मिश्रित GK","विश्व पर्यावरण दिवस कब मनाया जाता है?",["5 जून", "22 अप्रैल", "1 मई", "10 दिसंबर"],0,"सही उत्तर «5 जून» है। यह प्रश्न मिश्रित GK विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["मिश्रित GK","अंतरराष्ट्रीय योग दिवस कब मनाया जाता है?",["21 जून", "5 जून", "11 जुलाई", "14 नवंबर"],0,"सही उत्तर «21 जून» है। यह प्रश्न मिश्रित GK विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["मिश्रित GK","भारत में शिक्षक दिवस कब मनाया जाता है?",["5 सितंबर", "14 नवंबर", "2 अक्टूबर", "8 मार्च"],0,"सही उत्तर «5 सितंबर» है। यह प्रश्न मिश्रित GK विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["मिश्रित GK","संयुक्त राष्ट्र दिवस कब मनाया जाता है?",["24 अक्टूबर", "5 जून", "1 जनवरी", "10 मई"],0,"सही उत्तर «24 अक्टूबर» है। यह प्रश्न मिश्रित GK विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["मिश्रित GK","सूर्य किस दिशा से उगता हुआ दिखाई देता है?",["पश्चिम", "उत्तर", "पूर्व", "दक्षिण"],2,"सही उत्तर «पूर्व» है। यह प्रश्न मिश्रित GK विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["मिश्रित GK","एक त्रिभुज के कितने भुजाएँ होती हैं?",["2", "3", "4", "5"],1,"सही उत्तर «3» है। यह प्रश्न मिश्रित GK विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["मिश्रित GK","विश्व स्वास्थ्य संगठन का संक्षिप्त नाम क्या है?",["WHO", "WTO", "UNESCO", "UNICEF"],0,"सही उत्तर «WHO» है। यह प्रश्न मिश्रित GK विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["मिश्रित GK","भारत का अंतरिक्ष अनुसंधान संगठन कौन-सा है?",["NASA", "ISRO", "ESA", "DRDO"],1,"सही उत्तर «ISRO» है। यह प्रश्न मिश्रित GK विषय से संबंधित है। इस तथ्य को याद रखने के लिए उत्तर के साथ विषय और उससे जुड़ी बुनियादी जानकारी भी दोहराएँ।"],
-  ["भारत सामान्य ज्ञान","भारत का राष्ट्रीय जलीय जीव कौन-सा है?",["मगरमच्छ", "गंगा डॉल्फिन", "कछुआ", "नीली व्हेल"],1,"गंगा डॉल्फिन को भारत का राष्ट्रीय जलीय जीव घोषित किया गया है।"],
-  ["भारत सामान्य ज्ञान","भारत का राष्ट्रीय वृक्ष कौन-सा है?",["नीम", "पीपल", "बरगद", "सागौन"],2,"बरगद का पेड़ लंबे समय तक जीवित रहने और विशाल छाया के लिए जाना जाता है।"],
-  ["भारत सामान्य ज्ञान","भारत का राष्ट्रीय फल कौन-सा है?",["सेब", "आम", "केला", "अंगूर"],1,"आम भारत का राष्ट्रीय फल माना जाता है।"],
-  ["भारत सामान्य ज्ञान","भारत का राष्ट्रीय कैलेंडर किस संवत पर आधारित है?",["विक्रम संवत", "शक संवत", "हिजरी संवत", "ग्रेगोरियन संवत"],1,"भारत का राष्ट्रीय कैलेंडर शक संवत पर आधारित है।"],
-  ["भारत सामान्य ज्ञान","भारतीय रुपये का प्रतीक किसने डिजाइन किया?",["सत्यजीत रे", "डी. उदय कुमार", "एम. एफ. हुसैन", "रघु राय"],1,"रुपये का प्रतीक डी. उदय कुमार ने डिजाइन किया था।"],
-  ["भारत सामान्य ज्ञान","भारत का राष्ट्रीय आदर्श वाक्य क्या है?",["वसुधैव कुटुम्बकम्", "सत्यमेव जयते", "जय जवान जय किसान", "अहिंसा परमो धर्मः"],1,"सत्यमेव जयते का अर्थ है—सत्य की ही विजय होती है।"],
-  ["भारत सामान्य ज्ञान","भारत का राष्ट्रीय प्रतीक कहाँ से लिया गया है?",["सांची स्तूप से", "सारनाथ के अशोक स्तंभ से", "कुतुब मीनार से", "लाल किले से"],1,"राष्ट्रीय प्रतीक सारनाथ स्थित अशोक स्तंभ के सिंह शीर्ष से लिया गया है।"],
-  ["भारत सामान्य ज्ञान","भारत का पहला उपग्रह कौन-सा था?",["रोहिणी", "भास्कर", "आर्यभट्ट", "इनसैट-1A"],2,"आर्यभट्ट भारत का पहला उपग्रह था, जिसे 1975 में प्रक्षेपित किया गया।"],
-  ["भारत सामान्य ज्ञान","भारत की पहली महिला राष्ट्रपति कौन थीं?",["इंदिरा गांधी", "प्रतिभा पाटिल", "सरोजिनी नायडू", "द्रौपदी मुर्मू"],1,"प्रतिभा पाटिल भारत की पहली महिला राष्ट्रपति बनीं।"],
-  ["भारत सामान्य ज्ञान","भारत का सर्वोच्च न्यायालय कहाँ स्थित है?",["मुंबई", "कोलकाता", "नई दिल्ली", "चेन्नई"],2,"भारत का सर्वोच्च न्यायालय नई दिल्ली में स्थित है।"],
-  ["भारत सामान्य ज्ञान","भारतीय रेल का मुख्यालय कहाँ है?",["मुंबई", "नई दिल्ली", "चेन्नई", "कोलकाता"],1,"भारतीय रेल का मुख्यालय नई दिल्ली में है।"],
-  ["भारत सामान्य ज्ञान","भारत में सबसे लंबी तटरेखा वाला राज्य कौन-सा है?",["तमिलनाडु", "आंध्र प्रदेश", "गुजरात", "केरल"],2,"भारत के राज्यों में गुजरात की तटरेखा सबसे लंबी है।"],
-  ["भारत सामान्य ज्ञान","भारत का राष्ट्रीय ध्वज किस नाम से भी जाना जाता है?",["पंचरंगा", "तिरंगा", "ध्वजचक्र", "जनध्वज"],1,"भारतीय राष्ट्रीय ध्वज में तीन मुख्य रंगों की पट्टियाँ हैं, इसलिए इसे तिरंगा कहते हैं।"],
-  ["भारत सामान्य ज्ञान","अशोक चक्र में कितनी तीलियाँ होती हैं?",["12", "18", "24", "32"],2,"तिरंगे के अशोक चक्र में 24 तीलियाँ होती हैं।"],
-  ["भारत सामान्य ज्ञान","भारत का पहला परमाणु परीक्षण किस वर्ष हुआ?",["1962", "1971", "1974", "1998"],2,"भारत ने पोखरण में अपना पहला परमाणु परीक्षण 1974 में किया था।"],
-  ["इतिहास","दांडी मार्च किस वर्ष हुआ था?",["1920", "1930", "1942", "1946"],1,"महात्मा गांधी ने नमक कानून के विरोध में 1930 में दांडी मार्च किया।"],
-  ["इतिहास","चंपारण सत्याग्रह किस वर्ष हुआ था?",["1905", "1917", "1922", "1930"],1,"1917 का चंपारण सत्याग्रह गांधीजी के भारत में शुरुआती प्रमुख आंदोलनों में था।"],
-  ["इतिहास","भारतीय राष्ट्रीय कांग्रेस की स्थापना कब हुई?",["1857", "1885", "1905", "1919"],1,"भारतीय राष्ट्रीय कांग्रेस की स्थापना 1885 में हुई थी।"],
-  ["इतिहास","भारतीय राष्ट्रीय कांग्रेस के संस्थापक के रूप में किसका नाम जुड़ा है?",["ए. ओ. ह्यूम", "लॉर्ड कर्जन", "लॉर्ड माउंटबेटन", "वॉरेन हेस्टिंग्स"],0,"ए. ओ. ह्यूम ने कांग्रेस की स्थापना में प्रमुख भूमिका निभाई।"],
-  ["इतिहास","‘करो या मरो’ का नारा किस आंदोलन से जुड़ा है?",["असहयोग आंदोलन", "भारत छोड़ो आंदोलन", "स्वदेशी आंदोलन", "खिलाफत आंदोलन"],1,"गांधीजी ने 1942 के भारत छोड़ो आंदोलन में ‘करो या मरो’ का आह्वान किया।"],
-  ["इतिहास","साइमन कमीशन भारत कब आया?",["1919", "1922", "1928", "1935"],2,"साइमन कमीशन 1928 में भारत आया था।"],
-  ["इतिहास","लाल किला किस मुगल शासक ने बनवाया?",["बाबर", "अकबर", "शाहजहाँ", "औरंगज़ेब"],2,"शाहजहाँ ने दिल्ली में लाल किले का निर्माण करवाया।"],
-  ["इतिहास","फतेहपुर सीकरी का निर्माण किसने करवाया?",["हुमायूँ", "अकबर", "जहाँगीर", "शाहजहाँ"],1,"मुगल सम्राट अकबर ने फतेहपुर सीकरी को अपनी राजधानी के रूप में विकसित किया।"],
-  ["इतिहास","पानीपत का प्रथम युद्ध कब हुआ?",["1526", "1556", "1761", "1757"],0,"1526 के प्रथम पानीपत युद्ध में बाबर ने इब्राहिम लोदी को हराया।"],
-  ["इतिहास","प्लासी का युद्ध किस वर्ष हुआ?",["1707", "1757", "1764", "1857"],1,"1757 के प्लासी युद्ध के बाद बंगाल में ईस्ट इंडिया कंपनी का प्रभाव बढ़ा।"],
-  ["इतिहास","बक्सर का युद्ध किस वर्ष हुआ?",["1757", "1764", "1773", "1857"],1,"1764 के बक्सर युद्ध में ईस्ट इंडिया कंपनी की सेना ने संयुक्त भारतीय सेनाओं को हराया।"],
-  ["इतिहास","‘गीतांजलि’ के लेखक कौन हैं?",["बंकिमचंद्र चट्टोपाध्याय", "रवींद्रनाथ टैगोर", "मुंशी प्रेमचंद", "मैथिलीशरण गुप्त"],1,"रवींद्रनाथ टैगोर की ‘गीतांजलि’ को अंतरराष्ट्रीय ख्याति मिली और उन्हें नोबेल पुरस्कार मिला।"],
-  ["इतिहास","‘आनंदमठ’ उपन्यास किसने लिखा?",["रवींद्रनाथ टैगोर", "बंकिमचंद्र चट्टोपाध्याय", "भारतेंदु हरिश्चंद्र", "प्रेमचंद"],1,"‘वंदे मातरम्’ गीत बंकिमचंद्र चट्टोपाध्याय के उपन्यास ‘आनंदमठ’ में शामिल है।"],
-  ["इतिहास","स्वामी विवेकानंद ने शिकागो धर्म संसद में भाषण किस वर्ष दिया?",["1885", "1893", "1901", "1915"],1,"स्वामी विवेकानंद ने 1893 में शिकागो की विश्व धर्म संसद में भाषण दिया।"],
-  ["इतिहास","आर्य समाज की स्थापना किसने की?",["राजा राममोहन राय", "स्वामी दयानंद सरस्वती", "स्वामी विवेकानंद", "ईश्वरचंद्र विद्यासागर"],1,"स्वामी दयानंद सरस्वती ने 1875 में आर्य समाज की स्थापना की।"],
-  ["भूगोल","भारत की सबसे ऊँची चोटी जो पूरी तरह भारत में है, सामान्य GK में कौन-सी मानी जाती है?",["नंदा देवी", "अनामुडी", "गुरु शिखर", "धौलागिरि"],0,"नंदा देवी उत्तराखंड में स्थित एक प्रमुख ऊँची पर्वत चोटी है।"],
-  ["भूगोल","क्षेत्रफल के आधार पर विश्व का सबसे बड़ा देश कौन-सा है?",["कनाडा", "चीन", "रूस", "अमेरिका"],2,"रूस क्षेत्रफल के आधार पर विश्व का सबसे बड़ा देश है।"],
-  ["भूगोल","विश्व का सबसे छोटा महाद्वीप कौन-सा है?",["यूरोप", "ऑस्ट्रेलिया", "अंटार्कटिका", "दक्षिण अमेरिका"],1,"ऑस्ट्रेलिया को क्षेत्रफल के आधार पर सबसे छोटा महाद्वीप माना जाता है।"],
-  ["भूगोल","मिस्र से होकर कौन-सी प्रसिद्ध नदी बहती है?",["अमेज़न", "नील", "डेन्यूब", "यांग्त्से"],1,"नील नदी उत्तर-पूर्वी अफ्रीका से बहती है और मिस्र के इतिहास में महत्वपूर्ण रही है।"],
-  ["भूगोल","अमेज़न वर्षावन मुख्यतः किस महाद्वीप में है?",["अफ्रीका", "एशिया", "दक्षिण अमेरिका", "यूरोप"],2,"अमेज़न वर्षावन का अधिकांश हिस्सा दक्षिण अमेरिका में स्थित है।"],
-  ["भूगोल","भारत में सबसे अधिक वर्षा के लिए प्रसिद्ध स्थानों में कौन-सा शामिल है?",["जैसलमेर", "मौसिनराम", "लेह", "बीकानेर"],1,"मेघालय का मौसिनराम अत्यधिक औसत वर्षा के लिए प्रसिद्ध है।"],
-  ["भूगोल","भारत की मानक समय रेखा का देशांतर लगभग कितना है?",["68°7′ पूर्व", "82°30′ पूर्व", "97°25′ पूर्व", "23°30′ उत्तर"],1,"भारत का मानक समय 82°30′ पूर्व देशांतर पर आधारित है।"],
-  ["भूगोल","भारत की सबसे बड़ी खारे पानी की झील कौन-सी है?",["डल झील", "वुलर झील", "चिल्का झील", "लोकटक झील"],2,"ओडिशा की चिल्का झील एक विशाल खारे/अर्ध-खारे पानी की लैगून है।"],
-  ["भूगोल","लोकटक झील किस राज्य में है?",["असम", "मणिपुर", "मेघालय", "त्रिपुरा"],1,"लोकटक झील मणिपुर में स्थित है और अपने तैरते फुमदी द्वीपों के लिए जानी जाती है।"],
-  ["भूगोल","काजीरंगा राष्ट्रीय उद्यान किस राज्य में है?",["असम", "गुजरात", "राजस्थान", "केरल"],0,"काजीरंगा राष्ट्रीय उद्यान असम में है और एक सींग वाले गैंडे के लिए प्रसिद्ध है।"],
-  ["भूगोल","गिर राष्ट्रीय उद्यान किस राज्य में है?",["मध्य प्रदेश", "गुजरात", "कर्नाटक", "ओडिशा"],1,"गुजरात का गिर क्षेत्र एशियाई शेरों के लिए प्रसिद्ध है।"],
-  ["भूगोल","भारत का सबसे दक्षिणी केंद्रशासित द्वीपसमूह कौन-सा है?",["लक्षद्वीप", "अंडमान और निकोबार द्वीपसमूह", "दीव", "दमन"],1,"अंडमान और निकोबार द्वीपसमूह बंगाल की खाड़ी में स्थित है।"],
-  ["भूगोल","भाखड़ा नांगल बाँध किस नदी पर है?",["गंगा", "सतलुज", "महानदी", "कावेरी"],1,"भाखड़ा नांगल बाँध सतलुज नदी पर बनाया गया है।"],
-  ["विज्ञान","बल की SI इकाई क्या है?",["जूल", "न्यूटन", "पास्कल", "वाट"],1,"बल की SI इकाई न्यूटन है, जिसका नाम वैज्ञानिक आइज़ैक न्यूटन पर रखा गया।"],
-  ["विज्ञान","ऊर्जा की SI इकाई क्या है?",["वोल्ट", "जूल", "एम्पियर", "ओम"],1,"ऊर्जा और कार्य की SI इकाई जूल है।"],
-  ["विज्ञान","शक्ति की SI इकाई क्या है?",["वाट", "न्यूटन", "कूलॉम", "टेस्ला"],0,"शक्ति ऊर्जा के उपयोग या स्थानांतरण की दर है और इसकी इकाई वाट है।"],
-  ["विज्ञान","विद्युत प्रतिरोध की SI इकाई क्या है?",["एम्पियर", "ओम", "वोल्ट", "वाट"],1,"विद्युत प्रतिरोध की SI इकाई ओम है।"],
-  ["विज्ञान","मानव शरीर में भोजन का अधिकांश अवशोषण कहाँ होता है?",["आमाशय", "छोटी आँत", "बड़ी आँत", "ग्रासनली"],1,"छोटी आँत में पचे हुए पोषक तत्वों का अधिकांश अवशोषण होता है।"],
-  ["विज्ञान","इंसुलिन हार्मोन कौन-सा अंग बनाता है?",["यकृत", "अग्न्याशय", "गुर्दा", "थायरॉयड"],1,"अग्न्याशय की बीटा कोशिकाएँ इंसुलिन बनाती हैं, जो रक्त शर्करा नियंत्रित करने में मदद करता है।"],
-  ["विज्ञान","मानव शरीर का सामान्य तापमान लगभग कितना माना जाता है?",["30°C", "34°C", "37°C", "40°C"],2,"37°C को सामान्य औसत शरीर तापमान का पारंपरिक मान माना जाता है; वास्तविक तापमान थोड़ा बदल सकता है।"],
-  ["विज्ञान","विटामिन D का प्रमुख प्राकृतिक स्रोत क्या है?",["सूर्य का प्रकाश", "केवल नमक", "चीनी", "चावल"],0,"त्वचा सूर्य के UVB प्रकाश की मदद से विटामिन D बनाने में सक्षम होती है।"],
-  ["विज्ञान","पौधों में जल और खनिज मुख्यतः कौन-सा ऊतक पहुँचाता है?",["फ्लोएम", "जाइलम", "एपिडर्मिस", "क्लोरोफिल"],1,"जाइलम जड़ों से पानी और खनिजों को पौधे के अन्य भागों तक पहुँचाता है।"],
-  ["विज्ञान","पौधों में बना भोजन किस ऊतक से पहुँचता है?",["जाइलम", "फ्लोएम", "कॉर्क", "रंध्र"],1,"फ्लोएम पत्तियों में बने शर्करा जैसे पदार्थों को अन्य भागों तक पहुँचाता है।"],
-  ["विज्ञान","पृथ्वी का प्राकृतिक उपग्रह कौन है?",["मंगल", "चंद्रमा", "सूर्य", "शुक्र"],1,"चंद्रमा पृथ्वी का प्राकृतिक उपग्रह है।"],
-  ["विज्ञान","सौरमंडल में सूर्य से सबसे निकट ग्रह कौन-सा है?",["शुक्र", "बुध", "पृथ्वी", "मंगल"],1,"बुध सूर्य के सबसे निकट स्थित ग्रह है।"],
-  ["विज्ञान","किस ग्रह को सुबह का तारा या शाम का तारा कहा जाता है?",["मंगल", "शुक्र", "बृहस्पति", "बुध"],1,"शुक्र बहुत चमकीला दिखाई देता है और सूर्योदय से पहले या सूर्यास्त के बाद दिख सकता है।"],
-  ["विज्ञान","पृथ्वी के वायुमंडल में सबसे अधिक कौन-सी गैस है?",["ऑक्सीजन", "कार्बन डाइऑक्साइड", "नाइट्रोजन", "हाइड्रोजन"],2,"पृथ्वी के शुष्क वायुमंडल में लगभग 78 प्रतिशत नाइट्रोजन होती है।"],
-  ["विज्ञान","परमाणु के केंद्र को क्या कहते हैं?",["इलेक्ट्रॉन", "नाभिक", "कक्षा", "अणु"],1,"परमाणु के केंद्र में प्रोटॉन और न्यूट्रॉन वाला नाभिक होता है।"],
-  ["विज्ञान","pH मान 7 किस प्रकार के विलयन को दर्शाता है?",["अम्लीय", "क्षारीय", "उदासीन", "धात्विक"],2,"सामान्य जलीय परिस्थितियों में pH 7 उदासीनता दर्शाता है।"],
-  ["विज्ञान","लोहे पर जंग लगने के लिए मुख्यतः क्या आवश्यक है?",["केवल अंधेरा", "ऑक्सीजन और नमी", "केवल नाइट्रोजन", "केवल धूप"],1,"लोहे में जंग लगने की प्रक्रिया में ऑक्सीजन और पानी/नमी महत्वपूर्ण भूमिका निभाते हैं।"],
-  ["संविधान","भारतीय संविधान की प्रस्तावना किन शब्दों से शुरू होती है?",["जय हिंद", "हम, भारत के लोग", "सत्यमेव जयते", "भारत माता की जय"],1,"प्रस्तावना की शुरुआत ‘हम, भारत के लोग’ से होती है।"],
-  ["संविधान","संविधान में राज्य के नीति-निर्देशक तत्व किस भाग में हैं?",["भाग II", "भाग III", "भाग IV", "भाग V"],2,"राज्य के नीति-निर्देशक तत्व संविधान के भाग IV में दिए गए हैं।"],
-  ["संविधान","मौलिक कर्तव्य किस अनुच्छेद में दिए गए हैं?",["अनुच्छेद 14", "अनुच्छेद 21", "अनुच्छेद 32", "अनुच्छेद 51A"],3,"मौलिक कर्तव्य संविधान के अनुच्छेद 51A में वर्णित हैं।"],
-  ["संविधान","कानून के समक्ष समानता किस अनुच्छेद में है?",["अनुच्छेद 14", "अनुच्छेद 19", "अनुच्छेद 25", "अनुच्छेद 44"],0,"अनुच्छेद 14 कानून के समक्ष समानता और कानूनों के समान संरक्षण की बात करता है।"],
-  ["संविधान","जीवन और व्यक्तिगत स्वतंत्रता का अधिकार किस अनुच्छेद में है?",["अनुच्छेद 15", "अनुच्छेद 21", "अनुच्छेद 29", "अनुच्छेद 40"],1,"अनुच्छेद 21 जीवन और व्यक्तिगत स्वतंत्रता के संरक्षण से संबंधित है।"],
-  ["संविधान","भारत में चुनाव कराने वाली संवैधानिक संस्था कौन-सी है?",["वित्त आयोग", "निर्वाचन आयोग", "नीति आयोग", "संघ लोक सेवा आयोग"],1,"भारत का निर्वाचन आयोग संसद, राज्य विधानसभाओं तथा राष्ट्रपति-उपराष्ट्रपति के चुनावों का संचालन करता है।"],
-  ["संविधान","धन विधेयक सबसे पहले किस सदन में पेश होता है?",["राज्यसभा", "लोकसभा", "किसी भी सदन में", "सर्वोच्च न्यायालय"],1,"धन विधेयक केवल लोकसभा में राष्ट्रपति की सिफारिश पर पेश किया जाता है।"],
-  ["संविधान","भारत के नियंत्रक एवं महालेखा परीक्षक का संक्षिप्त नाम क्या है?",["CEC", "CAG", "AGI", "UPSC"],1,"CAG सरकारी खातों और सार्वजनिक धन के उपयोग का लेखा-परीक्षण करता है।"],
-  ["संविधान","पंचायती राज संस्थाओं को संवैधानिक दर्जा किस संशोधन से मिला?",["42वें संशोधन", "44वें संशोधन", "73वें संशोधन", "86वें संशोधन"],2,"73वें संविधान संशोधन ने पंचायती राज संस्थाओं को संवैधानिक आधार दिया।"],
-  ["संविधान","नगरपालिकाओं से संबंधित संविधान संशोधन कौन-सा है?",["52वाँ संशोधन", "61वाँ संशोधन", "74वाँ संशोधन", "91वाँ संशोधन"],2,"74वें संशोधन ने शहरी स्थानीय निकायों/नगरपालिकाओं को संवैधानिक मान्यता दी।"],
-  ["छत्तीसगढ़ GK","छत्तीसगढ़ की राजभाषा कौन-सी है?",["हिंदी", "मराठी", "गुजराती", "तमिल"],0,"छत्तीसगढ़ की आधिकारिक राजभाषा हिंदी है; छत्तीसगढ़ी भी व्यापक रूप से बोली जाती है।"],
-  ["छत्तीसगढ़ GK","छत्तीसगढ़ का राज्य स्थापना दिवस कब है?",["15 अगस्त", "1 नवंबर", "26 जनवरी", "2 अक्टूबर"],1,"छत्तीसगढ़ 1 नवंबर 2000 को मध्य प्रदेश से अलग होकर राज्य बना।"],
-  ["छत्तीसगढ़ GK","छत्तीसगढ़ में प्रसिद्ध भोरमदेव मंदिर किस जिले में है?",["कबीरधाम", "रायपुर", "कोरबा", "जांजगीर-चांपा"],0,"भोरमदेव मंदिर कबीरधाम जिले में स्थित ऐतिहासिक मंदिर समूह है।"],
-  ["छत्तीसगढ़ GK","गुरु घासीदास राष्ट्रीय उद्यान किस राज्य में है?",["मध्य प्रदेश", "छत्तीसगढ़", "ओडिशा", "झारखंड"],1,"गुरु घासीदास राष्ट्रीय उद्यान छत्तीसगढ़ के उत्तरी क्षेत्र में स्थित है।"],
-  ["छत्तीसगढ़ GK","मैनपाट किस जिले में स्थित है?",["सरगुजा", "बस्तर", "दुर्ग", "महासमुंद"],0,"मैनपाट सरगुजा जिले का पहाड़ी पर्यटन स्थल है, जिसे कभी-कभी छत्तीसगढ़ का शिमला भी कहा जाता है।"],
-  ["छत्तीसगढ़ GK","छत्तीसगढ़ की प्रमुख नदी शिवनाथ किसकी सहायक नदी है?",["गोदावरी", "महानदी", "नर्मदा", "तापी"],1,"शिवनाथ नदी महानदी की प्रमुख सहायक नदियों में से एक है।"],
-  ["छत्तीसगढ़ GK","दंतेश्वरी मंदिर कहाँ स्थित है?",["दंतेवाड़ा", "रायपुर", "बिलासपुर", "धमतरी"],0,"दंतेश्वरी मंदिर बस्तर क्षेत्र के दंतेवाड़ा में स्थित प्रसिद्ध शक्तिपीठ है।"],
-  ["छत्तीसगढ़ GK","छत्तीसगढ़ का प्रमुख लौह अयस्क क्षेत्र बैलाडीला कहाँ है?",["दंतेवाड़ा क्षेत्र", "रायपुर", "जशपुर", "कवर्धा"],0,"बैलाडीला की पहाड़ियाँ दंतेवाड़ा क्षेत्र में लौह अयस्क के लिए प्रसिद्ध हैं।"],
-  ["छत्तीसगढ़ GK","छत्तीसगढ़ का प्रसिद्ध लोकनृत्य राउत नाचा किस समुदाय से जुड़ा है?",["यादव/राउत समुदाय", "सतनामी समुदाय", "बैगा समुदाय", "पारधी समुदाय"],0,"राउत नाचा छत्तीसगढ़ में यादव या राउत समुदाय की पारंपरिक नृत्य शैली है।"],
-  ["छत्तीसगढ़ GK","छत्तीसगढ़ में तीरथगढ़ जलप्रपात किस राष्ट्रीय उद्यान क्षेत्र में है?",["कांगेर घाटी", "इंद्रावती", "अचानकमार", "गुरु घासीदास"],0,"तीरथगढ़ जलप्रपात बस्तर के कांगेर घाटी राष्ट्रीय उद्यान क्षेत्र में है।"],
-  ["छत्तीसगढ़ GK","अचानकमार टाइगर रिजर्व किस राज्य में है?",["महाराष्ट्र", "छत्तीसगढ़", "बिहार", "तेलंगाना"],1,"अचानकमार टाइगर रिजर्व छत्तीसगढ़ में स्थित है।"],
-  ["खेल","बैडमिंटन के एक गेम में सामान्यतः कितने अंक जीतने होते हैं?",["11", "15", "21", "25"],2,"आधुनिक बैडमिंटन में सामान्यतः 21 अंकों का गेम खेला जाता है, दो अंकों की बढ़त के नियम के साथ।"],
-  ["खेल","टेनिस में शून्य स्कोर के लिए कौन-सा शब्द इस्तेमाल होता है?",["निल", "लव", "डक", "जीरो पॉइंट"],1,"टेनिस में शून्य अंक को परंपरागत रूप से ‘लव’ कहा जाता है।"],
-  ["खेल","ओलंपिक खेलों का आयोजन करने वाली संस्था कौन-सी है?",["FIFA", "ICC", "अंतरराष्ट्रीय ओलंपिक समिति", "BCCI"],2,"अंतरराष्ट्रीय ओलंपिक समिति (IOC) ओलंपिक आंदोलन की प्रमुख संस्था है।"],
-  ["खेल","क्रिकेट में LBW का पूरा नाम क्या है?",["Long Bat Win", "Leg Before Wicket", "Last Ball Wide", "Leg By Wire"],1,"LBW क्रिकेट में आउट होने का एक तरीका है; इसका पूरा नाम Leg Before Wicket है।"],
-  ["खेल","हॉकी की एक टीम में मैदान पर कितने खिलाड़ी होते हैं?",["7", "9", "11", "12"],2,"फील्ड हॉकी में प्रत्येक टीम के 11 खिलाड़ी मैदान पर होते हैं।"],
-  ["खेल","फीफा किस खेल की अंतरराष्ट्रीय संस्था है?",["क्रिकेट", "फुटबॉल", "हॉकी", "टेनिस"],1,"FIFA विश्व स्तर पर फुटबॉल की प्रमुख अंतरराष्ट्रीय संस्था है।"],
-  ["कंप्यूटर","CSS का मुख्य उपयोग क्या है?",["वेब पेज की सजावट", "डेटाबेस मिटाना", "ईमेल भेजना", "ऑपरेटिंग सिस्टम बनाना"],0,"CSS वेब पेज के रंग, लेआउट, फॉन्ट और दृश्य रूप को नियंत्रित करता है।"],
-  ["कंप्यूटर","JavaScript का उपयोग आमतौर पर किसलिए किया जाता है?",["केवल चित्र छापने", "वेब पेज में इंटरैक्टिव व्यवहार", "कंप्यूटर को बिजली देने", "स्क्रीन साफ करने"],1,"JavaScript वेब पेज में बटन, क्विज़ और गतिशील व्यवहार जैसी सुविधाएँ जोड़ सकती है।"],
-  ["कंप्यूटर","डेटा को लंबे समय तक रखने वाला उपकरण कौन-सा है?",["RAM", "रजिस्टर", "SSD", "कैश"],2,"SSD एक स्थायी स्टोरेज उपकरण है; बिजली बंद होने पर भी इसमें डेटा बना रहता है।"],
-  ["कंप्यूटर","LAN का पूरा नाम क्या है?",["Large Access Node", "Local Area Network", "Linked Analog Network", "Long Area Number"],1,"LAN सीमित क्षेत्र जैसे घर, कार्यालय या स्कूल में कंप्यूटरों को जोड़ता है।"],
-  ["कंप्यूटर","फिशिंग किस प्रकार का खतरा है?",["कंप्यूटर ठंडा करना", "धोखे से निजी जानकारी चुराने की कोशिश", "फाइल प्रिंट करना", "नेटवर्क तेज करना"],1,"फिशिंग में नकली संदेश या वेबसाइट के जरिए पासवर्ड और अन्य संवेदनशील जानकारी लेने की कोशिश होती है।"],
-  ["कंप्यूटर","HTTPS में S का अर्थ क्या है?",["System", "Secure", "Service", "Source"],1,"HTTPS वेब संचार को TLS द्वारा एन्क्रिप्ट करने वाला HTTP का सुरक्षित रूप है।"],
-  ["कंप्यूटर","ओपन-सोर्स सॉफ्टवेयर का अर्थ क्या है?",["जो केवल इंटरनेट पर चलता है", "जिसका स्रोत कोड उपलब्ध लाइसेंस के तहत देखा/बदला जा सकता है", "जो हमेशा भुगतान वाला हो", "जो केवल मोबाइल में चले"],1,"ओपन-सोर्स सॉफ्टवेयर का स्रोत कोड लाइसेंस की शर्तों के अनुसार देखने, उपयोग करने या बदलने के लिए उपलब्ध होता है।"],
-  ["मिश्रित GK","विश्व पुस्तक दिवस कब मनाया जाता है?",["23 अप्रैल", "5 जून", "21 जून", "1 दिसंबर"],0,"विश्व पुस्तक और कॉपीराइट दिवस हर साल 23 अप्रैल को मनाया जाता है।"],
-  ["मिश्रित GK","अंतरराष्ट्रीय महिला दिवस कब मनाया जाता है?",["8 मार्च", "1 मई", "14 नवंबर", "10 दिसंबर"],0,"अंतरराष्ट्रीय महिला दिवस हर वर्ष 8 मार्च को मनाया जाता है।"],
-  ["मिश्रित GK","विश्व जल दिवस कब मनाया जाता है?",["22 मार्च", "22 अप्रैल", "5 जून", "16 सितंबर"],0,"विश्व जल दिवस हर साल 22 मार्च को मनाया जाता है।"],
-  ["मिश्रित GK","भारत में बाल दिवस कब मनाया जाता है?",["5 सितंबर", "14 नवंबर", "2 अक्टूबर", "26 जनवरी"],1,"भारत में 14 नवंबर को बाल दिवस मनाया जाता है; यह जवाहरलाल नेहरू की जयंती है।"],
-  ["मिश्रित GK","विश्व ओजोन दिवस कब मनाया जाता है?",["16 सितंबर", "5 जून", "24 अक्टूबर", "1 दिसंबर"],0,"ओजोन परत संरक्षण के लिए अंतरराष्ट्रीय दिवस 16 सितंबर को मनाया जाता है।"],
-  ["मिश्रित GK","संयुक्त राष्ट्र की स्थापना किस वर्ष हुई?",["1919", "1939", "1945", "1955"],2,"संयुक्त राष्ट्र की स्थापना 1945 में द्वितीय विश्व युद्ध के बाद हुई।"],
-  ["मिश्रित GK","UNESCO का मुख्यालय कहाँ है?",["लंदन", "पेरिस", "रोम", "न्यूयॉर्क"],1,"यूनेस्को का मुख्यालय पेरिस, फ्रांस में है।"],
-  ["मिश्रित GK","WHO का मुख्यालय कहाँ है?",["जिनेवा", "न्यूयॉर्क", "वियना", "दिल्ली"],0,"विश्व स्वास्थ्य संगठन का मुख्यालय जिनेवा, स्विट्जरलैंड में है।"],
-  ["मिश्रित GK","भारत में राष्ट्रीय विज्ञान दिवस कब मनाया जाता है?",["28 फरवरी", "5 जून", "15 अगस्त", "11 मई"],0,"राष्ट्रीय विज्ञान दिवस 28 फरवरी को रमन प्रभाव की खोज की स्मृति में मनाया जाता है।"],
-  ["मिश्रित GK","भारत में संविधान दिवस कब मनाया जाता है?",["26 जनवरी", "26 नवंबर", "15 अगस्त", "2 अक्टूबर"],1,"26 नवंबर को संविधान अपनाए जाने की याद में संविधान दिवस मनाया जाता है।"],
-  ["भारत सामान्य ज्ञान","पुनरावृत्ति प्रश्न: भारत का राष्ट्रीय जलीय जीव कौन-सा है?",["गंगा डॉल्फिन", "कछुआ", "नीली व्हेल", "मगरमच्छ"],0,"गंगा डॉल्फिन को भारत का राष्ट्रीय जलीय जीव घोषित किया गया है।"],
-  ["भारत सामान्य ज्ञान","पुनरावृत्ति प्रश्न: भारत का राष्ट्रीय वृक्ष कौन-सा है?",["बरगद", "सागौन", "नीम", "पीपल"],0,"बरगद का पेड़ लंबे समय तक जीवित रहने और विशाल छाया के लिए जाना जाता है।"],
-  ["भारत सामान्य ज्ञान","पुनरावृत्ति प्रश्न: भारत का राष्ट्रीय फल कौन-सा है?",["अंगूर", "सेब", "आम", "केला"],2,"आम भारत का राष्ट्रीय फल माना जाता है।"],
-  ["भारत सामान्य ज्ञान","पुनरावृत्ति प्रश्न: भारत का राष्ट्रीय कैलेंडर किस संवत पर आधारित है?",["शक संवत", "हिजरी संवत", "ग्रेगोरियन संवत", "विक्रम संवत"],0,"भारत का राष्ट्रीय कैलेंडर शक संवत पर आधारित है।"],
-  ["भारत सामान्य ज्ञान","पुनरावृत्ति प्रश्न: भारतीय रुपये का प्रतीक किसने डिजाइन किया?",["एम. एफ. हुसैन", "रघु राय", "सत्यजीत रे", "डी. उदय कुमार"],3,"रुपये का प्रतीक डी. उदय कुमार ने डिजाइन किया था।"],
-  ["भारत सामान्य ज्ञान","पुनरावृत्ति प्रश्न: भारत का राष्ट्रीय आदर्श वाक्य क्या है?",["अहिंसा परमो धर्मः", "वसुधैव कुटुम्बकम्", "सत्यमेव जयते", "जय जवान जय किसान"],2,"सत्यमेव जयते का अर्थ है—सत्य की ही विजय होती है।"],
-  ["भारत सामान्य ज्ञान","पुनरावृत्ति प्रश्न: भारत का राष्ट्रीय प्रतीक कहाँ से लिया गया है?",["सारनाथ के अशोक स्तंभ से", "कुतुब मीनार से", "लाल किले से", "सांची स्तूप से"],0,"राष्ट्रीय प्रतीक सारनाथ स्थित अशोक स्तंभ के सिंह शीर्ष से लिया गया है।"],
-  ["भारत सामान्य ज्ञान","पुनरावृत्ति प्रश्न: भारत का पहला उपग्रह कौन-सा था?",["आर्यभट्ट", "इनसैट-1A", "रोहिणी", "भास्कर"],0,"आर्यभट्ट भारत का पहला उपग्रह था, जिसे 1975 में प्रक्षेपित किया गया।"],
-  ["भारत सामान्य ज्ञान","पुनरावृत्ति प्रश्न: भारत की पहली महिला राष्ट्रपति कौन थीं?",["द्रौपदी मुर्मू", "इंदिरा गांधी", "प्रतिभा पाटिल", "सरोजिनी नायडू"],2,"प्रतिभा पाटिल भारत की पहली महिला राष्ट्रपति बनीं।"],
-  ["भारत सामान्य ज्ञान","पुनरावृत्ति प्रश्न: भारत का सर्वोच्च न्यायालय कहाँ स्थित है?",["कोलकाता", "नई दिल्ली", "चेन्नई", "मुंबई"],1,"भारत का सर्वोच्च न्यायालय नई दिल्ली में स्थित है।"],
-  ["भारत सामान्य ज्ञान","पुनरावृत्ति प्रश्न: भारतीय रेल का मुख्यालय कहाँ है?",["चेन्नई", "कोलकाता", "मुंबई", "नई दिल्ली"],3,"भारतीय रेल का मुख्यालय नई दिल्ली में है।"],
-  ["भारत सामान्य ज्ञान","पुनरावृत्ति प्रश्न: भारत में सबसे लंबी तटरेखा वाला राज्य कौन-सा है?",["केरल", "तमिलनाडु", "आंध्र प्रदेश", "गुजरात"],3,"भारत के राज्यों में गुजरात की तटरेखा सबसे लंबी है।"],
-  ["भारत सामान्य ज्ञान","पुनरावृत्ति प्रश्न: भारत का राष्ट्रीय ध्वज किस नाम से भी जाना जाता है?",["तिरंगा", "ध्वजचक्र", "जनध्वज", "पंचरंगा"],0,"भारतीय राष्ट्रीय ध्वज में तीन मुख्य रंगों की पट्टियाँ हैं, इसलिए इसे तिरंगा कहते हैं।"],
-  ["भारत सामान्य ज्ञान","पुनरावृत्ति प्रश्न: अशोक चक्र में कितनी तीलियाँ होती हैं?",["24", "32", "12", "18"],0,"तिरंगे के अशोक चक्र में 24 तीलियाँ होती हैं।"],
-  ["भारत सामान्य ज्ञान","पुनरावृत्ति प्रश्न: भारत का पहला परमाणु परीक्षण किस वर्ष हुआ?",["1998", "1962", "1971", "1974"],3,"भारत ने पोखरण में अपना पहला परमाणु परीक्षण 1974 में किया था।"],
-  ["इतिहास","पुनरावृत्ति प्रश्न: दांडी मार्च किस वर्ष हुआ था?",["1930", "1942", "1946", "1920"],0,"महात्मा गांधी ने नमक कानून के विरोध में 1930 में दांडी मार्च किया।"],
-  ["इतिहास","पुनरावृत्ति प्रश्न: चंपारण सत्याग्रह किस वर्ष हुआ था?",["1922", "1930", "1905", "1917"],3,"1917 का चंपारण सत्याग्रह गांधीजी के भारत में शुरुआती प्रमुख आंदोलनों में था।"],
-  ["इतिहास","पुनरावृत्ति प्रश्न: भारतीय राष्ट्रीय कांग्रेस की स्थापना कब हुई?",["1919", "1857", "1885", "1905"],2,"भारतीय राष्ट्रीय कांग्रेस की स्थापना 1885 में हुई थी।"],
-  ["इतिहास","पुनरावृत्ति प्रश्न: भारतीय राष्ट्रीय कांग्रेस के संस्थापक के रूप में किसका नाम जुड़ा है?",["लॉर्ड कर्जन", "लॉर्ड माउंटबेटन", "वॉरेन हेस्टिंग्स", "ए. ओ. ह्यूम"],3,"ए. ओ. ह्यूम ने कांग्रेस की स्थापना में प्रमुख भूमिका निभाई।"],
-  ["इतिहास","पुनरावृत्ति प्रश्न: ‘करो या मरो’ का नारा किस आंदोलन से जुड़ा है?",["स्वदेशी आंदोलन", "खिलाफत आंदोलन", "असहयोग आंदोलन", "भारत छोड़ो आंदोलन"],3,"गांधीजी ने 1942 के भारत छोड़ो आंदोलन में ‘करो या मरो’ का आह्वान किया।"],
-  ["इतिहास","पुनरावृत्ति प्रश्न: साइमन कमीशन भारत कब आया?",["1935", "1919", "1922", "1928"],3,"साइमन कमीशन 1928 में भारत आया था।"],
-  ["इतिहास","पुनरावृत्ति प्रश्न: लाल किला किस मुगल शासक ने बनवाया?",["अकबर", "शाहजहाँ", "औरंगज़ेब", "बाबर"],1,"शाहजहाँ ने दिल्ली में लाल किले का निर्माण करवाया।"],
-  ["इतिहास","पुनरावृत्ति प्रश्न: फतेहपुर सीकरी का निर्माण किसने करवाया?",["जहाँगीर", "शाहजहाँ", "हुमायूँ", "अकबर"],3,"मुगल सम्राट अकबर ने फतेहपुर सीकरी को अपनी राजधानी के रूप में विकसित किया।"],
-  ["इतिहास","पुनरावृत्ति प्रश्न: पानीपत का प्रथम युद्ध कब हुआ?",["1757", "1526", "1556", "1761"],1,"1526 के प्रथम पानीपत युद्ध में बाबर ने इब्राहिम लोदी को हराया।"],
-  ["इतिहास","पुनरावृत्ति प्रश्न: प्लासी का युद्ध किस वर्ष हुआ?",["1757", "1764", "1857", "1707"],0,"1757 के प्लासी युद्ध के बाद बंगाल में ईस्ट इंडिया कंपनी का प्रभाव बढ़ा।"],
-  ["इतिहास","पुनरावृत्ति प्रश्न: बक्सर का युद्ध किस वर्ष हुआ?",["1773", "1857", "1757", "1764"],3,"1764 के बक्सर युद्ध में ईस्ट इंडिया कंपनी की सेना ने संयुक्त भारतीय सेनाओं को हराया।"],
-  ["इतिहास","पुनरावृत्ति प्रश्न: ‘गीतांजलि’ के लेखक कौन हैं?",["मैथिलीशरण गुप्त", "बंकिमचंद्र चट्टोपाध्याय", "रवींद्रनाथ टैगोर", "मुंशी प्रेमचंद"],2,"रवींद्रनाथ टैगोर की ‘गीतांजलि’ को अंतरराष्ट्रीय ख्याति मिली और उन्हें नोबेल पुरस्कार मिला।"],
-  ["इतिहास","GK अभ्यास: ‘आनंदमठ’ उपन्यास किसने लिखा? — सही उत्तर चुनिए।",["बंकिमचंद्र चट्टोपाध्याय", "भारतेंदु हरिश्चंद्र", "प्रेमचंद", "रवींद्रनाथ टैगोर"],0,"‘वंदे मातरम्’ गीत बंकिमचंद्र चट्टोपाध्याय के उपन्यास ‘आनंदमठ’ में शामिल है।"],
-  ["इतिहास","GK अभ्यास: स्वामी विवेकानंद ने शिकागो धर्म संसद में भाषण किस वर्ष दिया? — सही उत्तर चुनिए।",["1901", "1915", "1885", "1893"],3,"स्वामी विवेकानंद ने 1893 में शिकागो की विश्व धर्म संसद में भाषण दिया।"],
-  ["इतिहास","GK अभ्यास: आर्य समाज की स्थापना किसने की? — सही उत्तर चुनिए।",["ईश्वरचंद्र विद्यासागर", "राजा राममोहन राय", "स्वामी दयानंद सरस्वती", "स्वामी विवेकानंद"],2,"स्वामी दयानंद सरस्वती ने 1875 में आर्य समाज की स्थापना की।"],
-  ["भूगोल","GK अभ्यास: भारत की सबसे ऊँची चोटी जो पूरी तरह भारत में है, सामान्य GK में कौन-सी मानी जाती है? — सही उत्तर चुनिए।",["अनामुडी", "गुरु शिखर", "धौलागिरि", "नंदा देवी"],3,"नंदा देवी उत्तराखंड में स्थित एक प्रमुख ऊँची पर्वत चोटी है।"],
-  ["भूगोल","GK अभ्यास: क्षेत्रफल के आधार पर विश्व का सबसे बड़ा देश कौन-सा है? — सही उत्तर चुनिए।",["रूस", "अमेरिका", "कनाडा", "चीन"],0,"रूस क्षेत्रफल के आधार पर विश्व का सबसे बड़ा देश है।"],
-  ["भूगोल","GK अभ्यास: विश्व का सबसे छोटा महाद्वीप कौन-सा है? — सही उत्तर चुनिए।",["दक्षिण अमेरिका", "यूरोप", "ऑस्ट्रेलिया", "अंटार्कटिका"],2,"ऑस्ट्रेलिया को क्षेत्रफल के आधार पर सबसे छोटा महाद्वीप माना जाता है।"],
-  ["भूगोल","GK अभ्यास: मिस्र से होकर कौन-सी प्रसिद्ध नदी बहती है? — सही उत्तर चुनिए।",["नील", "डेन्यूब", "यांग्त्से", "अमेज़न"],0,"नील नदी उत्तर-पूर्वी अफ्रीका से बहती है और मिस्र के इतिहास में महत्वपूर्ण रही है।"],
-  ["भूगोल","GK अभ्यास: अमेज़न वर्षावन मुख्यतः किस महाद्वीप में है? — सही उत्तर चुनिए।",["दक्षिण अमेरिका", "यूरोप", "अफ्रीका", "एशिया"],0,"अमेज़न वर्षावन का अधिकांश हिस्सा दक्षिण अमेरिका में स्थित है।"],
-  ["भूगोल","GK अभ्यास: भारत में सबसे अधिक वर्षा के लिए प्रसिद्ध स्थानों में कौन-सा शामिल है? — सही उत्तर चुनिए।",["बीकानेर", "जैसलमेर", "मौसिनराम", "लेह"],2,"मेघालय का मौसिनराम अत्यधिक औसत वर्षा के लिए प्रसिद्ध है।"],
-  ["भूगोल","GK अभ्यास: भारत की मानक समय रेखा का देशांतर लगभग कितना है? — सही उत्तर चुनिए।",["82°30′ पूर्व", "97°25′ पूर्व", "23°30′ उत्तर", "68°7′ पूर्व"],0,"भारत का मानक समय 82°30′ पूर्व देशांतर पर आधारित है।"],
-  ["भूगोल","GK अभ्यास: भारत की सबसे बड़ी खारे पानी की झील कौन-सी है? — सही उत्तर चुनिए।",["चिल्का झील", "लोकटक झील", "डल झील", "वुलर झील"],0,"ओडिशा की चिल्का झील एक विशाल खारे/अर्ध-खारे पानी की लैगून है।"],
-  ["भूगोल","GK अभ्यास: लोकटक झील किस राज्य में है? — सही उत्तर चुनिए।",["त्रिपुरा", "असम", "मणिपुर", "मेघालय"],2,"लोकटक झील मणिपुर में स्थित है और अपने तैरते फुमदी द्वीपों के लिए जानी जाती है।"],
-  ["भूगोल","GK अभ्यास: काजीरंगा राष्ट्रीय उद्यान किस राज्य में है? — सही उत्तर चुनिए।",["गुजरात", "राजस्थान", "केरल", "असम"],3,"काजीरंगा राष्ट्रीय उद्यान असम में है और एक सींग वाले गैंडे के लिए प्रसिद्ध है।"],
-  ["भूगोल","GK अभ्यास: गिर राष्ट्रीय उद्यान किस राज्य में है? — सही उत्तर चुनिए।",["कर्नाटक", "ओडिशा", "मध्य प्रदेश", "गुजरात"],3,"गुजरात का गिर क्षेत्र एशियाई शेरों के लिए प्रसिद्ध है।"],
-  ["भूगोल","GK अभ्यास: भारत का सबसे दक्षिणी केंद्रशासित द्वीपसमूह कौन-सा है? — सही उत्तर चुनिए।",["दमन", "लक्षद्वीप", "अंडमान और निकोबार द्वीपसमूह", "दीव"],2,"अंडमान और निकोबार द्वीपसमूह बंगाल की खाड़ी में स्थित है।"],
-  ["भूगोल","GK अभ्यास: भाखड़ा नांगल बाँध किस नदी पर है? — सही उत्तर चुनिए।",["सतलुज", "महानदी", "कावेरी", "गंगा"],0,"भाखड़ा नांगल बाँध सतलुज नदी पर बनाया गया है।"],
-  ["विज्ञान","GK अभ्यास: बल की SI इकाई क्या है? — सही उत्तर चुनिए।",["पास्कल", "वाट", "जूल", "न्यूटन"],3,"बल की SI इकाई न्यूटन है, जिसका नाम वैज्ञानिक आइज़ैक न्यूटन पर रखा गया।"],
-  ["विज्ञान","GK अभ्यास: ऊर्जा की SI इकाई क्या है? — सही उत्तर चुनिए।",["ओम", "वोल्ट", "जूल", "एम्पियर"],2,"ऊर्जा और कार्य की SI इकाई जूल है।"],
-  ["विज्ञान","GK अभ्यास: शक्ति की SI इकाई क्या है? — सही उत्तर चुनिए।",["न्यूटन", "कूलॉम", "टेस्ला", "वाट"],3,"शक्ति ऊर्जा के उपयोग या स्थानांतरण की दर है और इसकी इकाई वाट है।"],
-  ["विज्ञान","GK अभ्यास: विद्युत प्रतिरोध की SI इकाई क्या है? — सही उत्तर चुनिए।",["वोल्ट", "वाट", "एम्पियर", "ओम"],3,"विद्युत प्रतिरोध की SI इकाई ओम है।"],
-  ["विज्ञान","GK अभ्यास: मानव शरीर में भोजन का अधिकांश अवशोषण कहाँ होता है? — सही उत्तर चुनिए।",["ग्रासनली", "आमाशय", "छोटी आँत", "बड़ी आँत"],2,"छोटी आँत में पचे हुए पोषक तत्वों का अधिकांश अवशोषण होता है।"],
-  ["विज्ञान","GK अभ्यास: इंसुलिन हार्मोन कौन-सा अंग बनाता है? — सही उत्तर चुनिए।",["अग्न्याशय", "गुर्दा", "थायरॉयड", "यकृत"],0,"अग्न्याशय की बीटा कोशिकाएँ इंसुलिन बनाती हैं, जो रक्त शर्करा नियंत्रित करने में मदद करता है।"],
-  ["विज्ञान","GK अभ्यास: मानव शरीर का सामान्य तापमान लगभग कितना माना जाता है? — सही उत्तर चुनिए।",["37°C", "40°C", "30°C", "34°C"],0,"37°C को सामान्य औसत शरीर तापमान का पारंपरिक मान माना जाता है; वास्तविक तापमान थोड़ा बदल सकता है।"],
-  ["विज्ञान","GK अभ्यास: विटामिन D का प्रमुख प्राकृतिक स्रोत क्या है? — सही उत्तर चुनिए।",["चावल", "सूर्य का प्रकाश", "केवल नमक", "चीनी"],1,"त्वचा सूर्य के UVB प्रकाश की मदद से विटामिन D बनाने में सक्षम होती है।"],
-  ["विज्ञान","GK अभ्यास: पौधों में जल और खनिज मुख्यतः कौन-सा ऊतक पहुँचाता है? — सही उत्तर चुनिए।",["जाइलम", "एपिडर्मिस", "क्लोरोफिल", "फ्लोएम"],0,"जाइलम जड़ों से पानी और खनिजों को पौधे के अन्य भागों तक पहुँचाता है।"],
-  ["विज्ञान","GK अभ्यास: पौधों में बना भोजन किस ऊतक से पहुँचता है? — सही उत्तर चुनिए।",["कॉर्क", "रंध्र", "जाइलम", "फ्लोएम"],3,"फ्लोएम पत्तियों में बने शर्करा जैसे पदार्थों को अन्य भागों तक पहुँचाता है।"],
-  ["विज्ञान","GK अभ्यास: पृथ्वी का प्राकृतिक उपग्रह कौन है? — सही उत्तर चुनिए।",["शुक्र", "मंगल", "चंद्रमा", "सूर्य"],2,"चंद्रमा पृथ्वी का प्राकृतिक उपग्रह है।"],
-  ["विज्ञान","ज्ञान जाँच: सौरमंडल में सूर्य से सबसे निकट ग्रह कौन-सा है? इसका सही विकल्प क्या है?",["बुध", "पृथ्वी", "मंगल", "शुक्र"],0,"बुध सूर्य के सबसे निकट स्थित ग्रह है।"],
-  ["विज्ञान","ज्ञान जाँच: किस ग्रह को सुबह का तारा या शाम का तारा कहा जाता है? इसका सही विकल्प क्या है?",["बृहस्पति", "बुध", "मंगल", "शुक्र"],3,"शुक्र बहुत चमकीला दिखाई देता है और सूर्योदय से पहले या सूर्यास्त के बाद दिख सकता है।"],
-  ["विज्ञान","ज्ञान जाँच: पृथ्वी के वायुमंडल में सबसे अधिक कौन-सी गैस है? इसका सही विकल्प क्या है?",["हाइड्रोजन", "ऑक्सीजन", "कार्बन डाइऑक्साइड", "नाइट्रोजन"],3,"पृथ्वी के शुष्क वायुमंडल में लगभग 78 प्रतिशत नाइट्रोजन होती है।"],
-  ["विज्ञान","ज्ञान जाँच: परमाणु के केंद्र को क्या कहते हैं? इसका सही विकल्प क्या है?",["नाभिक", "कक्षा", "अणु", "इलेक्ट्रॉन"],0,"परमाणु के केंद्र में प्रोटॉन और न्यूट्रॉन वाला नाभिक होता है।"],
-  ["विज्ञान","ज्ञान जाँच: pH मान 7 किस प्रकार के विलयन को दर्शाता है? इसका सही विकल्प क्या है?",["उदासीन", "धात्विक", "अम्लीय", "क्षारीय"],0,"सामान्य जलीय परिस्थितियों में pH 7 उदासीनता दर्शाता है।"],
-  ["विज्ञान","ज्ञान जाँच: लोहे पर जंग लगने के लिए मुख्यतः क्या आवश्यक है? इसका सही विकल्प क्या है?",["केवल धूप", "केवल अंधेरा", "ऑक्सीजन और नमी", "केवल नाइट्रोजन"],2,"लोहे में जंग लगने की प्रक्रिया में ऑक्सीजन और पानी/नमी महत्वपूर्ण भूमिका निभाते हैं।"],
-  ["संविधान","ज्ञान जाँच: भारतीय संविधान की प्रस्तावना किन शब्दों से शुरू होती है? इसका सही विकल्प क्या है?",["हम, भारत के लोग", "सत्यमेव जयते", "भारत माता की जय", "जय हिंद"],0,"प्रस्तावना की शुरुआत ‘हम, भारत के लोग’ से होती है।"],
-  ["संविधान","ज्ञान जाँच: संविधान में राज्य के नीति-निर्देशक तत्व किस भाग में हैं? इसका सही विकल्प क्या है?",["भाग IV", "भाग V", "भाग II", "भाग III"],0,"राज्य के नीति-निर्देशक तत्व संविधान के भाग IV में दिए गए हैं।"],
-  ["संविधान","ज्ञान जाँच: मौलिक कर्तव्य किस अनुच्छेद में दिए गए हैं? इसका सही विकल्प क्या है?",["अनुच्छेद 51A", "अनुच्छेद 14", "अनुच्छेद 21", "अनुच्छेद 32"],0,"मौलिक कर्तव्य संविधान के अनुच्छेद 51A में वर्णित हैं।"],
-  ["संविधान","ज्ञान जाँच: कानून के समक्ष समानता किस अनुच्छेद में है? इसका सही विकल्प क्या है?",["अनुच्छेद 19", "अनुच्छेद 25", "अनुच्छेद 44", "अनुच्छेद 14"],3,"अनुच्छेद 14 कानून के समक्ष समानता और कानूनों के समान संरक्षण की बात करता है।"],
-  ["संविधान","ज्ञान जाँच: जीवन और व्यक्तिगत स्वतंत्रता का अधिकार किस अनुच्छेद में है? इसका सही विकल्प क्या है?",["अनुच्छेद 29", "अनुच्छेद 40", "अनुच्छेद 15", "अनुच्छेद 21"],3,"अनुच्छेद 21 जीवन और व्यक्तिगत स्वतंत्रता के संरक्षण से संबंधित है।"],
-  ["संविधान","ज्ञान जाँच: भारत में चुनाव कराने वाली संवैधानिक संस्था कौन-सी है? इसका सही विकल्प क्या है?",["संघ लोक सेवा आयोग", "वित्त आयोग", "निर्वाचन आयोग", "नीति आयोग"],2,"भारत का निर्वाचन आयोग संसद, राज्य विधानसभाओं तथा राष्ट्रपति-उपराष्ट्रपति के चुनावों का संचालन करता है।"],
-  ["संविधान","ज्ञान जाँच: धन विधेयक सबसे पहले किस सदन में पेश होता है? इसका सही विकल्प क्या है?",["लोकसभा", "किसी भी सदन में", "सर्वोच्च न्यायालय", "राज्यसभा"],0,"धन विधेयक केवल लोकसभा में राष्ट्रपति की सिफारिश पर पेश किया जाता है।"],
-  ["संविधान","ज्ञान जाँच: भारत के नियंत्रक एवं महालेखा परीक्षक का संक्षिप्त नाम क्या है? इसका सही विकल्प क्या है?",["AGI", "UPSC", "CEC", "CAG"],3,"CAG सरकारी खातों और सार्वजनिक धन के उपयोग का लेखा-परीक्षण करता है।"],
-  ["संविधान","ज्ञान जाँच: पंचायती राज संस्थाओं को संवैधानिक दर्जा किस संशोधन से मिला? इसका सही विकल्प क्या है?",["86वें संशोधन", "42वें संशोधन", "44वें संशोधन", "73वें संशोधन"],3,"73वें संविधान संशोधन ने पंचायती राज संस्थाओं को संवैधानिक आधार दिया।"],
-  ["संविधान","ज्ञान जाँच: नगरपालिकाओं से संबंधित संविधान संशोधन कौन-सा है? इसका सही विकल्प क्या है?",["61वाँ संशोधन", "74वाँ संशोधन", "91वाँ संशोधन", "52वाँ संशोधन"],1,"74वें संशोधन ने शहरी स्थानीय निकायों/नगरपालिकाओं को संवैधानिक मान्यता दी।"],
-  ["छत्तीसगढ़ GK","ज्ञान जाँच: छत्तीसगढ़ की राजभाषा कौन-सी है? इसका सही विकल्प क्या है?",["गुजराती", "तमिल", "हिंदी", "मराठी"],2,"छत्तीसगढ़ की आधिकारिक राजभाषा हिंदी है; छत्तीसगढ़ी भी व्यापक रूप से बोली जाती है।"],
-  ["छत्तीसगढ़ GK","ज्ञान जाँच: छत्तीसगढ़ का राज्य स्थापना दिवस कब है? इसका सही विकल्प क्या है?",["2 अक्टूबर", "15 अगस्त", "1 नवंबर", "26 जनवरी"],2,"छत्तीसगढ़ 1 नवंबर 2000 को मध्य प्रदेश से अलग होकर राज्य बना।"],
-  ["छत्तीसगढ़ GK","ज्ञान जाँच: छत्तीसगढ़ में प्रसिद्ध भोरमदेव मंदिर किस जिले में है? इसका सही विकल्प क्या है?",["रायपुर", "कोरबा", "जांजगीर-चांपा", "कबीरधाम"],3,"भोरमदेव मंदिर कबीरधाम जिले में स्थित ऐतिहासिक मंदिर समूह है।"],
-  ["छत्तीसगढ़ GK","ज्ञान जाँच: गुरु घासीदास राष्ट्रीय उद्यान किस राज्य में है? इसका सही विकल्प क्या है?",["ओडिशा", "झारखंड", "मध्य प्रदेश", "छत्तीसगढ़"],3,"गुरु घासीदास राष्ट्रीय उद्यान छत्तीसगढ़ के उत्तरी क्षेत्र में स्थित है।"],
-  ["छत्तीसगढ़ GK","ज्ञान जाँच: मैनपाट किस जिले में स्थित है? इसका सही विकल्प क्या है?",["महासमुंद", "सरगुजा", "बस्तर", "दुर्ग"],1,"मैनपाट सरगुजा जिले का पहाड़ी पर्यटन स्थल है, जिसे कभी-कभी छत्तीसगढ़ का शिमला भी कहा जाता है।"],
-  ["छत्तीसगढ़ GK","ज्ञान जाँच: छत्तीसगढ़ की प्रमुख नदी शिवनाथ किसकी सहायक नदी है? इसका सही विकल्प क्या है?",["महानदी", "नर्मदा", "तापी", "गोदावरी"],0,"शिवनाथ नदी महानदी की प्रमुख सहायक नदियों में से एक है।"],
-  ["छत्तीसगढ़ GK","ज्ञान जाँच: दंतेश्वरी मंदिर कहाँ स्थित है? इसका सही विकल्प क्या है?",["बिलासपुर", "धमतरी", "दंतेवाड़ा", "रायपुर"],2,"दंतेश्वरी मंदिर बस्तर क्षेत्र के दंतेवाड़ा में स्थित प्रसिद्ध शक्तिपीठ है।"],
-  ["छत्तीसगढ़ GK","ज्ञान जाँच: छत्तीसगढ़ का प्रमुख लौह अयस्क क्षेत्र बैलाडीला कहाँ है? इसका सही विकल्प क्या है?",["कवर्धा", "दंतेवाड़ा क्षेत्र", "रायपुर", "जशपुर"],1,"बैलाडीला की पहाड़ियाँ दंतेवाड़ा क्षेत्र में लौह अयस्क के लिए प्रसिद्ध हैं।"],
-  ["छत्तीसगढ़ GK","ज्ञान जाँच: छत्तीसगढ़ का प्रसिद्ध लोकनृत्य राउत नाचा किस समुदाय से जुड़ा है? इसका सही विकल्प क्या है?",["सतनामी समुदाय", "बैगा समुदाय", "पारधी समुदाय", "यादव/राउत समुदाय"],3,"राउत नाचा छत्तीसगढ़ में यादव या राउत समुदाय की पारंपरिक नृत्य शैली है।"],
-  ["छत्तीसगढ़ GK","ज्ञान जाँच: छत्तीसगढ़ में तीरथगढ़ जलप्रपात किस राष्ट्रीय उद्यान क्षेत्र में है? इसका सही विकल्प क्या है?",["अचानकमार", "गुरु घासीदास", "कांगेर घाटी", "इंद्रावती"],2,"तीरथगढ़ जलप्रपात बस्तर के कांगेर घाटी राष्ट्रीय उद्यान क्षेत्र में है।"],
-  ["छत्तीसगढ़ GK","ज्ञान जाँच: अचानकमार टाइगर रिजर्व किस राज्य में है? इसका सही विकल्प क्या है?",["तेलंगाना", "महाराष्ट्र", "छत्तीसगढ़", "बिहार"],2,"अचानकमार टाइगर रिजर्व छत्तीसगढ़ में स्थित है।"]
+const questions = [
+{category:"india",q:"भारत की राजधानी क्या है?",o:["मुंबई","नई दिल्ली","जयपुर","लखनऊ"],a:1,e:"भारत की राजधानी नई दिल्ली है।"},
+{category:"india",q:"भारत का राष्ट्रीय पशु कौन है?",o:["शेर","हाथी","बाघ","तेंदुआ"],a:2,e:"भारत का राष्ट्रीय पशु बाघ है।"},
+{category:"india",q:"भारत का राष्ट्रीय पक्षी कौन है?",o:["तोता","मोर","कबूतर","हंस"],a:1,e:"भारत का राष्ट्रीय पक्षी मोर है।"},
+{category:"india",q:"भारत का स्वतंत्रता दिवस कब मनाया जाता है?",o:["26 जनवरी","2 अक्टूबर","15 अगस्त","14 नवंबर"],a:2,e:"15 अगस्त को स्वतंत्रता दिवस मनाया जाता है।"},
+{category:"india",q:"भारत का राष्ट्रीय गान किसने लिखा?",o:["रवींद्रनाथ टैगोर","प्रेमचंद","बंकिमचंद्र चट्टोपाध्याय","महादेवी वर्मा"],a:0,e:"जन गण मन रवींद्रनाथ टैगोर ने लिखा।"},
+{category:"history",q:"भारत को स्वतंत्रता किस वर्ष मिली?",o:["1942","1945","1947","1950"],a:2,e:"भारत 1947 में स्वतंत्र हुआ।"},
+{category:"history",q:"महात्मा गांधी का जन्म कब हुआ?",o:["2 अक्टूबर 1869","15 अगस्त 1872","26 जनवरी 1865","14 नवंबर 1889"],a:0,e:"महात्मा गांधी का जन्म 2 अक्टूबर 1869 को हुआ।"},
+{category:"history",q:"भारत छोड़ो आंदोलन किस वर्ष शुरू हुआ?",o:["1930","1942","1946","1920"],a:1,e:"भारत छोड़ो आंदोलन 1942 में शुरू हुआ।"},
+{category:"history",q:"ताजमहल किसने बनवाया?",o:["अकबर","बाबर","शाहजहाँ","जहाँगीर"],a:2,e:"ताजमहल मुगल सम्राट शाहजहाँ ने बनवाया।"},
+{category:"history",q:"भारत के प्रथम प्रधानमंत्री कौन थे?",o:["सरदार पटेल","जवाहरलाल नेहरू","डॉ. राजेंद्र प्रसाद","लाल बहादुर शास्त्री"],a:1,e:"जवाहरलाल नेहरू भारत के प्रथम प्रधानमंत्री थे।"},
+{category:"geography",q:"विश्व का सबसे बड़ा महासागर कौन-सा है?",o:["हिंद","अटलांटिक","प्रशांत","आर्कटिक"],a:2,e:"प्रशांत महासागर क्षेत्रफल में सबसे बड़ा है।"},
+{category:"geography",q:"क्षेत्रफल के आधार पर विश्व का सबसे बड़ा देश कौन है?",o:["चीन","कनाडा","रूस","अमेरिका"],a:2,e:"रूस क्षेत्रफल के आधार पर सबसे बड़ा देश है।"},
+{category:"geography",q:"भारत के उत्तर में कौन-सी पर्वतमाला है?",o:["अरावली","हिमालय","सतपुड़ा","नीलगिरि"],a:1,e:"हिमालय भारत के उत्तरी भाग में स्थित है।"},
+{category:"geography",q:"भारत की सबसे लंबी नदी प्रणाली कौन-सी है?",o:["गंगा","नर्मदा","कावेरी","ताप्ती"],a:0,e:"गंगा नदी प्रणाली भारत की प्रमुख और सबसे लंबी नदी प्रणालियों में से है।"},
+{category:"geography",q:"रेगिस्तान में सामान्यतः वर्षा कैसी होती है?",o:["बहुत अधिक","कम","रोज़ भारी","लगातार"],a:1,e:"रेगिस्तानी क्षेत्रों में वर्षा बहुत कम होती है।"},
+{category:"science",q:"पानी का रासायनिक सूत्र क्या है?",o:["CO₂","O₂","H₂O","NaCl"],a:2,e:"पानी का रासायनिक सूत्र H₂O है।"},
+{category:"science",q:"पौधे भोजन किस प्रक्रिया से बनाते हैं?",o:["श्वसन","प्रकाश संश्लेषण","पाचन","वाष्पीकरण"],a:1,e:"पौधे प्रकाश संश्लेषण द्वारा भोजन बनाते हैं।"},
+{category:"science",q:"मानव शरीर में रक्त पंप कौन करता है?",o:["फेफड़े","मस्तिष्क","हृदय","गुर्दे"],a:2,e:"हृदय रक्त को पूरे शरीर में पंप करता है।"},
+{category:"science",q:"सूर्य के सबसे निकट ग्रह कौन-सा है?",o:["शुक्र","पृथ्वी","मंगल","बुध"],a:3,e:"बुध सूर्य के सबसे निकट ग्रह है।"},
+{category:"science",q:"सामान्य वायुदाब पर पानी का क्वथनांक कितना है?",o:["50°C","75°C","100°C","150°C"],a:2,e:"सामान्य वायुदाब पर पानी लगभग 100°C पर उबलता है।"},
+{category:"constitution",q:"भारतीय संविधान कब लागू हुआ?",o:["15 अगस्त 1947","26 जनवरी 1950","26 नवंबर 1949","2 अक्टूबर 1950"],a:1,e:"संविधान 26 जनवरी 1950 को लागू हुआ।"},
+{category:"constitution",q:"भारत में संविधान दिवस कब मनाया जाता है?",o:["15 अगस्त","26 जनवरी","26 नवंबर","2 अक्टूबर"],a:2,e:"संविधान दिवस 26 नवंबर को मनाया जाता है।"},
+{category:"constitution",q:"भारत के प्रथम राष्ट्रपति कौन थे?",o:["डॉ. राजेंद्र प्रसाद","डॉ. राधाकृष्णन","जवाहरलाल नेहरू","ज़ाकिर हुसैन"],a:0,e:"डॉ. राजेंद्र प्रसाद भारत के प्रथम राष्ट्रपति थे।"},
+{category:"cg",q:"छत्तीसगढ़ राज्य का गठन कब हुआ?",o:["1 नवंबर 2000","1 मई 2001","15 अगस्त 2000","26 जनवरी 2000"],a:0,e:"छत्तीसगढ़ 1 नवंबर 2000 को राज्य बना।"},
+{category:"cg",q:"छत्तीसगढ़ की राजधानी क्या है?",o:["बिलासपुर","दुर्ग","रायपुर","जगदलपुर"],a:2,e:"छत्तीसगढ़ की राजधानी रायपुर है।"}
 ];
-const icons={"सभी कैटेगरी":"🌟","भारत सामान्य ज्ञान":"🇮🇳","इतिहास":"🏛️","भूगोल":"🌍","विज्ञान":"🔬","संविधान":"⚖️","छत्तीसगढ़ GK":"🌾","खेल":"🏏","कंप्यूटर":"💻","मिश्रित GK":"🧩"};
-let selected="सभी कैटेगरी",list=[],idx=0,score=0,answered=false;
-const $=id=>document.getElementById(id);
-function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
-function categories(){
- const names=["सभी कैटेगरी",...new Set(data.map(q=>q[0]))];$("categories").innerHTML="";
- names.forEach(name=>{const n=name==="सभी कैटेगरी"?data.length:data.filter(q=>q[0]===name).length;const b=document.createElement("button");b.className="cat"+(name===selected?" active":"");b.innerHTML=`${icons[name]||"📘"} ${name}<small>${n} सवाल</small>`;b.onclick=()=>{selected=name;categories()};$("categories").appendChild(b)});
- $("totalStat").textContent=data.length;$("playedStat").textContent=localStorage.getItem("hq-played")||"0";$("bestStat").textContent=(localStorage.getItem("hq-best")||"0")+"%";
-}
-function start(){const source=selected==="सभी कैटेगरी"?data:data.filter(q=>q[0]===selected);list=shuffle(source);const n=$("count").value;if(n!=="all")list=list.slice(0,Number(n));idx=0;score=0;$("home").style.display="none";$("result").style.display="none";$("quiz").style.display="block";show();window.scrollTo(0,0)}
-function show(){answered=false;const q=list[idx];$("categoryLabel").textContent=(icons[q[0]]||"📘")+" "+q[0];$("progressText").textContent=`सवाल ${idx+1}/${list.length}`;$("fill").style.width=(idx/list.length*100)+"%";$("question").textContent=q[1];$("options").innerHTML="";$("feedback").textContent="";$("feedback").className="feedback";$("explanation").textContent="";$("explanation").classList.add("hidden");$("next").disabled=true;$("next").textContent=idx===list.length-1?"रिजल्ट देखें 🏆":"अगला सवाल →";const labels=["A","B","C","D"];q[2].forEach((opt,i)=>{const b=document.createElement("button");b.className="option";b.textContent=labels[i]+"  "+opt;b.onclick=()=>answer(i);$("options").appendChild(b)})}
-function answer(chosen){if(answered)return;answered=true;const q=list[idx];const buttons=[...$("options").children];buttons.forEach((b,i)=>{b.disabled=true;if(i===q[3])b.classList.add("correct");if(i===chosen&&i!==q[3])b.classList.add("wrong")});if(chosen===q[3]){score++;$("feedback").textContent="✅ बिल्कुल सही जवाब!";$("feedback").classList.add("good")}else{$("feedback").textContent="❌ सही जवाब: "+q[2][q[3]];$("feedback").classList.add("bad")} $("explanation").textContent="📘 समझिए: "+(q[4]||("सही उत्तर «"+q[2][q[3]]+"» है।"));$("explanation").classList.remove("hidden");$("fill").style.width=((idx+1)/list.length*100)+"%";$("next").disabled=false}
-function next(){if(!answered)return;if(idx<list.length-1){idx++;show()}else finish()}
-function finish(){ $("quiz").style.display="none";$("result").style.display="block";const pct=Math.round(score/list.length*100);$("scoreBig").textContent=`${score}/${list.length}`;$("resultText").textContent=pct>=80?"शानदार! आपकी तैयारी बहुत अच्छी है। 🎉":pct>=50?"अच्छा प्रयास! अभ्यास जारी रखें। 💪":"कोई बात नहीं—फिर कोशिश करें, आप बेहतर करेंगे! 🌱";localStorage.setItem("hq-played",String(Number(localStorage.getItem("hq-played")||0)+1));const best=Math.max(Number(localStorage.getItem("hq-best")||0),pct);localStorage.setItem("hq-best",String(best));categories();window.scrollTo(0,0)}
-function home(){ $("quiz").style.display="none";$("result").style.display="none";$("home").style.display="block";categories();window.scrollTo(0,0)}
-$("start").onclick=start;$("next").onclick=next;$("quit").onclick=home;$("again").onclick=start;$("homeBtn").onclick=home;categories();
 
-// Supabase connection: publishable key is intended for browser use; never put a secret/service_role key here.
-const SUPABASE_URL = "https://vidsfhvqesfpicbaynfu.supabase.co";
-const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_AmFOrIW7PHQugnkFll1Sfg_RrjIUG_t";
-let sbClient = null, dbQuestions = [], editingDbId = null;
-function adminMsg(t){ const e=document.getElementById('adminMessage'); if(e)e.textContent=t; }
-function toQuizRow(r){const opts=[r.option_a,r.option_b,r.option_c,r.option_d];let ci=String(r.correct_answer||'A').trim().toUpperCase();let ix=['A','B','C','D'].indexOf(ci);if(ix<0)ix=opts.indexOf(r.correct_answer);if(ix<0)ix=0;return [r.subject||'मिश्रित GK',r.question||'',opts,ix,r.explanation||('सही उत्तर «'+opts[ix]+'» है।')];}
-async function loadDbQuestions(){try{if(!sbClient)return;const {data:rows,error}=await sbClient.from('questions').select('*').order('id',{ascending:true});if(error)throw error;dbQuestions=rows||[];const existing=new Set(data.map(q=>q[1]+'|'+q[0]));dbQuestions.forEach(r=>{const q=toQuizRow(r);if(!existing.has(q[1]+'|'+q[0]))data.push(q)});categories();}catch(e){console.warn('Could not load database questions:',e.message)}}
-function renderAdminRows(){const el=document.getElementById('adminQuestionList');el.innerHTML='';if(!dbQuestions.length){el.textContent='अभी database में कोई नया सवाल नहीं है।';return;}dbQuestions.forEach(r=>{const d=document.createElement('div');d.className='admin-item';const title=document.createElement('strong');title.textContent='['+(r.subject||'')+'] '+r.question;d.appendChild(title);const br=document.createElement('br');d.appendChild(br);const edit=document.createElement('button');edit.className='secondary';edit.textContent='Edit';edit.onclick=()=>fillEdit(r);const del=document.createElement('button');del.className='secondary';del.textContent='Delete';del.onclick=()=>deleteQuestion(r.id);d.append(edit,del);el.appendChild(d);});}
-function fillEdit(r){editingDbId=r.id;document.getElementById('editId').value=r.id;document.getElementById('formTitle').textContent='सवाल Edit करें';document.getElementById('qSubject').value=r.subject||'';document.getElementById('qText').value=r.question||'';['A','B','C','D'].forEach((l,i)=>document.getElementById('q'+l).value=r['option_'+l.toLowerCase()]||'');document.getElementById('qCorrect').value=String(r.correct_answer||'A').toUpperCase();document.getElementById('qExplanation').value=r.explanation||'';window.scrollTo(0,document.getElementById('adminPanel').offsetTop);}
-function clearAdminForm(){editingDbId=null;document.getElementById('editId').value='';document.getElementById('formTitle').textContent='नया सवाल जोड़ें';['qSubject','qText','qA','qB','qC','qD','qExplanation'].forEach(id=>document.getElementById(id).value='');document.getElementById('qCorrect').value='A';}
-async function saveQuestion(){if(!sbClient){adminMsg('Supabase अभी लोड नहीं हुआ। पेज refresh करें।');return;}const row={subject:document.getElementById('qSubject').value.trim(),question:document.getElementById('qText').value.trim(),option_a:document.getElementById('qA').value.trim(),option_b:document.getElementById('qB').value.trim(),option_c:document.getElementById('qC').value.trim(),option_d:document.getElementById('qD').value.trim(),correct_answer:document.getElementById('qCorrect').value,explanation:document.getElementById('qExplanation').value.trim()};if(!row.subject||!row.question||!row.option_a||!row.option_b||!row.option_c||!row.option_d){adminMsg('कैटेगरी, सवाल और चारों विकल्प भरें।');return;}let result=editingDbId?await sbClient.from('questions').update(row).eq('id',editingDbId):await sbClient.from('questions').insert(row);if(result.error){adminMsg('Save error: '+result.error.message);return;}adminMsg('सवाल save हो गया।');clearAdminForm();await refreshAdmin();await loadDbQuestions();}
-async function deleteQuestion(id){if(!confirm('क्या यह database सवाल हटाना है?'))return;const {error}=await sbClient.from('questions').delete().eq('id',id);if(error){adminMsg('Delete error: '+error.message);return;}adminMsg('सवाल delete हो गया।');await refreshAdmin();}
-async function refreshAdmin(){if(!sbClient)return;const {data:rows,error}=await sbClient.from('questions').select('*').order('id',{ascending:true});if(error){adminMsg(error.message);return;}dbQuestions=rows||[];renderAdminRows();}
-document.getElementById('showAdmin').onclick=()=>{const p=document.getElementById('adminPanel');p.style.display=p.style.display==='none'?'block':'none';p.scrollIntoView({behavior:'smooth'});};
-document.getElementById('adminLoginBtn').onclick=async()=>{if(!sbClient){adminMsg('Supabase client load नहीं हुआ। इंटरनेट जाँचें और refresh करें।');return;}const email=document.getElementById('adminEmail').value.trim(),password=document.getElementById('adminPassword').value;const {error}=await sbClient.auth.signInWithPassword({email,password});if(error){adminMsg('Login error: '+error.message);return;}document.getElementById('adminLogin').style.display='none';document.getElementById('adminTools').style.display='block';adminMsg('Login सफल।');await refreshAdmin();};
-document.getElementById('adminLogout').onclick=async()=>{await sbClient.auth.signOut();document.getElementById('adminLogin').style.display='block';document.getElementById('adminTools').style.display='none';adminMsg('Logout हो गया।');};
-document.getElementById('saveQuestion').onclick=saveQuestion;document.getElementById('cancelEdit').onclick=clearAdminForm;
-const sbScript=document.createElement('script');sbScript.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';sbScript.onload=()=>{sbClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);loadDbQuestions();};sbScript.onerror=()=>console.warn('Supabase JS failed to load');document.head.appendChild(sbScript);
+const $ = id => document.getElementById(id);
+let category = "all", list = [], index = 0, points = 0, locked = false;
+let best = Number(localStorage.getItem("gkBest") || 0);
+$("best").textContent = best;
+
+document.querySelectorAll(".cat").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".cat").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    category = btn.dataset.cat;
+  });
+});
+
+$("start").addEventListener("click", startQuiz);
+$("again").addEventListener("click", startQuiz);
+
+function startQuiz() {
+  list = questions.filter(q => category === "all" || q.category === category);
+  if (!list.length) return alert("इस कैटेगरी में सवाल उपलब्ध नहीं हैं।");
+  const count = $("count").value;
+  if (count !== "all") list = list.slice(0, Number(count));
+  index = 0;
+  points = 0;
+  locked = false;
+  $("result").classList.add("hidden");
+  $("quiz").classList.remove("hidden");
+  $("quiz").scrollIntoView({behavior:"smooth"});
+  showQuestion();
+}
+
+function showQuestion() {
+  locked = false;
+  const q = list[index];
+  $("counter").textContent = `सवाल ${index + 1} / ${list.length}`;
+  $("bar").style.width = `${index / list.length * 100}%`;
+  $("question").textContent = q.q;
+  $("options").innerHTML = "";
+  $("explanation").classList.add("hidden");
+  $("next").classList.add("hidden");
+
+  q.o.forEach((text, i) => {
+    const btn = document.createElement("button");
+    btn.className = "option";
+    btn.textContent = `${String.fromCharCode(65+i)}. ${text}`;
+    btn.addEventListener("click", () => answer(i));
+    $("options").appendChild(btn);
+  });
+}
+
+function answer(choice) {
+  if (locked) return;
+  locked = true;
+  const q = list[index];
+  [...$("options").children].forEach((btn, i) => {
+    btn.disabled = true;
+    if (i === q.a) btn.classList.add("correct");
+    if (i === choice && i !== q.a) btn.classList.add("wrong");
+  });
+
+  if (choice === q.a) {
+    points++;
+    $("explanation").textContent = "✅ सही जवाब! " + q.e;
+  } else {
+    $("explanation").textContent = "❌ सही जवाब: " + q.o[q.a] + "। " + q.e;
+  }
+
+  $("explanation").classList.remove("hidden");
+  $("bar").style.width = `${(index + 1) / list.length * 100}%`;
+  $("next").textContent = index === list.length - 1 ? "परिणाम देखें 🏆" : "अगला सवाल ➜";
+  $("next").classList.remove("hidden");
+}
+
+$("next").addEventListener("click", () => {
+  if (!locked) return;
+  index++;
+  if (index < list.length) showQuestion();
+  else showResult();
+});
+
+function showResult() {
+  $("quiz").classList.add("hidden");
+  $("result").classList.remove("hidden");
+  const percent = Math.round(points / list.length * 100);
+  $("score").textContent = `आपका स्कोर: ${points} / ${list.length} (${percent}%)`;
+  $("message").textContent = percent >= 80 ? "शानदार! आपकी GK बहुत अच्छी है। 🎉" : percent >= 50 ? "अच्छा प्रयास! अभ्यास जारी रखें। 💪" : "कोई बात नहीं, दोबारा कोशिश करें। 📚";
+
+  if (points > best) {
+    best = points;
+    localStorage.setItem("gkBest", String(best));
+    $("best").textContent = best;
+  }
+  $("result").scrollIntoView({behavior:"smooth"});
+}
 </script>
-<style>body {
-  background: #18213a !important;
-}
-/* Modern premium design improvements */
-:root {
-  --bg: #080d1a;
-  --panel: #111b2f;
-  --panel2: #1a2943;
-  --text: #f5f7ff;
-  --muted: #b2bfd6;
-  --line: #344563;
-  --a: #8b76ff;
-  --b: #35dfb0;
-  --bad: #ff7189;
-}
-
-body {
-  background:
-    radial-gradient(ellipse at 50% -10%, #3d3b85 0%, transparent 45%),
-    linear-gradient(180deg, #080d1a, #10182a);
-  line-height: 1.6;
-}
-
-header {
-  padding: 38px 18px 34px;
-  background:
-    radial-gradient(ellipse at top right, #3d8fa8 0%, transparent 50%),
-    linear-gradient(135deg, #30236f, #111d38 80%);
-  border-bottom: 1px solid #ffffff24;
-}
-
-.logo {
-  display: inline-block;
-  padding: 6px 12px;
-  border: 1px solid #ffffff38;
-  border-radius: 30px;
-  background: #ffffff0d;
-  letter-spacing: 2px;
-}
-
-.hero h1 {
-  font-weight: 900;
-  letter-spacing: -0.5px;
-  text-shadow: 0 5px 24px #0005;
-}
-
-main {
-  width: min(900px, 100%);
-  padding-top: 24px;
-}
-
-.stat,
-.card {
-  border-color: #ffffff16;
-  box-shadow: 0 12px 35px #0003;
-  backdrop-filter: blur(8px);
-}
-
-.stat {
-  background: linear-gradient(145deg, #182641, #10182a);
-  transition: transform .2s, border-color .2s;
-}
-
-.stat strong {
-  color: #b9adff;
-  font-weight: 900;
-}
-
-.card {
-  border-radius: 20px;
-}
-
-.label {
-  color: #c3cde3;
-}
-
-.cat,
-.option,
-select,
-.secondary {
-  transition: background .2s, border-color .2s, transform .2s;
-}
-
-.cat:hover,
-.option:hover,
-.secondary:hover {
-  border-color: #9a8aff;
-  background-color: #253658;
-}
-
-.primary {
-  background: linear-gradient(135deg, #8a6cff, #596dff);
-  box-shadow: 0 7px 20px #6857ff38;
-  transition: transform .2s, filter .2s;
-}
-
-.primary:hover {
-  filter: brightness(1.12);
-  transform: translateY(-1px);
-}
-
-button:focus-visible,
-select:focus-visible,
-summary:focus-visible {
-  outline: 3px solid #6fe8ce;
-  outline-offset: 3px;
-}
-
-.section-title {
-  font-weight: 850;
-  letter-spacing: -.3px;
-}
-
-.note-list li {
-  padding: 5px 0;
-}
-
-footer {
-  margin-top: 24px;
-  padding: 26px 16px;
-  background: #080d18;
-  border-top: 1px solid #ffffff18;
-  text-align: center;
-}
-
-@media (max-width: 480px) {
-  header {
-    padding: 30px 14px;
-  }
-
-  .stats {
-    gap: 7px;
-  }
-
-  .stat {
-    padding: 12px 3px;
-  }
-
-  .stat strong {
-    font-size: 20px;
-  }
-
-  .card {
-    padding: 16px;
-    border-radius: 17px;
-  }
-
-  .row .primary {
-    width: 100%;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    transition: none !important;
-    animation: none !important;
-  }
-}
-  .gkx-wrap{max-width:1100px;margin:32px auto;padding:18px;font-family:inherit;color:inherit}
-  .gkx-hero{padding:24px;border-radius:18px;background:linear-gradient(135deg,#173b73,#2765a8);color:#fff;margin-bottom:20px}
-  .gkx-hero h2{margin:0 0 8px;font-size:clamp(1.4rem,3vw,2rem)}
-  .gkx-hero p{margin:0;line-height:1.6}
-  .gkx-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
-  .gkx-card{border:1px solid #d8e1ed;border-radius:15px;padding:17px;background:var(--card-bg,#fff);box-shadow:0 3px 12px rgba(20,45,80,.06)}
-  .gkx-card h3{margin:0 0 10px;font-size:1.12rem;color:#225b9c}
-  .gkx-card ul{padding-left:20px;margin:0}
-  .gkx-card li{margin:8px 0;line-height:1.5}
-  .gkx-quiz{margin-top:24px}
-  .gkx-qa{padding:14px 0;border-bottom:1px solid #e1e7ef;line-height:1.55}
-  .gkx-qa:last-child{border-bottom:0}
-  .gkx-qa summary{cursor:pointer;font-weight:650}
-  .gkx-answer{margin:9px 0 0;padding:10px 12px;border-radius:9px;background:#edf5ff}
-  .gkx-note{margin-top:18px;font-size:.92rem;opacity:.8}
-  @media(prefers-color-scheme:dark){
-    .gkx-card{background:#171b23;border-color:#343b49}
-    .gkx-card h3{color:#8fc2ff}
-    .gkx-answer{background:#202f43}
-  }
-</style>
-
-<section class="gkx-wrap" aria-labelledby="gkx-title">
-  <div class="gkx-hero">
-    <h2 id="gkx-title">भारत GK: नए विषय और रोचक तथ्य</h2>
-    <p>इतिहास, भूगोल, विज्ञान, संविधान, छत्तीसगढ़ और कंप्यूटर से जुड़े छोटे-छोटे तथ्य पढ़ें। नीचे दिए गए सवालों के जवाब खोलकर अपनी तैयारी जाँचें।</p>
-  </div>
-
-  <div class="gkx-grid">
-    <article class="gkx-card">
-      <h3>🏛️ भारतीय इतिहास</h3>
-      <ul>
-        <li>भारत का संविधान 26 नवंबर 1949 को अपनाया गया।</li>
-        <li>भारत 15 अगस्त 1947 को स्वतंत्र हुआ।</li>
-        <li>दांडी मार्च 1930 में महात्मा गांधी के नेतृत्व में हुआ।</li>
-        <li>अशोक के अनेक शिलालेख ब्राह्मी लिपि में लिखे गए थे।</li>
-      </ul>
-    </article>
-
-    <article class="gkx-card">
-      <h3>🌍 भारत का भूगोल</h3>
-      <ul>
-        <li>क्षेत्रफल के आधार पर राजस्थान भारत का सबसे बड़ा राज्य है।</li>
-        <li>भारत की मुख्य भूमि का दक्षिणतम बिंदु कन्याकुमारी है।</li>
-        <li>गंगा नदी का उद्गम क्षेत्र गंगोत्री हिमनद से जुड़ा है।</li>
-        <li>थार मरुस्थल का बड़ा भाग राजस्थान में स्थित है।</li>
-      </ul>
-    </article>
-
-    <article class="gkx-card">
-      <h3>🔬 विज्ञान</h3>
-      <ul>
-        <li>पानी का रासायनिक सूत्र H₂O है।</li>
-        <li>पौधे प्रकाश संश्लेषण में सूर्य के प्रकाश का उपयोग करते हैं।</li>
-        <li>ध्वनि को फैलने के लिए माध्यम चाहिए; निर्वात में ध्वनि नहीं फैलती।</li>
-        <li>मानव शरीर में हृदय रक्त पंप करता है।</li>
-      </ul>
-    </article>
-
-    <article class="gkx-card">
-      <h3>📜 भारतीय संविधान</h3>
-      <ul>
-        <li>भारतीय संविधान 26 जनवरी 1950 को लागू हुआ।</li>
-        <li>मौलिक अधिकार संविधान के भाग III में हैं।</li>
-        <li>भारत में मतदान की न्यूनतम आयु 18 वर्ष है, निर्धारित शर्तों के अधीन।</li>
-        <li>भारत का राष्ट्रपति देश का संवैधानिक प्रमुख होता है।</li>
-      </ul>
-    </article>
-
-    <article class="gkx-card">
-      <h3>🌾 छत्तीसगढ़ GK</h3>
-      <ul>
-        <li>छत्तीसगढ़ राज्य का गठन 1 नवंबर 2000 को हुआ।</li>
-        <li>रायपुर छत्तीसगढ़ की राजधानी है।</li>
-        <li>चित्रकोट जलप्रपात बस्तर क्षेत्र में इंद्रावती नदी पर स्थित है।</li>
-        <li>छत्तीसगढ़ को धान की खेती के लिए जाना जाता है।</li>
-      </ul>
-    </article>
-
-    <article class="gkx-card">
-      <h3>💻 कंप्यूटर GK</h3>
-      <ul>
-        <li>CPU को अक्सर कंप्यूटर का मुख्य प्रोसेसिंग भाग कहा जाता है।</li>
-        <li>RAM अस्थायी मेमोरी है; बिजली बंद होने पर इसका डेटा सामान्यतः मिट जाता है।</li>
-        <li>HTML वेब पेज की संरचना बनाने के लिए इस्तेमाल होती है।</li>
-        <li>URL किसी वेब संसाधन का पता बताता है।</li>
-      </ul>
-    </article>
-
-    <article class="gkx-card">
-      <h3>🏅 खेल GK</h3>
-      <ul>
-        <li>ओलंपिक खेल सामान्यतः हर चार साल में आयोजित होते हैं।</li>
-        <li>क्रिकेट की एक टीम मैदान में 11 खिलाड़ियों के साथ खेलती है।</li>
-        <li>बैडमिंटन में शटल कॉक का उपयोग होता है।</li>
-        <li>शतरंज में प्रत्येक खिलाड़ी खेल की शुरुआत 16 मोहरों से करता है।</li>
-      </ul>
-    </article>
-
-    <article class="gkx-card">
-      <h3>🌱 पर्यावरण GK</h3>
-      <ul>
-        <li>पेड़ वातावरण से कार्बन डाइऑक्साइड लेते हैं और प्रकाश संश्लेषण के दौरान ऑक्सीजन छोड़ते हैं।</li>
-        <li>जैव विविधता का अर्थ जीवों और उनके पारिस्थितिक तंत्रों की विविधता है।</li>
-        <li>सौर ऊर्जा सूर्य से प्राप्त होती है।</li>
-        <li>कचरे को कम करना, दोबारा उपयोग करना और रीसायकल करना उपयोगी आदतें हैं।</li>
-      </ul>
-    </article>
-  </div>
-
-  <div class="gkx-card gkx-quiz">
-    <h3>🧠 अभ्यास प्रश्न — जवाब खोलें</h3>
-
-    <details class="gkx-qa">
-      <summary>1. भारतीय संविधान कब लागू हुआ?</summary>
-      <div class="gkx-answer">उत्तर: 26 जनवरी 1950।</div>
-    </details>
-
-    <details class="gkx-qa">
-      <summary>2. क्षेत्रफल के आधार पर भारत का सबसे बड़ा राज्य कौन-सा है?</summary>
-      <div class="gkx-answer">उत्तर: राजस्थान।</div>
-    </details>
-
-    <details class="gkx-qa">
-      <summary>3. पानी का रासायनिक सूत्र क्या है?</summary>
-      <div class="gkx-answer">उत्तर: H₂O।</div>
-    </details>
-
-    <details class="gkx-qa">
-      <summary>4. छत्तीसगढ़ राज्य का गठन किस तारीख को हुआ?</summary>
-      <div class="gkx-answer">उत्तर: 1 नवंबर 2000।</div>
-    </details>
 </body>
 </html>
